@@ -1,0 +1,42 @@
+{
+  "name": "tskaigi-layout",
+  "version": "1.0.0",
+  "private": true,
+  "nodecg": {
+    "compatibleRange": "^1.0.0 || ^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "サンプル",
+        "title": "サンプル画面",
+        "file": "sample.html"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "sample.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "scripts": {
+    "start": "node ../../index.js",
+    "dev": "dev:*",
+    "dev:view": "vite"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.2.0",
+    "globby": "^14.0.0",
+    "npm-run-all": "^4.1.5",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "rollup-plugin-node-externals": "^6.1.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

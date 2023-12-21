@@ -3,6 +3,10 @@
 /dashboard
 /graphics
 
+# editor
+
+.vscode/settings.json
+
 # Logs
 logs
 *.log

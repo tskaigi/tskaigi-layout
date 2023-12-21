@@ -9,5 +9,5 @@ const App: FC = () => {
 render(
   <>
     <App />
-  </>
+  </>,
 );

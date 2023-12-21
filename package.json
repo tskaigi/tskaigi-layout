@@ -2,6 +2,7 @@
   "name": "tskaigi-layout",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "nodecg": {
     "compatibleRange": "^1.0.0 || ^2.0.0",
     "dashboardPanels": [
@@ -23,7 +24,8 @@
     "start": "node ../../index.js",
     "dev": "run-p dev:*",
     "dev:view": "vite",
-    "dev:start": "node ../../index.js"
+    "dev:start": "node ../../index.js",
+    "lint:eslint": "eslint ."
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

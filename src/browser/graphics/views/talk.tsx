@@ -1,10 +1,11 @@
 import type { FC } from "react";
 
 import { render } from "../../render";
-import React from "react";
+
+import { Base } from "../components/Base";
 
 const App: FC = () => {
-  return <h1>Graphics</h1>;
+  return <Base></Base>;
 };
 
 render(

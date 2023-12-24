@@ -10,7 +10,7 @@ const mockImage = [
 ];
 
 type Props = {
-  intervalTime: number;
+  intervalTime?: number;
 };
 
 export const SponsorRoll: FC<Props> = ({ intervalTime = 5000 }) => {
@@ -31,8 +31,8 @@ export const SponsorRoll: FC<Props> = ({ intervalTime = 5000 }) => {
       {mockImage.map((image, index) => {
         return (
           <img
-            className={styles.image}
             key={image}
+            className={styles.image}
             src={image}
             hidden={currentIndex !== index}
           ></img>
@@ -45,13 +45,20 @@ export const SponsorRoll: FC<Props> = ({ intervalTime = 5000 }) => {
 const styles = {
   container: css`
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
     background-color: rgb(0, 0, 0, 0.2);
   `,
   image: css`
     position: absolute;
     top: 0;
     left: 0;
-    padding: 16px;
+    width: 100%;
+    height: 100%;
+    display: block;
     opacity: 1;
     transition: opacity 500ms ease-in-out;
 

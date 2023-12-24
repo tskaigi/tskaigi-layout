@@ -12,7 +12,7 @@ export const SlideArea: FC<Props> = ({ size = "16x9" }) => {
 
 const styles = {
   container: css`
-    height: 850px;
+    width: 100%;
     aspect-ratio: 16 / 9;
     background-color: rgb(0, 0, 0, 0.2);
     display: flex;

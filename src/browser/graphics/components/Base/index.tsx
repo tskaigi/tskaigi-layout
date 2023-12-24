@@ -11,8 +11,10 @@ export const Base: FC<Props> = ({ children }) => {
 
 const styles = {
   background: css`
+    box-sizing: border-box;
     height: 1080px;
     width: 1920px;
+    padding: 20px;
     background-color: ${typescript.main};
   `,
 };

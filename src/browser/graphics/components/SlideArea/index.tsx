@@ -15,5 +15,12 @@ const styles = {
     height: 850px;
     aspect-ratio: 16 / 9;
     background-color: rgb(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgb(0, 0, 0, 0.5);
+    line-height: 1;
   `,
 };

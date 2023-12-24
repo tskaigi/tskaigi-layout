@@ -15,6 +15,7 @@ const styles = {
     height: 1080px;
     width: 1920px;
     padding: 20px;
+    overflow: hidden;
     background-color: ${typescript.main};
   `,
 };

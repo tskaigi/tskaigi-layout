@@ -7,6 +7,7 @@ import { typescript } from "../../styles/color";
 
 import { TalkDescription } from "../components/TalkDescription";
 import { SlideArea } from "../components/SlideArea";
+import { Camera } from "../components/Camera";
 import { SponsorRoll } from "../components/SponsorRoll";
 import { SponsorStatic } from "../components/SponsorStatic";
 
@@ -18,6 +19,7 @@ const App: FC = () => {
           <SlideArea />
         </div>
         <div className={styles.side}>
+          <Camera />
           <SponsorRoll />
           <SponsorStatic />
         </div>
@@ -44,6 +46,8 @@ const styles = {
 
   side: css`
     display: flex;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
     flex-direction: column;
     gap: 8px;
   `,

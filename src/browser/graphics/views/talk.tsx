@@ -24,7 +24,15 @@ const App: FC = () => {
           <SponsorStatic />
         </div>
         <div>
-          <TalkDescription title="発表タイトル" name="登壇者名" />
+          <TalkDescription
+            title="発表タイトル"
+            name="登壇者名"
+            social={{
+              github: "ken7253",
+              link: "example.com",
+              twitter: "ken7253",
+            }}
+          />
         </div>
       </div>
     </div>

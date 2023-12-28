@@ -1,7 +1,9 @@
-import type { FC } from "react";
+import type { FC, ReactNode } from "react";
 
 import { css } from "@emotion/css";
 import { typescript } from "../../../styles/color";
+
+import { GitHub, Twitter, LinkRounded } from "@mui/icons-material";
 
 type Social = Partial<Record<"twitter" | "github" | "link", string>>;
 
@@ -11,6 +13,12 @@ type Props = {
   social?: Social;
 };
 
+const iconMap: Record<keyof Social, ReactNode> = {
+  link: <LinkRounded />,
+  github: <GitHub />,
+  twitter: <Twitter />,
+};
+
 export const TalkDescription: FC<Props> = ({ title, name, social }) => {
   return (
     <div className={styles.container}>
@@ -18,9 +26,16 @@ export const TalkDescription: FC<Props> = ({ title, name, social }) => {
       <div className={styles.about}>
         <div className={styles.name}>{name}</div>
         <div className={styles.social}>
-          {Object.entries(social ?? []).map(([key, value]) => {
-            return <div key={key}>{value}</div>;
-          })}
+          {(Object.entries(social ?? []) as [keyof Social, string][]).map(
+            ([key, value]) => {
+              return (
+                <>
+                  {iconMap[key]}
+                  <div key={key}>{value}</div>
+                </>
+              );
+            },
+          )}
         </div>
       </div>
     </div>
@@ -42,6 +57,7 @@ const styles = {
   about: css`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 8px 0 0 0;
   `,
   name: css`
@@ -49,6 +65,7 @@ const styles = {
   `,
   social: css`
     display: flex;
+    align-items: center;
     gap: 8px;
   `,
 };

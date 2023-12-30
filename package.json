@@ -15,7 +15,7 @@
     ],
     "graphics": [
       {
-        "file": "sample.html",
+        "file": "talk.html",
         "width": 1920,
         "height": 1080
       }
@@ -32,6 +32,7 @@
     "check:format": "prettier . --check"
   },
   "devDependencies": {
+    "@emotion/css": "^11.11.2",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
@@ -51,6 +52,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.1",
     "@mui/material": "^5.15.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

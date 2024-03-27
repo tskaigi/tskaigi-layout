@@ -2,14 +2,12 @@ import type { FC } from "react";
 import { useEffect, useState } from "react";
 import { match } from "ts-pattern";
 
-import { render } from "../../render";
-
-import { CheckList } from "../components/CheckList";
+import { CheckList } from "../../../components/CheckList";
 import { Button, Stack } from "@mui/material";
 
 type Progress = "standby" | "during";
 
-const App: FC = () => {
+export const Workflow: FC = () => {
   const [progress, setProgress] = useState<Progress>("standby");
   const [toNext, setToNext] = useState(false);
 
@@ -63,9 +61,3 @@ const App: FC = () => {
     </Stack>
   );
 };
-
-render(
-  <>
-    <App />
-  </>,
-);

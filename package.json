@@ -7,10 +7,10 @@
     "compatibleRange": "^1.0.0 || ^2.0.0",
     "dashboardPanels": [
       {
-        "name": "workflow",
-        "title": "ワークフロー",
-        "file": "workflow.html",
-        "width": 2
+        "name": "main",
+        "title": "メインダッシュボード",
+        "file": "Main.html",
+        "width": 4
       }
     ],
     "graphics": [

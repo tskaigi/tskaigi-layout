@@ -46,6 +46,7 @@ const styles = {
     width: 100%;
     aspect-ratio: 1/1;
     background-color: rgb(255, 255, 255);
+    border-radius: 8px;
   `,
   image: css`
     box-sizing: border-box;

@@ -45,16 +45,20 @@ const styles = {
     align-items: center;
     width: 100%;
     aspect-ratio: 1/1;
-    background-color: rgb(0, 0, 0, 0.2);
+    background-color: rgb(255, 255, 255);
   `,
   image: css`
+    box-sizing: border-box;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
     width: 100%;
     height: auto;
+    margin: auto;
     display: block;
     opacity: 1;
+    transform: translateY(-50%);
+    padding: 8px;
     transition: opacity 500ms ease-in-out;
 
     &[hidden] {

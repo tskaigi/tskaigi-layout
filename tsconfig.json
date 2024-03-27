@@ -3,7 +3,8 @@
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "Bundler",
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "DOM"],
+    "types": ["node", "@nodecg/types/augment-window"],
     "jsx": "preserve",
 
     "esModuleInterop": true,

@@ -4,6 +4,7 @@ import { css } from "@emotion/css";
 import { typescript } from "../../../styles/color";
 
 import { GitHub, Twitter, LinkRounded } from "@mui/icons-material";
+import background from "../../img/background.png";
 
 type Social = Partial<Record<"twitter" | "github" | "link", string>>;
 
@@ -46,13 +47,17 @@ const styles = {
   container: css`
     max-width: 100%;
     padding: 16px;
-    background-color: ${typescript.primaryBackground};
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(255, 255, 255, 0.8)
+      ),
+      url(${background});
     color: ${typescript.main};
+    border-radius: 8px;
   `,
   title: css`
     font-size: 2.5rem;
     padding: 4px 0 8px 0;
-    border-bottom: solid 2px ${typescript.main};
   `,
   about: css`
     display: flex;

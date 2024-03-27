@@ -7,9 +7,9 @@
     "compatibleRange": "^1.0.0 || ^2.0.0",
     "dashboardPanels": [
       {
-        "name": "サンプル",
-        "title": "サンプル画面",
-        "file": "sample.html",
+        "name": "workflow",
+        "title": "ワークフロー",
+        "file": "workflow.html",
         "width": 2
       }
     ],

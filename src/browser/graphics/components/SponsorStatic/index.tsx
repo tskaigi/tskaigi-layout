@@ -4,11 +4,15 @@ import { css } from "@emotion/css";
 
 const dummyImages = new Array(6).fill("https://placehold.jp/300x150.png");
 
-export const SponsorStatic: FC = () => {
+type Props = {
+  images: string[];
+};
+
+export const SponsorStatic: FC<Props> = ({ images }) => {
   return (
     <div className={styles.container}>
-      {dummyImages.map((image, index) => {
-        return <img className={styles.image} key={image + index} src={image} />;
+      {images.map((image) => {
+        return <img className={styles.image} key={image} src={image} />;
       })}
     </div>
   );

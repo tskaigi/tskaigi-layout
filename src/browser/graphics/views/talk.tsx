@@ -5,6 +5,9 @@ import { css } from "@emotion/css";
 
 import { typescript } from "../../styles/color";
 
+import { TimeTableSchema } from "../../schema/TimeTable";
+import { useReplicant } from "../../hooks/useReplicant";
+
 import { TalkDescription } from "../components/TalkDescription";
 import { SlideArea } from "../components/SlideArea";
 import { Camera } from "../components/Camera";
@@ -34,6 +37,10 @@ const sponsor = {
 };
 
 const App: FC = () => {
+  const { value } = useReplicant("time-table", TimeTableSchema);
+
+  console.log(value);
+
   return (
     <div>
       <div className={styles.layoutContainer}>

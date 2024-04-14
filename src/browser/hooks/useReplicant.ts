@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { BaseSchema, safeParse, type AnySchema } from "valibot";
+import { BaseSchema, safeParse } from "valibot";
 
 /**
  * 汎用Replicant呼び出し用Hooks

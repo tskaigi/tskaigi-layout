@@ -11,9 +11,17 @@ type Props = {
   talkIndex: number;
   hasNext: boolean;
   room: keyof TimeTable;
+  onNext?: () => void;
+  onPrev?: () => void;
 };
 
-export const TalkSummary: FC<Props> = ({ talkIndex, room, hasNext }: Props) => {
+export const TalkSummary: FC<Props> = ({
+  talkIndex,
+  room,
+  hasNext,
+  onNext,
+  onPrev,
+}: Props) => {
   const { value, reset } = useReplicant<TimeTable>(
     "time-table",
     TimeTableSchema,
@@ -23,7 +31,12 @@ export const TalkSummary: FC<Props> = ({ talkIndex, room, hasNext }: Props) => {
   return (
     <Stack gap={2}>
       <h2>現在の発表</h2>
-      <TalkIndex hasPrev={talkIndex !== 0} hasNext={hasNext}>
+      <TalkIndex
+        hasPrev={talkIndex !== 0}
+        hasNext={hasNext}
+        onNext={onNext}
+        onPrev={onPrev}
+      >
         {talkIndex}
       </TalkIndex>
       <Stack gap={2}>

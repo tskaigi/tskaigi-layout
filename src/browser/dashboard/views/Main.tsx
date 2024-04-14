@@ -43,6 +43,16 @@ const App: FC = () => {
     }
   };
 
+  const pageChangeHandler = (to: "prev" | "next") => {
+    if (progress === undefined) return;
+    const step = to === "next" ? 1 : -1;
+
+    setProgress({
+      ...progress,
+      index: progress.index + step,
+    });
+  };
+
   return (
     <>
       <Workflow onChangeProgress={progressUpdateHandler} />
@@ -50,6 +60,8 @@ const App: FC = () => {
         hasNext={hasNextTalk(timeTable, progress)}
         talkIndex={progress?.index ?? 0}
         room={progress?.room ?? "trackOne"}
+        onNext={() => pageChangeHandler("next")}
+        onPrev={() => pageChangeHandler("prev")}
       />
     </>
   );

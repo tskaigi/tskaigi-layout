@@ -36,6 +36,7 @@ const App: FC = () => {
   console.log({ hasNext: hasNextTalk(timeTable, progress) });
 
   const progressUpdateHandler: WorkflowProps["onChangeProgress"] = (mode) => {
+    if (!hasNextTalk(timeTable, progress)) return;
     if (mode === "during" && progress !== undefined) {
       setProgress({
         ...progress,

@@ -9,10 +9,11 @@ import { timeTable } from "../../../../dashboard/data/timeTable";
 
 type Props = {
   talkIndex: number;
+  hasNext: boolean;
   room: keyof TimeTable;
 };
 
-export const TalkSummary: FC<Props> = ({ talkIndex, room }: Props) => {
+export const TalkSummary: FC<Props> = ({ talkIndex, room, hasNext }: Props) => {
   const { value, setValue, reset } = useReplicant<TimeTable>(
     "time-table",
     TimeTableSchema,
@@ -20,9 +21,11 @@ export const TalkSummary: FC<Props> = ({ talkIndex, room }: Props) => {
   );
 
   return (
-    <div>
+    <Stack gap={2}>
       <h2>現在の発表</h2>
-      <TalkIndex>{talkIndex}</TalkIndex>
+      <TalkIndex hasPrev={talkIndex !== 0} hasNext={hasNext}>
+        {talkIndex}
+      </TalkIndex>
       <Stack gap={2}>
         <TextField
           label="発表者名"
@@ -38,6 +41,6 @@ export const TalkSummary: FC<Props> = ({ talkIndex, room }: Props) => {
           リセット
         </Button>
       </Stack>
-    </div>
+    </Stack>
   );
 };

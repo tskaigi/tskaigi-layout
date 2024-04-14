@@ -48,6 +48,7 @@ const App: FC = () => {
     <>
       <Workflow onChangeProgress={progressUpdateHandler} />
       <TalkSummary
+        hasNext={hasNextTalk(timeTable, progress)}
         talkIndex={progress?.index ?? 0}
         room={progress?.room ?? "trackOne"}
       />

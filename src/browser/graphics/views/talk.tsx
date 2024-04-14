@@ -5,7 +5,8 @@ import { css } from "@emotion/css";
 
 import { typescript } from "../../styles/color";
 
-import { TimeTableSchema } from "../../schema/TimeTable";
+import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
+import { ProgressSchema, type Progress } from "../../schema/Progress";
 import { useReplicant } from "../../hooks/useReplicant";
 
 import { TalkDescription } from "../components/TalkDescription";
@@ -37,9 +38,27 @@ const sponsor = {
 };
 
 const App: FC = () => {
-  const { value } = useReplicant("time-table", TimeTableSchema);
+  const { value: timeTable } = useReplicant<TimeTable>(
+    "time-table",
+    TimeTableSchema,
+  );
+  const { value: progress } = useReplicant<Progress>(
+    "progress",
+    ProgressSchema,
+  );
 
-  console.log(value);
+  console.log(timeTable);
+
+  const getCurrentTalk = (
+    data: TimeTable | undefined,
+    current: Progress | undefined,
+    fallback: TimeTable[Progress["room"]][number],
+  ) => data?.[current?.room ?? "trackOne"]?.[current?.index ?? 0] ?? fallback;
+
+  const talk = getCurrentTalk(timeTable, progress, {
+    speakerName: "",
+    title: "",
+  });
 
   return (
     <div>
@@ -54,8 +73,8 @@ const App: FC = () => {
         </div>
         <div>
           <TalkDescription
-            title="発表タイトル"
-            name="登壇者名"
+            title={talk.title}
+            name={talk.speakerName}
             social={{
               github: "ken7253",
               link: "example.com",

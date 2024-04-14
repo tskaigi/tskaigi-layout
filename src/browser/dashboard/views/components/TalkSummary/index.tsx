@@ -1,20 +1,40 @@
 import { type FC } from "react";
 
 import { useReplicant } from "../../../../hooks/useReplicant";
-import { TimeTableSchema } from "../../../../schema/TimeTable";
-import { Stack, TextField } from "@mui/material";
+import { TimeTableSchema, type TimeTable } from "../../../../schema/TimeTable";
+import { Button, Stack, TextField } from "@mui/material";
 
-export const TalkSummary: FC = () => {
-  const { value } = useReplicant("time-table", TimeTableSchema);
+import { timeTable } from "../../../../dashboard/data/timeTable";
 
-  console.log(value);
+type Props = {
+  talkIndex: number;
+  room: keyof TimeTable;
+};
+
+export const TalkSummary: FC<Props> = ({ talkIndex, room }: Props) => {
+  const { value, setValue, reset } = useReplicant<TimeTable>(
+    "time-table",
+    TimeTableSchema,
+    timeTable,
+  );
 
   return (
     <div>
       <h2>現在の発表</h2>
       <Stack gap={2}>
-        <TextField label="発表者名" variant="outlined" />
-        <TextField label="タイトル" variant="outlined" />
+        <TextField
+          label="発表者名"
+          variant="outlined"
+          value={value?.[room][talkIndex].speakerName ?? ""}
+        />
+        <TextField
+          label="タイトル"
+          variant="outlined"
+          value={value?.[room][talkIndex].title ?? ""}
+        />
+        <Button variant="contained" onClick={() => reset()}>
+          リセット
+        </Button>
       </Stack>
     </div>
   );

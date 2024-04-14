@@ -4,6 +4,7 @@ import { useReplicant } from "../../../../hooks/useReplicant";
 import { TimeTableSchema, type TimeTable } from "../../../../schema/TimeTable";
 import { Button, Stack, TextField } from "@mui/material";
 
+import { RoomSelect } from "../../../components/RoomSelect";
 import { TalkIndex } from "../../../components/TalkIndex";
 import { timeTable } from "../../../../dashboard/data/timeTable";
 
@@ -31,6 +32,7 @@ export const TalkSummary: FC<Props> = ({
   return (
     <Stack gap={2}>
       <h2>現在の発表</h2>
+      <RoomSelect items={value} current={room} />
       <TalkIndex
         hasPrev={talkIndex !== 0}
         hasNext={hasNext}

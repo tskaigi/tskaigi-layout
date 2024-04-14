@@ -4,7 +4,7 @@
     "module": "ES2022",
     "moduleResolution": "Bundler",
     "lib": ["ESNext", "DOM"],
-    "types": ["node", "@nodecg/types/augment-window"],
+    "types": ["node", "@nodecg/types/augment-window", "vite/client"],
     "jsx": "preserve",
 
     "esModuleInterop": true,

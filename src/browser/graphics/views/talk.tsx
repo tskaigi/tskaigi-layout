@@ -11,6 +11,28 @@ import { Camera } from "../components/Camera";
 import { SponsorRoll } from "../components/SponsorRoll";
 import { SponsorStatic } from "../components/SponsorStatic";
 
+import {
+  ascend,
+  dwango,
+  helpfeel,
+  leverages,
+  progate,
+} from "../img/sponsor/roll";
+import {
+  earthbrain,
+  googlecloud,
+  layerx,
+  medley,
+  timee,
+  toggle,
+  ubie,
+} from "../img/sponsor/static";
+
+const sponsor = {
+  roll: [ascend, dwango, helpfeel, leverages, progate],
+  static: [earthbrain, googlecloud, layerx, medley, timee, toggle, ubie],
+};
+
 const App: FC = () => {
   return (
     <div>
@@ -20,8 +42,8 @@ const App: FC = () => {
         </div>
         <div className={styles.side}>
           <Camera />
-          <SponsorRoll />
-          <SponsorStatic />
+          <SponsorRoll images={sponsor.roll} />
+          <SponsorStatic images={sponsor.static} />
         </div>
         <div>
           <TalkDescription

@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const CheckList: FC<Props> = ({ items, onChange }) => {
-  const [checkList, setCheckList] = useState(items.map(() => false));
+  const [checkList, setCheckList] = useState(() => items.map(() => false));
 
   const checkHandler = (_: ChangeEvent, index: number) => {
     setCheckList((prev) => {

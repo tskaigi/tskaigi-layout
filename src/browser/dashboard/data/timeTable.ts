@@ -6,6 +6,10 @@ export const timeTable = {
       speakerName: "foobar",
       title: "hogefuga",
     },
+    {
+      speakerName: "fooooo",
+      title: "aaaaa",
+    },
   ],
   trackTwo: [],
   trackThree: [],

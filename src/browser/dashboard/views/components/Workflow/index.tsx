@@ -7,15 +7,25 @@ import { Button, Stack } from "@mui/material";
 
 type Progress = "standby" | "during";
 
-export const Workflow: FC = () => {
+type Props = {
+  onChangeProgress?: (mode: Progress) => void;
+};
+
+export const Workflow: FC<Props> = ({ onChangeProgress }: Props) => {
   const [progress, setProgress] = useState<Progress>("standby");
   const [toNext, setToNext] = useState(false);
 
   const progressUpdateHandler = () => {
     setToNext(false);
     match(progress)
-      .with("standby", () => setProgress("during"))
-      .with("during", () => setProgress("standby"))
+      .with("standby", () => {
+        setProgress("during");
+        onChangeProgress?.("during");
+      })
+      .with("during", () => {
+        setProgress("standby");
+        onChangeProgress?.("standby");
+      })
       .exhaustive();
   };
 

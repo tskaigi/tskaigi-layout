@@ -1,4 +1,4 @@
-import { ComponentProps, useEffect, useState, type FC } from "react";
+import { ComponentProps, type FC } from "react";
 
 import { render } from "../../render";
 
@@ -16,14 +16,14 @@ const App: FC = () => {
     "time-table",
     TimeTableSchema,
   );
-  const {
-    value: progress,
-    setValue: setProgress,
-    reset,
-  } = useReplicant<Progress>("progress", ProgressSchema, {
-    index: 0,
-    room: "trackOne",
-  });
+  const { value: progress, setValue: setProgress } = useReplicant<Progress>(
+    "progress",
+    ProgressSchema,
+    {
+      index: 0,
+      room: "trackOne",
+    },
+  );
 
   const hasNextTalk = (
     data: TimeTable | undefined,
@@ -32,8 +32,6 @@ const App: FC = () => {
     if (current === undefined) return false;
     return data?.[current.room]?.[current.index + 1] !== undefined;
   };
-
-  console.log({ hasNext: hasNextTalk(timeTable, progress) });
 
   const progressUpdateHandler: WorkflowProps["onChangeProgress"] = (mode) => {
     if (!hasNextTalk(timeTable, progress)) return;

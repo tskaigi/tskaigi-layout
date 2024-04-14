@@ -29,11 +29,6 @@ export const Workflow: FC<Props> = ({ onChangeProgress }: Props) => {
       .exhaustive();
   };
 
-  useEffect(() => {
-    console.log(`progress update : ${progress}`);
-    // TODO: obs-websocketなどと接続する
-  }, [progress]);
-
   return (
     <Stack spacing={2}>
       {match(progress)

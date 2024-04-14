@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const TalkSummary: FC<Props> = ({ talkIndex, room, hasNext }: Props) => {
-  const { value, setValue, reset } = useReplicant<TimeTable>(
+  const { value, reset } = useReplicant<TimeTable>(
     "time-table",
     TimeTableSchema,
     timeTable,

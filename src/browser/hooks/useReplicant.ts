@@ -7,9 +7,10 @@ import { BaseSchema, safeParse, type AnySchema } from "valibot";
 export const useReplicant = <T extends {}>(
   name: string,
   schema: BaseSchema,
+  initialize?: T,
 ) => {
   const replicant = useMemo(() => nodecg.Replicant(name), [name]);
-  const [value, update] = useState<T | undefined>(undefined);
+  const [value, update] = useState<T | undefined>(initialize);
 
   const setValue = useCallback(
     (nextState: T) => {
@@ -30,6 +31,11 @@ export const useReplicant = <T extends {}>(
     [schema],
   );
 
+  const reset = useCallback(() => {
+    update(initialize);
+    replicant.value = initialize;
+  }, [update, initialize]);
+
   useEffect(() => {
     replicant.addListener("change", changeHandler);
 
@@ -39,5 +45,6 @@ export const useReplicant = <T extends {}>(
   return {
     value,
     setValue,
+    reset,
   };
 };

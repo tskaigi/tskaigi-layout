@@ -1,11 +1,4 @@
-type Tracks = "trackOne" | "trackTwo" | "trackThree";
-
-export type TimeTable = {
-  [K in Tracks]: {
-    title: string;
-    speakerName: string;
-  }[];
-};
+import { type TimeTable } from "../../schema/TimeTable";
 
 export const timeTable = {
   trackOne: [

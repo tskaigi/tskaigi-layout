@@ -16,6 +16,7 @@ const App: FC = () => {
     "time-table",
     TimeTableSchema,
   );
+
   const { value: progress, setValue: setProgress } = useReplicant<Progress>(
     "progress",
     ProgressSchema,
@@ -57,6 +58,7 @@ const App: FC = () => {
     <>
       <Workflow onChangeProgress={progressUpdateHandler} />
       <TalkSummary
+        timeTable={timeTable}
         hasNext={hasNextTalk(timeTable, progress)}
         talkIndex={progress?.index ?? 0}
         room={progress?.room ?? "trackOne"}

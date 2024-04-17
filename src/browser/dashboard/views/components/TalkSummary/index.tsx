@@ -6,9 +6,9 @@ import { Button, Stack, TextField } from "@mui/material";
 
 import { RoomSelect } from "../../../components/RoomSelect";
 import { TalkIndex } from "../../../components/TalkIndex";
-import { timeTable } from "../../../../dashboard/data/timeTable";
 
 type Props = {
+  timeTable: TimeTable | undefined;
   talkIndex: number;
   hasNext: boolean;
   room: keyof TimeTable;
@@ -17,22 +17,27 @@ type Props = {
 };
 
 export const TalkSummary: FC<Props> = ({
+  timeTable,
   talkIndex,
   room,
   hasNext,
   onNext,
   onPrev,
 }: Props) => {
-  const { value, reset } = useReplicant<TimeTable>(
+  const { reset } = useReplicant<TimeTable>(
     "time-table",
     TimeTableSchema,
     timeTable,
   );
 
+  if (timeTable === undefined) {
+    return null;
+  }
+
   return (
     <Stack gap={2}>
       <h2>現在の発表</h2>
-      <RoomSelect items={value} current={room} />
+      <RoomSelect list={Object.keys(timeTable)} room={room} />
       <TalkIndex
         hasPrev={talkIndex !== 0}
         hasNext={hasNext}
@@ -45,12 +50,12 @@ export const TalkSummary: FC<Props> = ({
         <TextField
           label="発表者名"
           variant="outlined"
-          value={value?.[room][talkIndex].speakerName ?? ""}
+          value={timeTable?.[room][talkIndex].speakerName ?? ""}
         />
         <TextField
           label="タイトル"
           variant="outlined"
-          value={value?.[room][talkIndex].title ?? ""}
+          value={timeTable?.[room][talkIndex].title ?? ""}
         />
         <Button variant="contained" onClick={() => reset()}>
           リセット

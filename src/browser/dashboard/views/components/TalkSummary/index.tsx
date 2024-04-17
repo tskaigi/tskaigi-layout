@@ -1,4 +1,4 @@
-import { type FC } from "react";
+import { type FC, type ComponentProps } from "react";
 
 import { useReplicant } from "../../../../hooks/useReplicant";
 import { TimeTableSchema, type TimeTable } from "../../../../schema/TimeTable";
@@ -7,13 +7,20 @@ import { Button, Stack, TextField } from "@mui/material";
 import { RoomSelect } from "../../../components/RoomSelect";
 import { TalkIndex } from "../../../components/TalkIndex";
 
+type UIError = {
+  kind: "room" | null;
+  message: string;
+};
+
 type Props = {
   timeTable: TimeTable | undefined;
   talkIndex: number;
   hasNext: boolean;
-  room: keyof TimeTable;
-  onNext?: () => void;
-  onPrev?: () => void;
+  room: ComponentProps<typeof RoomSelect>["room"];
+  error?: UIError;
+  onChangeRoom?: ComponentProps<typeof RoomSelect>["onChangeRoom"];
+  onNext?: ComponentProps<typeof TalkIndex>["onNext"];
+  onPrev?: ComponentProps<typeof TalkIndex>["onPrev"];
 };
 
 export const TalkSummary: FC<Props> = ({
@@ -21,8 +28,10 @@ export const TalkSummary: FC<Props> = ({
   talkIndex,
   room,
   hasNext,
+  error,
   onNext,
   onPrev,
+  onChangeRoom,
 }: Props) => {
   const { reset } = useReplicant<TimeTable>(
     "time-table",
@@ -37,7 +46,13 @@ export const TalkSummary: FC<Props> = ({
   return (
     <Stack gap={2}>
       <h2>現在の発表</h2>
-      <RoomSelect list={Object.keys(timeTable)} room={room} />
+      <RoomSelect
+        list={Object.keys(timeTable)}
+        room={room}
+        error={error?.kind === "room"}
+        errorMessage={error?.kind === "room" ? error.message : undefined}
+        onChangeRoom={onChangeRoom}
+      />
       <TalkIndex
         hasPrev={talkIndex !== 0}
         hasNext={hasNext}

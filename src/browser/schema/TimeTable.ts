@@ -1,14 +1,14 @@
-import * as v from "valibot";
+import { object, string, array, type Output } from "valibot";
 
-export const TrackItemSchema = v.object({
-  speakerName: v.string(),
-  title: v.string(),
+export const TrackItemSchema = object({
+  speakerName: string(),
+  title: string(),
 });
 
-export const TimeTableSchema = v.object({
-  trackOne: v.array(TrackItemSchema),
-  trackTwo: v.array(TrackItemSchema),
-  trackThree: v.array(TrackItemSchema),
+export const TimeTableSchema = object({
+  trackOne: array(TrackItemSchema),
+  trackTwo: array(TrackItemSchema),
+  trackThree: array(TrackItemSchema),
 });
 
-export type TimeTable = v.Input<typeof TimeTableSchema>;
+export type TimeTable = Output<typeof TimeTableSchema>;

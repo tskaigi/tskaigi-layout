@@ -1,12 +1,12 @@
-import * as v from "valibot";
+import { object, union, literal, number, type Output } from "valibot";
 
-export const ProgressSchema = v.object({
-  room: v.union([
-    v.literal("trackOne"),
-    v.literal("trackTwo"),
-    v.literal("trackThree"),
+export const ProgressSchema = object({
+  room: union([
+    literal("trackOne"),
+    literal("trackTwo"),
+    literal("trackThree"),
   ]),
-  index: v.number(),
+  index: number(),
 });
 
-export type Progress = v.Input<typeof ProgressSchema>;
+export type Progress = Output<typeof ProgressSchema>;

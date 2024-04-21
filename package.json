@@ -29,7 +29,8 @@
     "dev:view": "vite",
     "dev:server": "node ../../index.js",
     "check:eslint": "eslint .",
-    "check:format": "prettier . --check"
+    "check:format": "prettier . --check",
+    "update-timetable": "node --loader ts-node/esm ./script/update-timetable.ts"
   },
   "devDependencies": {
     "@emotion/css": "^11.11.2",

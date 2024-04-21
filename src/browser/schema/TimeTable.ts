@@ -3,6 +3,11 @@ import { object, string, array, type Output } from "valibot";
 export const TrackItemSchema = object({
   speakerName: string(),
   title: string(),
+  social: object({
+    github: string(),
+    link: string(),
+    twitter: string(),
+  }),
 });
 
 export const TimeTableSchema = object({

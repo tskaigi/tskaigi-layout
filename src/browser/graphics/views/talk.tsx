@@ -58,6 +58,11 @@ const App: FC = () => {
   const talk = getCurrentTalk(timeTable, progress, {
     speakerName: "",
     title: "",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
   });
 
   return (
@@ -75,11 +80,7 @@ const App: FC = () => {
           <TalkDescription
             title={talk.title}
             name={talk.speakerName}
-            social={{
-              github: "ken7253",
-              link: "example.com",
-              twitter: "ken7253",
-            }}
+            social={talk.social}
           />
         </div>
       </div>

@@ -8,6 +8,9 @@ import { TalkSummary } from "./components/TalkSummary";
 import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
 import { useReplicant } from "../../hooks/useReplicant";
+import { Button } from "@mui/material";
+
+import { timeTable as defaultTimeTable } from "../data/timeTable";
 
 type WorkflowProps = ComponentProps<typeof Workflow>;
 type UIError = ComponentProps<typeof TalkSummary>["error"];
@@ -15,19 +18,20 @@ type UIError = ComponentProps<typeof TalkSummary>["error"];
 const App: FC = () => {
   const [error, setError] = useState<UIError>(undefined);
 
-  const { value: timeTable } = useReplicant<TimeTable>(
+  const { value: timeTable, reset: resetTimeTable } = useReplicant<TimeTable>(
     "time-table",
     TimeTableSchema,
+    defaultTimeTable,
   );
 
-  const { value: progress, setValue: setProgress } = useReplicant<Progress>(
-    "progress",
-    ProgressSchema,
-    {
-      index: 0,
-      room: "trackOne",
-    },
-  );
+  const {
+    value: progress,
+    setValue: setProgress,
+    reset: resetProgress,
+  } = useReplicant<Progress>("progress", ProgressSchema, {
+    index: 0,
+    room: "trackOne",
+  });
 
   const hasNextTalk = (
     data: TimeTable | undefined,
@@ -92,6 +96,15 @@ const App: FC = () => {
         onNext={() => pageChangeHandler("next")}
         onPrev={() => pageChangeHandler("prev")}
       />
+      <Button
+        variant="outlined"
+        onClick={() => {
+          resetTimeTable();
+          resetProgress();
+        }}
+      >
+        リセット
+      </Button>
     </>
   );
 };

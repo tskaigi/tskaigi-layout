@@ -24,14 +24,14 @@ const App: FC = () => {
     defaultTimeTable,
   );
 
-  const {
-    value: progress,
-    setValue: setProgress,
-    reset: resetProgress,
-  } = useReplicant<Progress>("progress", ProgressSchema, {
-    index: 0,
-    room: "trackOne",
-  });
+  const { value: progress, setValue: setProgress } = useReplicant<Progress>(
+    "progress",
+    ProgressSchema,
+    {
+      index: 0,
+      room: "trackOne",
+    },
+  );
 
   const hasNextTalk = (
     data: TimeTable | undefined,
@@ -95,6 +95,7 @@ const App: FC = () => {
         error={error}
         onNext={() => pageChangeHandler("next")}
         onPrev={() => pageChangeHandler("prev")}
+        onReset={resetTimeTable}
       />
     </>
   );

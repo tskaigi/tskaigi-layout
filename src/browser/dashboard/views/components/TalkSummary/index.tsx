@@ -21,6 +21,7 @@ type Props = {
   onChangeRoom?: ComponentProps<typeof RoomSelect>["onChangeRoom"];
   onNext?: ComponentProps<typeof TalkIndex>["onNext"];
   onPrev?: ComponentProps<typeof TalkIndex>["onPrev"];
+  onReset?: () => void;
 };
 
 export const TalkSummary: FC<Props> = ({
@@ -32,19 +33,14 @@ export const TalkSummary: FC<Props> = ({
   onNext,
   onPrev,
   onChangeRoom,
+  onReset,
 }: Props) => {
-  const { reset } = useReplicant<TimeTable>(
-    "time-table",
-    TimeTableSchema,
-    timeTable,
-  );
-
   if (timeTable === undefined) {
     return null;
   }
 
   return (
-    <Stack gap={2}>
+    <Stack gap={2} marginTop={2}>
       <h2>現在の発表</h2>
       <RoomSelect
         list={Object.keys(timeTable)}
@@ -59,7 +55,7 @@ export const TalkSummary: FC<Props> = ({
         onNext={onNext}
         onPrev={onPrev}
       >
-        {talkIndex}
+        {talkIndex + 1}
       </TalkIndex>
       <Stack gap={2}>
         <TextField
@@ -72,7 +68,7 @@ export const TalkSummary: FC<Props> = ({
           variant="outlined"
           value={timeTable?.[room][talkIndex].title ?? ""}
         />
-        <Button variant="contained" onClick={() => reset()}>
+        <Button variant="contained" onClick={onReset}>
           リセット
         </Button>
       </Stack>

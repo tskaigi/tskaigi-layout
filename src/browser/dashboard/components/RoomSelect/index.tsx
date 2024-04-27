@@ -15,6 +15,7 @@ type Props = {
   room: Room;
   error?: boolean;
   errorMessage?: string;
+  disabled?: boolean;
   onChangeRoom?: (event: SelectChangeEvent<Room>) => void;
 };
 
@@ -22,12 +23,18 @@ export const RoomSelect: FC<Props> = ({
   list,
   room,
   error,
-  onChangeRoom,
   errorMessage,
+  disabled = false,
+  onChangeRoom,
 }: Props) => {
   return (
     <>
-      <Select value={room} onChange={onChangeRoom} error={error}>
+      <Select
+        value={room}
+        onChange={onChangeRoom}
+        error={error}
+        disabled={disabled}
+      >
         {list.map((v) => (
           <MenuItem value={v}>{v}</MenuItem>
         ))}

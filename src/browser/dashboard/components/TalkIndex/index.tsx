@@ -6,6 +6,7 @@ type Props = {
   children: number;
   hasNext: boolean;
   hasPrev: boolean;
+  disabled?: boolean;
   onNext?: () => void;
   onPrev?: () => void;
 };
@@ -14,6 +15,7 @@ export const TalkIndex: FC<Props> = ({
   children,
   hasNext,
   hasPrev,
+  disabled = false,
   onNext,
   onPrev,
 }: Props) => {
@@ -25,7 +27,7 @@ export const TalkIndex: FC<Props> = ({
       spacing={4}
     >
       <Button
-        disabled={!hasPrev}
+        disabled={!hasPrev || disabled}
         size="large"
         variant="outlined"
         onClick={onPrev}
@@ -34,7 +36,7 @@ export const TalkIndex: FC<Props> = ({
       </Button>
       <div>{children}</div>
       <Button
-        disabled={!hasNext}
+        disabled={!hasNext || disabled}
         size="large"
         variant="outlined"
         onClick={onNext}

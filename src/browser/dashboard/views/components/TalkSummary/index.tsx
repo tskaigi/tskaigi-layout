@@ -1,8 +1,14 @@
-import { type FC, type ComponentProps } from "react";
+import { type FC, type ComponentProps, useState } from "react";
 
-import { useReplicant } from "../../../../hooks/useReplicant";
-import { TimeTableSchema, type TimeTable } from "../../../../schema/TimeTable";
-import { Button, Stack, TextField } from "@mui/material";
+import { type TimeTable } from "../../../../schema/TimeTable";
+import {
+  Button,
+  FormControlLabel,
+  Stack,
+  TextField,
+  Switch,
+} from "@mui/material";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 import { RoomSelect } from "../../../components/RoomSelect";
 import { TalkIndex } from "../../../components/TalkIndex";
@@ -35,6 +41,8 @@ export const TalkSummary: FC<Props> = ({
   onChangeRoom,
   onReset,
 }: Props) => {
+  const [isLock, setIsLock] = useState(true);
+
   if (timeTable === undefined) {
     return null;
   }
@@ -42,11 +50,18 @@ export const TalkSummary: FC<Props> = ({
   return (
     <Stack gap={2} marginTop={2}>
       <h2>現在の発表</h2>
+      <FormControlLabel
+        control={
+          <Switch defaultChecked onChange={() => setIsLock((prev) => !prev)} />
+        }
+        label="操作ロック"
+      />
       <RoomSelect
         list={Object.keys(timeTable)}
         room={room}
         error={error?.kind === "room"}
         errorMessage={error?.kind === "room" ? error.message : undefined}
+        disabled={isLock}
         onChangeRoom={onChangeRoom}
       />
       <TalkIndex
@@ -54,6 +69,7 @@ export const TalkSummary: FC<Props> = ({
         hasNext={hasNext}
         onNext={onNext}
         onPrev={onPrev}
+        disabled={isLock}
       >
         {talkIndex + 1}
       </TalkIndex>
@@ -62,13 +78,15 @@ export const TalkSummary: FC<Props> = ({
           label="発表者名"
           variant="outlined"
           value={timeTable?.[room][talkIndex].speakerName ?? ""}
+          disabled={isLock}
         />
         <TextField
           label="タイトル"
           variant="outlined"
           value={timeTable?.[room][talkIndex].title ?? ""}
+          disabled={isLock}
         />
-        <Button variant="contained" onClick={onReset}>
+        <Button variant="contained" onClick={onReset} disabled={isLock}>
           リセット
         </Button>
       </Stack>

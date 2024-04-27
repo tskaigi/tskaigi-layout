@@ -57,8 +57,6 @@ const App: FC = () => {
     ProgressSchema,
   );
 
-  console.log(timeTable);
-
   const getCurrentTalk = (
     data: TimeTable | undefined,
     current: Progress | undefined,

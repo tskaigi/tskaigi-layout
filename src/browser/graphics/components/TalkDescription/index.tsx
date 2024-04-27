@@ -64,7 +64,7 @@ const styles = {
     border-radius: 8px;
   `,
   title: (isLong: boolean) => css`
-    font-size: ${isLong ? "1.8rem" : "2.25rem"};
+    font-size: ${isLong ? "2rem" : "2.25rem"};
   `,
   about: css`
     display: flex;

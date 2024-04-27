@@ -3,7 +3,7 @@ import type { FC, ReactNode } from "react";
 import { css } from "@emotion/css";
 import { typescript } from "../../../styles/color";
 
-import { GitHub, Twitter, LinkRounded } from "@mui/icons-material";
+import { GitHub, LinkRounded, X } from "@mui/icons-material";
 import background from "../../img/background.png";
 
 type Social = Partial<Record<"twitter" | "github" | "link", string>>;
@@ -17,7 +17,7 @@ type Props = {
 const iconMap: Record<keyof Social, ReactNode> = {
   link: <LinkRounded />,
   github: <GitHub />,
-  twitter: <Twitter />,
+  twitter: <X />,
 };
 
 export const TalkDescription: FC<Props> = ({ title, name, social }) => {
@@ -28,14 +28,13 @@ export const TalkDescription: FC<Props> = ({ title, name, social }) => {
         <div className={styles.name}>{name}</div>
         <div className={styles.social}>
           {(Object.entries(social ?? []) as [keyof Social, string][]).map(
-            ([key, value]) => {
-              return (
+            ([key, value]) =>
+              value !== "" ? (
                 <>
                   {iconMap[key]}
                   <div key={key}>{value}</div>
                 </>
-              );
-            },
+              ) : null,
           )}
         </div>
       </div>

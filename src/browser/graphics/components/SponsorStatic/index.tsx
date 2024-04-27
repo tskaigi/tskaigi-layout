@@ -3,20 +3,24 @@ import type { FC } from "react";
 import { css } from "@emotion/css";
 
 type Props = {
+  title: string;
   images: string[];
 };
 
-export const SponsorStatic: FC<Props> = ({ images }) => {
+export const SponsorStatic: FC<Props> = ({ title, images }) => {
   return (
-    <div className={styles.container}>
-      {images.map((image) => {
-        return (
-          <div key={image} className={styles.item}>
-            <img className={styles.image} src={image} />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <span className={styles.title}>{title}</span>
+      <div className={styles.container}>
+        {images.map((image) => {
+          return (
+            <div key={image} className={styles.item}>
+              <img className={styles.image} src={image} />
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
@@ -27,6 +31,11 @@ const styles = {
     justify-content: center;
     align-items: center;
     gap: 8px;
+  `,
+  title: css`
+    font-weight: bolder;
+    text-align: center;
+    color: #fff;
   `,
   item: css`
     box-sizing: border-box;

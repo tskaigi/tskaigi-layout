@@ -83,8 +83,8 @@ const App: FC = () => {
         </div>
         <div className={styles.side}>
           <Camera />
-          <SponsorStatic images={sponsor.static} />
-          <SponsorRoll images={sponsor.roll} />
+          <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />
+          <SponsorRoll title="Gold Sponsors" images={sponsor.roll} />
         </div>
         <div>
           <TalkDescription

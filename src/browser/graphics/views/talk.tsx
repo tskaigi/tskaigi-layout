@@ -21,7 +21,7 @@ import {
   helpfeel,
   leverages,
   progate,
-} from "../img/sponsor/roll/";
+} from "../img/sponsor/platinum";
 import {
   earthbrain,
   googlecloudjapan,
@@ -31,11 +31,10 @@ import {
   toggle,
   ubie,
   bitkey,
-} from "../img/sponsor/static/";
+} from "../img/sponsor/gold";
 
 const sponsor = {
-  roll: [ascend, dwango, helpfeel, leverages, progate],
-  static: [
+  roll: [
     earthbrain,
     googlecloudjapan,
     layerx,
@@ -45,6 +44,7 @@ const sponsor = {
     ubie,
     bitkey,
   ],
+  static: [ascend, dwango, helpfeel, leverages, progate],
 };
 
 const App: FC = () => {

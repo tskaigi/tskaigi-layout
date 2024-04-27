@@ -57,6 +57,8 @@ const styles = {
     font-weight: bolder;
     text-align: center;
     color: #fff;
+    letter-spacing: 0.05em;
+    padding-top: 8px;
   `,
   image: css`
     position: absolute;

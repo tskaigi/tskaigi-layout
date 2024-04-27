@@ -8,7 +8,6 @@ import {
   TextField,
   Switch,
 } from "@mui/material";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 import { RoomSelect } from "../../../components/RoomSelect";
 import { TalkIndex } from "../../../components/TalkIndex";

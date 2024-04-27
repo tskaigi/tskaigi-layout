@@ -30,12 +30,14 @@ const styles = {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
   `,
   title: css`
     font-weight: bolder;
     text-align: center;
     color: #fff;
+    letter-spacing: 0.05em;
+    padding-top: 8px;
   `,
   item: css`
     box-sizing: border-box;

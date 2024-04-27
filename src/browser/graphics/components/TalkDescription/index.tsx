@@ -3,7 +3,7 @@ import type { FC, ReactNode } from "react";
 import { css } from "@emotion/css";
 import { typescript } from "../../../styles/color";
 
-import { GitHub, LinkRounded, X } from "@mui/icons-material";
+import { GitHub, LinkRounded, X, Person } from "@mui/icons-material";
 import background from "../../img/background.png";
 
 type Social = Partial<Record<"twitter" | "github" | "link", string>>;
@@ -15,9 +15,9 @@ type Props = {
 };
 
 const iconMap: Record<keyof Social, ReactNode> = {
-  link: <LinkRounded />,
-  github: <GitHub />,
-  twitter: <X />,
+  link: <LinkRounded fontSize="small" />,
+  github: <GitHub fontSize="small" />,
+  twitter: <X fontSize="small" />,
 };
 
 export const TalkDescription: FC<Props> = ({ title, name, social }) => {
@@ -25,7 +25,10 @@ export const TalkDescription: FC<Props> = ({ title, name, social }) => {
     <div className={styles.container}>
       <h2 className={styles.title(title.length > 50)}>{title}</h2>
       <div className={styles.about}>
-        <div className={styles.name}>{name}</div>
+        <div className={styles.name}>
+          <Person fontSize="medium" />
+          <span>{name}</span>
+        </div>
         <div className={styles.social}>
           {(Object.entries(social ?? []) as [keyof Social, string][]).map(
             ([key, value]) =>
@@ -69,6 +72,9 @@ const styles = {
     justify-content: space-between;
   `,
   name: css`
+    display: flex;
+    align-items: center;
+    gap: 4px;
     font-size: 1.5rem;
   `,
   social: css`

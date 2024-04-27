@@ -21,20 +21,30 @@ import {
   helpfeel,
   leverages,
   progate,
-} from "../img/sponsor/roll";
+} from "../img/sponsor/roll/";
 import {
   earthbrain,
-  googlecloud,
+  googlecloudjapan,
   layerx,
   medley,
   timee,
   toggle,
   ubie,
-} from "../img/sponsor/static";
+  bitkey,
+} from "../img/sponsor/static/";
 
 const sponsor = {
   roll: [ascend, dwango, helpfeel, leverages, progate],
-  static: [earthbrain, googlecloud, layerx, medley, timee, toggle, ubie],
+  static: [
+    earthbrain,
+    googlecloudjapan,
+    layerx,
+    medley,
+    timee,
+    toggle,
+    ubie,
+    bitkey,
+  ],
 };
 
 const App: FC = () => {

@@ -1,18 +1,14 @@
 import { ComponentProps, useState, type FC } from "react";
 
 import { render } from "../../render";
-
-import { Workflow } from "./components/Workflow";
 import { TalkSummary } from "./components/TalkSummary";
 
 import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
 import { useReplicant } from "../../hooks/useReplicant";
-import { Button } from "@mui/material";
-
 import { timeTable as defaultTimeTable } from "../data/timeTable";
+import { hasNextTalk } from "./util/hasNextTalk";
 
-type WorkflowProps = ComponentProps<typeof Workflow>;
 type UIError = ComponentProps<typeof TalkSummary>["error"];
 
 const App: FC = () => {
@@ -32,24 +28,6 @@ const App: FC = () => {
       room: "trackOne",
     },
   );
-
-  const hasNextTalk = (
-    data: TimeTable | undefined,
-    current: Progress | undefined,
-  ) => {
-    if (current === undefined) return false;
-    return data?.[current.room]?.[current.index + 1] !== undefined;
-  };
-
-  const progressUpdateHandler: WorkflowProps["onChangeProgress"] = (mode) => {
-    if (!hasNextTalk(timeTable, progress)) return;
-    if (mode === "during" && progress !== undefined) {
-      setProgress({
-        ...progress,
-        index: progress.index + 1,
-      });
-    }
-  };
 
   const pageChangeHandler = (to: "prev" | "next") => {
     if (progress === undefined) return;
@@ -81,23 +59,18 @@ const App: FC = () => {
     });
   };
 
-  console.log(progress);
-
   return (
-    <>
-      <Workflow onChangeProgress={progressUpdateHandler} />
-      <TalkSummary
-        timeTable={timeTable}
-        hasNext={hasNextTalk(timeTable, progress)}
-        talkIndex={progress?.index ?? 0}
-        room={progress?.room ?? "trackOne"}
-        onChangeRoom={roomChangeHandler}
-        error={error}
-        onNext={() => pageChangeHandler("next")}
-        onPrev={() => pageChangeHandler("prev")}
-        onReset={resetTimeTable}
-      />
-    </>
+    <TalkSummary
+      timeTable={timeTable}
+      hasNext={hasNextTalk(timeTable, progress)}
+      talkIndex={progress?.index ?? 0}
+      room={progress?.room ?? "trackOne"}
+      onChangeRoom={roomChangeHandler}
+      error={error}
+      onNext={() => pageChangeHandler("next")}
+      onPrev={() => pageChangeHandler("prev")}
+      onReset={resetTimeTable}
+    />
   );
 };
 

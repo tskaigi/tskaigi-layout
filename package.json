@@ -7,9 +7,15 @@
     "compatibleRange": "^1.0.0 || ^2.0.0",
     "dashboardPanels": [
       {
-        "name": "main",
-        "title": "メインダッシュボード",
-        "file": "Main.html",
+        "name": "workflow",
+        "title": "手順管理",
+        "file": "Workflow.html",
+        "width": 3
+      },
+      {
+        "name": "Talk",
+        "title": "登壇情報管理",
+        "file": "Talk.html",
         "width": 4
       }
     ],

@@ -23,22 +23,20 @@ export const SponsorStatic: FC<Props> = ({ images }) => {
 const styles = {
   container: css`
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 4px;
+    gap: 8px;
   `,
   item: css`
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: calc(100% / 2);
-    padding: 4px;
+    height: 75px;
+    width: auto;
+    border-radius: 8px;
+    overflow: hidden;
   `,
   image: css`
-    max-height: 100%;
-    max-width: 100%;
+    height: 100%;
+    width: auto;
   `,
 };

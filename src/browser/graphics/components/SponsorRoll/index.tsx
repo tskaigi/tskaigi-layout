@@ -40,26 +40,17 @@ export const SponsorRoll: FC<Props> = ({ intervalTime = 5000, images }) => {
 const styles = {
   container: css`
     position: relative;
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    aspect-ratio: 1/1;
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
   `,
   image: css`
-    box-sizing: border-box;
     position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: auto;
-    margin: auto;
-    display: block;
-    opacity: 1;
-    transform: translateY(-50%);
-    padding: 8px;
+    height: inherit;
+    min-width: 240px;
+    border-radius: 8px;
+    overflow: hidden;
     transition: opacity 500ms ease-in-out;
 
     &[hidden] {

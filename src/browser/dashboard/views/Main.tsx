@@ -96,15 +96,6 @@ const App: FC = () => {
         onNext={() => pageChangeHandler("next")}
         onPrev={() => pageChangeHandler("prev")}
       />
-      <Button
-        variant="outlined"
-        onClick={() => {
-          resetTimeTable();
-          resetProgress();
-        }}
-      >
-        リセット
-      </Button>
     </>
   );
 };

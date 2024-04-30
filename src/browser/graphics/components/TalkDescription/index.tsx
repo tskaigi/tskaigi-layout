@@ -4,7 +4,7 @@ import { css } from "@emotion/css";
 import { typescript } from "../../../styles/color";
 
 import { GitHub, LinkRounded, X, Person } from "@mui/icons-material";
-import background from "../../img/background.png";
+import background from "../../img/background/cloud.png";
 
 type Social = Partial<Record<"twitter" | "github" | "link", string>>;
 

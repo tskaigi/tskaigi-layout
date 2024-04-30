@@ -15,6 +15,8 @@ import { Camera } from "../components/Camera";
 import { SponsorRoll } from "../components/SponsorRoll";
 import { SponsorStatic } from "../components/SponsorStatic";
 
+import background from "../img/background/gradation.svg";
+
 import {
   ascend,
   dwango,
@@ -102,7 +104,7 @@ const styles = {
     width: 1920px;
     height: 1080px;
     padding: 20px;
-    background-color: ${typescript.main};
+    background: url(${background});
     display: grid;
     grid-template-columns: 1500px 1fr;
     grid-template-rows: auto 1fr;

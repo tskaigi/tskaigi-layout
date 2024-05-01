@@ -54,6 +54,7 @@ const App: FC = () => {
         <SlideArea subtitling={true} />
         <div className={styles.side}>
           <Camera />
+
           <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />
           <SponsorRoll title="Gold Sponsors" images={sponsor.roll} />
         </div>
@@ -86,6 +87,13 @@ const styles = {
     grid-row: 1 / 3;
     flex-direction: column;
     gap: 8px;
+  `,
+
+  logo: css`
+    width: 100%;
+    height: auto;
+    max-height: 60px;
+    background-color: rgba(0, 0, 0, 20%);
   `,
 };
 

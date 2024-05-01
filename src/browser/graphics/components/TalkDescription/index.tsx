@@ -23,10 +23,10 @@ const iconMap: Record<keyof Social, ReactNode> = {
 export const TalkDescription: FC<Props> = ({ title, name, social }) => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title(title.length > 50)}>{title}</h2>
+      <h2 className={styles.title(title.length > 40)}>{title}</h2>
       <div className={styles.about}>
         <div className={styles.name}>
-          <Person fontSize="medium" />
+          <Person fontSize="medium" sx={{ paddingBottom: "3px" }} />
           <span>{name}</span>
         </div>
         <div className={styles.social}>
@@ -53,7 +53,7 @@ const styles = {
     justify-content: space-between;
     height: 100%;
     width: 100%;
-    padding: 8px 16px;
+    padding: 8px 16px 8px 16px;
     background-image: linear-gradient(
         rgba(255, 255, 255, 50%),
         rgba(255, 255, 255, 100%)
@@ -63,22 +63,26 @@ const styles = {
     border-radius: 8px;
   `,
   title: (isLong: boolean) => css`
+    font-weight: 800;
     font-size: ${isLong ? "2rem" : "2.25rem"};
   `,
   about: css`
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
   `,
   name: css`
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 4px;
     font-size: 1.5rem;
+    font-weight: 600;
   `,
   social: css`
     display: flex;
     align-items: center;
     gap: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
   `,
 };

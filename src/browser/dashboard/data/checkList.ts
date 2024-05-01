@@ -9,7 +9,14 @@ type CheckList = {
  */
 export const checkListItems = {
   /** 講演開始前チェックリスト */
-  standby: [],
+  standby: [
+    "登壇者が会場に到着した",
+    "登壇資料が読み込めている",
+    "マイクチェックが完了した",
+  ],
   /** 講演終了後チェックリスト */
-  during: [],
+  during: [
+    "配信が待機画面に切り替わっている",
+    "次の登壇者情報に切り替えを行った",
+  ],
 } as const satisfies CheckList;

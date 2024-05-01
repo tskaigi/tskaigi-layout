@@ -51,10 +51,9 @@ const App: FC = () => {
   return (
     <>
       <div className={styles.layoutContainer}>
-        <SlideArea subtitling={true} />
+        <SlideArea subtitling={false} />
         <div className={styles.side}>
           <Camera />
-
           <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />
           <SponsorRoll title="Gold Sponsors" images={sponsor.roll} />
         </div>

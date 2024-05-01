@@ -51,9 +51,8 @@ const styles = {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 110px;
-    height: fit-content;
-    max-width: 100%;
+    height: 100%;
+    width: 100%;
     padding: 8px 16px;
     background-image: linear-gradient(
         rgba(255, 255, 255, 50%),

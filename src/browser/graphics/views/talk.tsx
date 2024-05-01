@@ -49,25 +49,21 @@ const App: FC = () => {
   });
 
   return (
-    <div>
+    <>
       <div className={styles.layoutContainer}>
-        <div>
-          <SlideArea />
-        </div>
+        <SlideArea subtitling={true} />
         <div className={styles.side}>
           <Camera />
           <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />
           <SponsorRoll title="Gold Sponsors" images={sponsor.roll} />
         </div>
-        <div>
-          <TalkDescription
-            title={talk.title}
-            name={talk.speakerName}
-            social={talk.social}
-          />
-        </div>
+        <TalkDescription
+          title={talk.title}
+          name={talk.speakerName}
+          social={talk.social}
+        />
       </div>
-    </div>
+    </>
   );
 };
 
@@ -80,7 +76,7 @@ const styles = {
     background: url(${background});
     display: grid;
     grid-template-columns: 1500px 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 120px;
     gap: 16px;
   `,
 
@@ -93,8 +89,4 @@ const styles = {
   `,
 };
 
-render(
-  <>
-    <App />
-  </>,
-);
+render(<App />);

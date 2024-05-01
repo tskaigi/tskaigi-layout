@@ -1,26 +1,53 @@
 import type { FC } from "react";
 
+import { CoPresent } from "@mui/icons-material";
 import { css } from "@emotion/css";
 
 type Props = {
-  size?: "16x9" | "4x3";
+  /** 字幕表示エリアを確保するか */
+  subtitling?: boolean;
 };
 
-export const SlideArea: FC<Props> = ({ size = "16x9" }) => {
-  return <div className={styles.container}>{size}</div>;
+export const SlideArea: FC<Props> = ({ subtitling = false }) => {
+  return (
+    <div className={styles.container}>
+      <div className={styles.slideWrapper}>
+        <div className={styles.slide(subtitling)}>
+          <CoPresent sx={{ fontSize: 80, opacity: 0.5 }} />
+        </div>
+      </div>
+      {subtitling && <div className={styles.subtitle} />}
+    </div>
+  );
 };
 
 const styles = {
   container: css`
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-color: rgb(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+  `,
+
+  slideWrapper: css`
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  `,
+
+  slide: (hasSubtitle: boolean) => css`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
-    font-weight: 900;
-    color: rgb(0, 0, 0, 0.5);
-    line-height: 1;
+    aspect-ratio: 16 / 9;
+    background-color: rgb(0, 0, 0, 0.2);
+
+    ${hasSubtitle ? { height: "100%" } : { width: "100%" }}
+  `,
+
+  subtitle: css`
+    height: 160px;
+    background-color: rgb(0, 0, 0, 0.2);
   `,
 };

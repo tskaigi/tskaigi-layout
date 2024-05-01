@@ -7,6 +7,17 @@ import timee from "./timee_horizontal.jpg";
 import toggle from "./toggle.jpg";
 import ubie from "./ubie_horizontal.jpg";
 
+export default [
+  bitkey,
+  earthbrain,
+  googlecloudjapan,
+  layerx,
+  medley,
+  timee,
+  toggle,
+  ubie,
+];
+
 export {
   bitkey,
   earthbrain,

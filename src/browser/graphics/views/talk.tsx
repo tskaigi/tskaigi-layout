@@ -14,37 +14,12 @@ import { SponsorRoll } from "../components/SponsorRoll";
 import { SponsorStatic } from "../components/SponsorStatic";
 
 import background from "../img/background/gradation.svg";
-
-import {
-  ascend,
-  dwango,
-  helpfeel,
-  leverages,
-  progate,
-} from "../img/sponsor/platinum";
-import {
-  earthbrain,
-  googlecloudjapan,
-  layerx,
-  medley,
-  timee,
-  toggle,
-  ubie,
-  bitkey,
-} from "../img/sponsor/gold";
+import platinumSponsor from "../img/sponsor/platinum";
+import goldSponsor from "../img/sponsor/gold";
 
 const sponsor = {
-  roll: [
-    earthbrain,
-    googlecloudjapan,
-    layerx,
-    medley,
-    timee,
-    toggle,
-    ubie,
-    bitkey,
-  ],
-  static: [ascend, dwango, helpfeel, leverages, progate],
+  roll: goldSponsor,
+  static: platinumSponsor,
 };
 
 const App: FC = () => {

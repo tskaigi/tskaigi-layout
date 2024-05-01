@@ -36,7 +36,9 @@ export const RoomSelect: FC<Props> = ({
         disabled={disabled}
       >
         {list.map((v) => (
-          <MenuItem value={v}>{v}</MenuItem>
+          <MenuItem value={v} key={v}>
+            {v}
+          </MenuItem>
         ))}
       </Select>
       {errorMessage && (

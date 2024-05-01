@@ -20,14 +20,14 @@ const App: FC = () => {
     defaultTimeTable,
   );
 
-  const { value: progress, setValue: setProgress } = useReplicant<Progress>(
-    "progress",
-    ProgressSchema,
-    {
-      index: 0,
-      room: "trackOne",
-    },
-  );
+  const {
+    value: progress,
+    setValue: setProgress,
+    reset: resetProgress,
+  } = useReplicant<Progress>("progress", ProgressSchema, {
+    index: 0,
+    room: "trackOne",
+  });
 
   const pageChangeHandler = (to: "prev" | "next") => {
     if (progress === undefined) return;
@@ -69,13 +69,10 @@ const App: FC = () => {
       error={error}
       onNext={() => pageChangeHandler("next")}
       onPrev={() => pageChangeHandler("prev")}
-      onReset={resetTimeTable}
+      onResetTimetable={resetTimeTable}
+      onResetProgress={resetProgress}
     />
   );
 };
 
-render(
-  <>
-    <App />
-  </>,
-);
+render(<App />);

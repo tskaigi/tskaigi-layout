@@ -58,7 +58,7 @@ export const TalkSummary: FC<Props> = ({
           }
           label="操作ロック"
         />
-        {timeTable !== undefined && (
+        {timeTable !== undefined ? (
           <>
             <RoomSelect
               list={Object.keys(timeTable)}
@@ -92,6 +92,12 @@ export const TalkSummary: FC<Props> = ({
               />
             </Stack>
           </>
+        ) : (
+          <p>
+            データに不整合が発生しました。
+            <br />
+            管理者に確認しリセット処理を行ってください
+          </p>
         )}
       </Stack>
       <Stack direction="row" gap={2} marginTop={2}>

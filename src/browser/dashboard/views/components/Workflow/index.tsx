@@ -1,8 +1,9 @@
 import type { FC } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { match } from "ts-pattern";
 
 import { CheckList } from "../../../components/CheckList";
+import { checkListItems } from "../../../data/checkList";
 import { Button, Stack } from "@mui/material";
 
 type Progress = "standby" | "during";
@@ -36,7 +37,7 @@ export const Workflow: FC<Props> = ({ onChangeProgress }: Props) => {
           <>
             <h2>開始前チェックリスト</h2>
             <CheckList
-              items={["hoge", "fuga", "piyo"]}
+              items={checkListItems.pre}
               onChange={setToNext}
               key={pattern}
             />
@@ -46,7 +47,7 @@ export const Workflow: FC<Props> = ({ onChangeProgress }: Props) => {
           <>
             <h2>終了後チェックリスト</h2>
             <CheckList
-              items={["foo", "bar", "buzz"]}
+              items={checkListItems.post}
               onChange={setToNext}
               key={pattern}
             />

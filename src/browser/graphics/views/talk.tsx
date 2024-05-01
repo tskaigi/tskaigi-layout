@@ -3,8 +3,6 @@ import type { FC } from "react";
 import { render } from "../../render";
 import { css } from "@emotion/css";
 
-import { typescript } from "../../styles/color";
-
 import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
 import { useReplicant } from "../../hooks/useReplicant";

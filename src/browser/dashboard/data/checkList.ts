@@ -1,6 +1,7 @@
+export type Progress = "standby" | "during";
+
 type CheckList = {
-  pre: string[];
-  post: string[];
+  [K in Progress]: string[];
 };
 
 /**
@@ -8,7 +9,7 @@ type CheckList = {
  */
 export const checkListItems = {
   /** 講演開始前チェックリスト */
-  pre: [],
+  standby: [],
   /** 講演終了後チェックリスト */
-  post: [],
+  during: [],
 } as const satisfies CheckList;

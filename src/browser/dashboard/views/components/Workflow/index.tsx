@@ -3,10 +3,8 @@ import { useState } from "react";
 import { match } from "ts-pattern";
 
 import { CheckList } from "../../../components/CheckList";
-import { checkListItems } from "../../../data/checkList";
+import { checkListItems, type Progress } from "../../../data/checkList";
 import { Button, Stack } from "@mui/material";
-
-type Progress = "standby" | "during";
 
 type Props = {
   onChangeProgress?: (mode: Progress) => void;
@@ -37,7 +35,7 @@ export const Workflow: FC<Props> = ({ onChangeProgress }: Props) => {
           <>
             <h2>開始前チェックリスト</h2>
             <CheckList
-              items={checkListItems.pre}
+              items={checkListItems[pattern]}
               onChange={setToNext}
               key={pattern}
             />
@@ -47,7 +45,7 @@ export const Workflow: FC<Props> = ({ onChangeProgress }: Props) => {
           <>
             <h2>終了後チェックリスト</h2>
             <CheckList
-              items={checkListItems.post}
+              items={checkListItems[pattern]}
               onChange={setToNext}
               key={pattern}
             />

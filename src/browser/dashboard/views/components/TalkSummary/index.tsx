@@ -45,6 +45,14 @@ export const TalkSummary: FC<Props> = ({
   onResetProgress,
 }: Props) => {
   const [isLock, setIsLock] = useState(true);
+  const [layout, setLayout] =
+    useState<ComponentProps<typeof Speaker>["layout"]>("default");
+
+  const changeLayoutHandler: ComponentProps<
+    typeof Speaker
+  >["onChangeLayout"] = (_, value) => {
+    setLayout(value as ComponentProps<typeof Speaker>["layout"]);
+  };
 
   return (
     <>
@@ -81,7 +89,9 @@ export const TalkSummary: FC<Props> = ({
             <Speaker
               name={timeTable[room][talkIndex].speakerName ?? ""}
               title={timeTable[room][talkIndex].title ?? ""}
+              layout={layout}
               disabled={isLock}
+              onChangeLayout={changeLayoutHandler}
             />
           </>
         ) : (

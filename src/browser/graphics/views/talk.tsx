@@ -5,6 +5,7 @@ import { css } from "@emotion/css";
 
 import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
+import { Layout, LayoutSchema } from "../../schema/Layout";
 import { useReplicant } from "../../hooks/useReplicant";
 
 import { TalkDescription } from "../components/TalkDescription";
@@ -27,10 +28,15 @@ const App: FC = () => {
     "time-table",
     TimeTableSchema,
   );
+
   const { value: progress } = useReplicant<Progress>(
     "progress",
     ProgressSchema,
   );
+
+  const { value: layout } = useReplicant<Layout>("layout", LayoutSchema, {
+    type: "default",
+  });
 
   const getCurrentTalk = (
     data: TimeTable | undefined,
@@ -51,7 +57,7 @@ const App: FC = () => {
   return (
     <>
       <div className={styles.layoutContainer}>
-        <SlideArea subtitling={false} />
+        <SlideArea subtitling={layout?.type === "translation"} />
         <div className={styles.side}>
           <Camera />
           <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />

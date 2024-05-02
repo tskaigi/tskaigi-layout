@@ -5,6 +5,7 @@ import { TalkSummary } from "./components/TalkSummary";
 
 import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
+import { LayoutSchema } from "../../schema/Layout";
 import { useReplicant } from "../../hooks/useReplicant";
 import { timeTable as defaultTimeTable } from "../data/timeTable";
 import { hasNextTalk } from "./util/hasNextTalk";
@@ -28,6 +29,14 @@ const App: FC = () => {
     index: 0,
     room: "trackOne",
   });
+
+  const { value: layout, setValue: setLayout } = useReplicant(
+    "layout",
+    LayoutSchema,
+    {
+      type: "default",
+    },
+  );
 
   const pageChangeHandler = (to: "prev" | "next") => {
     if (progress === undefined) return;

@@ -12,6 +12,7 @@ import { Dangerous } from "@mui/icons-material";
 
 import { RoomSelect } from "../../../components/RoomSelect";
 import { TalkIndex } from "../../../components/TalkIndex";
+import { Speaker } from "../../../components/Speaker";
 
 type UIError = {
   kind: "room" | null;
@@ -75,22 +76,13 @@ export const TalkSummary: FC<Props> = ({
               onPrev={onPrev}
               disabled={isLock}
             >
-              {talkIndex + 1}
+              {`${talkIndex + 1} / ${timeTable[room].length}`}
             </TalkIndex>
-            <Stack gap={2}>
-              <TextField
-                label="発表者名"
-                variant="outlined"
-                value={timeTable?.[room][talkIndex].speakerName ?? ""}
-                disabled={isLock}
-              />
-              <TextField
-                label="タイトル"
-                variant="outlined"
-                value={timeTable?.[room][talkIndex].title ?? ""}
-                disabled={isLock}
-              />
-            </Stack>
+            <Speaker
+              name={timeTable[room][talkIndex].speakerName ?? ""}
+              title={timeTable[room][talkIndex].title ?? ""}
+              disabled={isLock}
+            />
           </>
         ) : (
           <p>

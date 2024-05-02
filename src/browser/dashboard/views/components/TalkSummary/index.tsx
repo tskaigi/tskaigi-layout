@@ -1,13 +1,7 @@
 import { type FC, type ComponentProps, useState } from "react";
 
 import { type TimeTable } from "../../../../schema/TimeTable";
-import {
-  Button,
-  FormControlLabel,
-  Stack,
-  TextField,
-  Switch,
-} from "@mui/material";
+import { Button, FormControlLabel, Stack, Switch } from "@mui/material";
 import { Dangerous } from "@mui/icons-material";
 
 import { RoomSelect } from "../../../components/RoomSelect";
@@ -23,8 +17,10 @@ type Props = {
   timeTable: TimeTable | undefined;
   talkIndex: number;
   hasNext: boolean;
+  layout: ComponentProps<typeof Speaker>["layout"];
   room: ComponentProps<typeof RoomSelect>["room"];
   error?: UIError;
+  onChangeLayout: ComponentProps<typeof Speaker>["onChangeLayout"];
   onChangeRoom?: ComponentProps<typeof RoomSelect>["onChangeRoom"];
   onNext?: ComponentProps<typeof TalkIndex>["onNext"];
   onPrev?: ComponentProps<typeof TalkIndex>["onPrev"];
@@ -38,21 +34,15 @@ export const TalkSummary: FC<Props> = ({
   room,
   hasNext,
   error,
+  layout,
   onNext,
   onPrev,
   onChangeRoom,
+  onChangeLayout,
   onResetTimetable,
   onResetProgress,
 }: Props) => {
   const [isLock, setIsLock] = useState(true);
-  const [layout, setLayout] =
-    useState<ComponentProps<typeof Speaker>["layout"]>("default");
-
-  const changeLayoutHandler: ComponentProps<
-    typeof Speaker
-  >["onChangeLayout"] = (_, value) => {
-    setLayout(value as ComponentProps<typeof Speaker>["layout"]);
-  };
 
   return (
     <>
@@ -91,7 +81,7 @@ export const TalkSummary: FC<Props> = ({
               title={timeTable[room][talkIndex].title ?? ""}
               layout={layout}
               disabled={isLock}
-              onChangeLayout={changeLayoutHandler}
+              onChangeLayout={onChangeLayout}
             />
           </>
         ) : (

@@ -40,8 +40,20 @@ export const Speaker: FC<Props> = ({
           disabled={disabled}
           onChange={onChangeLayout}
         >
-          <ToggleButton value="default">デフォルト</ToggleButton>
-          <ToggleButton value="translation">翻訳表示用</ToggleButton>
+          <ToggleButton
+            size="small"
+            value="default"
+            sx={{ fontWeight: layout === "default" ? 900 : 500 }}
+          >
+            デフォルト
+          </ToggleButton>
+          <ToggleButton
+            size="small"
+            value="translation"
+            sx={{ fontWeight: layout === "translation" ? 900 : 500 }}
+          >
+            翻訳表示用
+          </ToggleButton>
         </ToggleButtonGroup>
       </Stack>
       <Stack gap={2}>

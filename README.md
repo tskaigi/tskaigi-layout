@@ -35,6 +35,17 @@ npm ci
 npm run dev
 ```
 
+## 使用方法
+
+アプリケーションをビルド後、NodeCGサーバーを立ち上げることでアプリケーションを実行できます。
+
+```sh
+npm run build
+npm start
+```
+
+実際の使用方法については[アプリケーション内部のマニュアル](https://github.com/tskaigi/tskaigi-layout/blob/main/src/browser/dashboard/data/manual/index.md)を参照してください。
+
 ## reference
 
 - [NodeCG](https://www.nodecg.dev/ja/)

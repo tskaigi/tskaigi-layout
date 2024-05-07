@@ -16,10 +16,14 @@ export const SponsorRoll: FC<Props> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const items = Object.groupBy(images, (_, i) =>
+    i % 2 === 0 ? "odd" : "even",
+  );
+
   useEffect(() => {
     const id = setInterval(() => {
       setCurrentIndex((prev) => {
-        return prev + 1 === images.length ? 0 : prev + 1;
+        return prev + 1 === items.odd?.length ? 0 : prev + 1;
       });
     }, intervalTime);
 
@@ -30,16 +34,30 @@ export const SponsorRoll: FC<Props> = ({
     <>
       <span className={styles.title}>{title}</span>
       <div className={styles.container}>
-        {images.map((image, index) => {
-          return (
-            <img
-              key={image}
-              className={styles.image}
-              src={image}
-              hidden={currentIndex !== index}
-            ></img>
-          );
-        })}
+        <div className={styles.layout}>
+          {items.odd?.map((image, index) => {
+            return (
+              <img
+                key={image}
+                className={styles.image}
+                src={image}
+                hidden={currentIndex !== index}
+              ></img>
+            );
+          })}
+        </div>
+        <div className={styles.layout}>
+          {items.even?.map((image, index) => {
+            return (
+              <img
+                key={image}
+                className={styles.image}
+                src={image}
+                hidden={currentIndex !== index}
+              ></img>
+            );
+          })}
+        </div>
       </div>
     </>
   );
@@ -47,11 +65,11 @@ export const SponsorRoll: FC<Props> = ({
 
 const styles = {
   container: css`
-    position: relative;
-    height: 75px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 8px;
   `,
   title: css`
     font-weight: bolder;
@@ -60,10 +78,18 @@ const styles = {
     letter-spacing: 0.05em;
     padding-top: 8px;
   `,
+  layout: css`
+    position: relative;
+    width: 50%;
+    height: inherit;
+  `,
   image: css`
     position: absolute;
+    top: 0;
+    left: 0;
     height: inherit;
-    min-width: 240px;
+    width: 100%;
+    height: auto;
     border-radius: 8px;
     overflow: hidden;
     transition: opacity 500ms ease-in-out;

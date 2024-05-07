@@ -2,7 +2,6 @@
   "name": "tskaigi-layout",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
   "nodecg": {
     "compatibleRange": "^1.0.0 || ^2.0.0",
     "dashboardPanels": [
@@ -35,13 +34,15 @@
   },
   "scripts": {
     "start": "node ../../index.js",
+    "build": "vite build",
     "dev": "run-p dev:*",
     "fmt": "prettier . --write",
     "check": "run-p check:*",
     "dev:view": "vite",
     "dev:server": "node ../../index.js",
     "check:eslint": "eslint .",
-    "check:format": "prettier . --check"
+    "check:format": "prettier . --check",
+    "prebuild": "rimraf dashboard graphics shared extension"
   },
   "devDependencies": {
     "@emotion/css": "^11.11.2",
@@ -58,6 +59,7 @@
     "globby": "^14.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
     "rollup-plugin-esbuild": "^6.1.0",
     "rollup-plugin-node-externals": "^6.1.2",
     "typescript": "^5.2.2",

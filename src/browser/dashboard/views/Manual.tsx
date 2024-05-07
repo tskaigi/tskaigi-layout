@@ -68,6 +68,10 @@ const styles = {
     p {
       line-height: 1.4;
     }
+
+    strong {
+      color: red;
+    }
   `,
 };
 

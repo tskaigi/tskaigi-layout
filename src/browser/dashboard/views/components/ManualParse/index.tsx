@@ -13,7 +13,7 @@ export const ManualParse: FC<Props> = ({ markdown }) => {
 
   return (
     <div>
-      <div dangerouslySetInnerHTML={{ __html: content }}></div>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 };

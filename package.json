@@ -2,6 +2,10 @@
   "name": "tskaigi-layout",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "18.19.1"
+  },
+  "engineStrict": true,
   "nodecg": {
     "compatibleRange": "^1.0.0 || ^2.0.0",
     "dashboardPanels": [

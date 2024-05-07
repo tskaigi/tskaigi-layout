@@ -79,7 +79,7 @@ const styles = {
     width: 1920px;
     height: 1080px;
     padding: 20px;
-    background: url(${background});
+    background: url("${background}");
     display: grid;
     grid-template-columns: 1500px 1fr;
     grid-template-rows: auto 120px;

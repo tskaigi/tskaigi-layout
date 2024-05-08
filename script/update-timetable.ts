@@ -52,10 +52,10 @@ Promise.all([
           const sessionDetailsData = SESSSION_DETAILS[content.username];
 
           if (content.title !== sessionDetailsData.title) {
-            console.log(`title mismatch: 「${content.title}」 is not 「${sessionDetailsData.title}」`);
+            console.log(`title mismatch: 「${content.title}」 is not 「${sessionDetailsData.title}」(後者が優先されます)`);
           }
           if (content.displayName !== sessionDetailsData.displayName) {
-            console.log(`displayName mismatch: 「${content.title}」 is not 「${sessionDetailsData.title}」`);
+            console.log(`displayName mismatch: 「${content.displayName}」 is not 「${sessionDetailsData.displayName}」(後者が優先されます)`);
           }
 
           const timeTableData = {

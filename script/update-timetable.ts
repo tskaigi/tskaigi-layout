@@ -51,9 +51,16 @@ Promise.all([
           // const sessionDetailsData: SessionDetail = SESSSION_DETAILS[content.username];
           const sessionDetailsData = SESSSION_DETAILS[content.username];
 
+          if (content.title !== sessionDetailsData.title) {
+            console.log(`title mismatch: 「${content.title}」 is not 「${sessionDetailsData.title}」`);
+          }
+          if (content.displayName !== sessionDetailsData.displayName) {
+            console.log(`displayName mismatch: 「${content.title}」 is not 「${sessionDetailsData.title}」`);
+          }
+
           const timeTableData = {
-            title: content.title,
-            speakerName: content.displayName,
+            title: sessionDetailsData.title,
+            speakerName: sessionDetailsData.displayName,
             social: {
               github: sessionDetailsData?.socials?.github || '',
               link: sessionDetailsData?.additionalInfo || '',

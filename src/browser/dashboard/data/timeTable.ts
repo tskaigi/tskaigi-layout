@@ -297,7 +297,7 @@ export const timeTable = {
       },
     },
     {
-      title: "Documetation testsの恩恵",
+      title: "Documentation testsの恩恵",
       speakerName: "ssssota",
       social: {
         github: "ssssota",

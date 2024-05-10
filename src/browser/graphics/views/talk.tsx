@@ -55,7 +55,14 @@ const App: FC = () => {
   return (
     <>
       <div className={styles.layoutContainer}>
-        <SlideArea subtitling={layout?.type === "translation"} />
+        <SlideArea
+          subtitling={layout?.type === "translation"}
+          frameURL={
+            layout?.type === "translation" && layout.frame.trim() !== ""
+              ? layout.frame
+              : undefined
+          }
+        />
         <div className={styles.side}>
           <Camera />
           <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />

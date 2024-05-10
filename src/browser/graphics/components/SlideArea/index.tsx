@@ -6,9 +6,10 @@ import { css } from "@emotion/css";
 type Props = {
   /** 字幕表示エリアを確保するか */
   subtitling?: boolean;
+  frameURL?: string;
 };
 
-export const SlideArea: FC<Props> = ({ subtitling = false }) => {
+export const SlideArea: FC<Props> = ({ subtitling = false, frameURL }) => {
   return (
     <div className={styles.container}>
       <div className={styles.slideWrapper}>
@@ -16,11 +17,14 @@ export const SlideArea: FC<Props> = ({ subtitling = false }) => {
           <CoPresent sx={{ fontSize: 80, opacity: 0.5 }} />
         </div>
       </div>
-      {subtitling && (
-        <div className={styles.subtitle}>
-          <Translate sx={{ fontSize: 40, opacity: 0.5 }} />
-        </div>
-      )}
+      {subtitling &&
+        (frameURL !== undefined ? (
+          <iframe src={frameURL} frameBorder={0} />
+        ) : (
+          <div className={styles.subtitle}>
+            <Translate sx={{ fontSize: 40, opacity: 0.5 }} />
+          </div>
+        ))}
     </div>
   );
 };

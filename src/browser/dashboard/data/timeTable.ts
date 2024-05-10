@@ -31,6 +31,16 @@ export const timeTable = {
       },
     },
     {
+      title:
+        "新サービス Progate Path の演習で TypeScript を採用して見えた教材観点からの利点と課題",
+      speakerName: "島津 真人",
+      social: {
+        github: "makotoshimazu",
+        link: "",
+        twitter: "MakotoShimazu",
+      },
+    },
+    {
       title: "PMF達成の立役者！Full TypeScript Architecture の選定背景と構成",
       speakerName: "丹羽 健",
       social: {
@@ -41,7 +51,7 @@ export const timeTable = {
     },
     {
       title: "TypeScript 関数型バックエンド開発のリアル",
-      speakerName: "伊藤直也",
+      speakerName: "伊藤 直也",
       social: {
         github: "naoya",
         link: "",
@@ -143,7 +153,7 @@ export const timeTable = {
       },
     },
     {
-      title: "Typescriptで使いやすいOpenAPIの書き方",
+      title: "TypeScriptで使いやすいOpenAPIの書き方",
       speakerName: "上坂 直輝",
       social: {
         github: "yukimochi",
@@ -287,7 +297,7 @@ export const timeTable = {
       },
     },
     {
-      title: "Documetation testsの恩恵",
+      title: "Documentation testsの恩恵",
       speakerName: "ssssota",
       social: {
         github: "ssssota",
@@ -322,6 +332,15 @@ export const timeTable = {
         github: "tockn",
         link: "",
         twitter: "tockn_s",
+      },
+    },
+    {
+      title: "エンジニアの技術的な意思決定を支えるADR - LayerXの活用事例",
+      speakerName: "松本駿",
+      social: {
+        github: "Toshi1127",
+        link: "",
+        twitter: "Toshi11274",
       },
     },
     {
@@ -417,7 +436,7 @@ export const timeTable = {
     },
     {
       title:
-        "Introduction to Database Connection Management Patterns in TypeScript！LangChain.js入門",
+        "Introduction to Database Connection Management Patterns in TypeScript",
       speakerName: "Sugar",
       social: {
         github: "sugar-cat7",

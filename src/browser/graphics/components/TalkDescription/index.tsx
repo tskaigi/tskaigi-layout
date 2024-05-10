@@ -33,10 +33,10 @@ export const TalkDescription: FC<Props> = ({ title, name, social }) => {
           {(Object.entries(social ?? []) as [keyof Social, string][]).map(
             ([key, value]) =>
               value !== "" ? (
-                <>
+                <div className={styles.socialItem} key={key}>
                   {iconMap[key]}
-                  <div key={key}>{value}</div>
-                </>
+                  <div>{value}</div>
+                </div>
               ) : null,
           )}
         </div>
@@ -84,5 +84,9 @@ const styles = {
     gap: 8px;
     font-weight: 600;
     font-size: 1.1rem;
+  `,
+  socialItem: css`
+    display: flex;
+    gap: 8px;
   `,
 };

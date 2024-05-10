@@ -13,7 +13,7 @@ export const timeTable = {
       },
     },
     {
-      title: "Keynote",
+      title: "Keynote: What's New in TypeScript",
       speakerName: "Daniel Rosenwasser",
       social: {
         github: "DanielRosenwasser",

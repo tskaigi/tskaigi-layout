@@ -3,6 +3,16 @@ import type { TimeTable } from "../../schema/TimeTable";
 export const timeTable = {
   trackOne: [
     {
+      // オープニングトークを表示する必要があるので手動調整対応
+      title: "TSKaigi 2024 Opening Talk",
+      speakerName: "竹下義晃(takezoux2)",
+      social: {
+        github: "",
+        link: "",
+        twitter: "",
+      },
+    },
+    {
       title: "Keynote",
       speakerName: "Daniel Rosenwasser",
       social: {

@@ -64,7 +64,7 @@ const App: FC = () => {
           }
         />
         <div className={styles.side}>
-          <Camera />
+          <Camera room={progress?.room ?? "trackOne"} />
           <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />
           <SponsorRoll title="Gold Sponsors" images={sponsor.roll} />
         </div>

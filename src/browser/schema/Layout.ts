@@ -1,7 +1,13 @@
-import { Output, literal, object, union } from "valibot";
+import { Output, literal, object, string, union } from "valibot";
 
-export const LayoutSchema = object({
-  type: union([literal("default"), literal("translation")]),
-});
+export const LayoutSchema = union([
+  object({
+    type: literal("default"),
+  }),
+  object({
+    type: literal("translation"),
+    frame: string(),
+  }),
+]);
 
 export type Layout = Output<typeof LayoutSchema>;

@@ -21,6 +21,7 @@ type Props = {
   room: ComponentProps<typeof RoomSelect>["room"];
   error?: UIError;
   onChangeLayout: ComponentProps<typeof Speaker>["onChangeLayout"];
+  onChangeFrameURL?: ComponentProps<typeof Speaker>["onChangeFrameURL"];
   onChangeRoom?: ComponentProps<typeof RoomSelect>["onChangeRoom"];
   onNext?: ComponentProps<typeof TalkIndex>["onNext"];
   onPrev?: ComponentProps<typeof TalkIndex>["onPrev"];
@@ -41,6 +42,7 @@ export const TalkSummary: FC<Props> = ({
   onChangeLayout,
   onResetTimetable,
   onResetProgress,
+  onChangeFrameURL,
 }: Props) => {
   const [isLock, setIsLock] = useState(true);
 
@@ -82,6 +84,7 @@ export const TalkSummary: FC<Props> = ({
               layout={layout}
               disabled={isLock}
               onChangeLayout={onChangeLayout}
+              onChangeFrameURL={onChangeFrameURL}
             />
           </>
         ) : (

@@ -34,9 +34,7 @@ const App: FC = () => {
     ProgressSchema,
   );
 
-  const { value: layout } = useReplicant<Layout>("layout", LayoutSchema, {
-    type: "default",
-  });
+  const { value: layout } = useReplicant<Layout>("layout", LayoutSchema);
 
   const getCurrentTalk = (
     data: TimeTable | undefined,

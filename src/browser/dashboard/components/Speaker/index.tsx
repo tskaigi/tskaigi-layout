@@ -13,10 +13,11 @@ type Props = {
   title: string;
   name: string;
   disabled?: boolean;
-  layout: Layout["type"];
+  layout: Layout;
   onChangeTitle?: ComponentProps<typeof TextField>["onChange"];
   onChangeName?: ComponentProps<typeof TextField>["onChange"];
   onChangeLayout?: ComponentProps<typeof ToggleButtonGroup>["onChange"];
+  onChangeFrameURL?: ComponentProps<typeof TextField>["onChange"];
 };
 
 export const Speaker: FC<Props> = ({
@@ -27,6 +28,7 @@ export const Speaker: FC<Props> = ({
   onChangeName,
   onChangeTitle,
   onChangeLayout,
+  onChangeFrameURL,
 }) => {
   return (
     <>
@@ -36,26 +38,33 @@ export const Speaker: FC<Props> = ({
         <ToggleButtonGroup
           exclusive
           color="info"
-          value={layout}
+          value={layout.type}
           disabled={disabled}
           onChange={onChangeLayout}
         >
           <ToggleButton
             size="small"
             value="default"
-            sx={{ fontWeight: layout === "default" ? 900 : 500 }}
+            sx={{ fontWeight: layout.type === "default" ? 900 : 500 }}
           >
             デフォルト
           </ToggleButton>
           <ToggleButton
             size="small"
             value="translation"
-            sx={{ fontWeight: layout === "translation" ? 900 : 500 }}
+            sx={{ fontWeight: layout.type === "translation" ? 900 : 500 }}
           >
             翻訳表示用
           </ToggleButton>
         </ToggleButtonGroup>
       </Stack>
+
+      {layout.type === "translation" && (
+        <TextField label="URL" type="url" onChange={onChangeFrameURL}>
+          {layout.frame}
+        </TextField>
+      )}
+
       <Stack gap={2}>
         <TextField
           label="発表者名"

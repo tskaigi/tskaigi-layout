@@ -1,4 +1,4 @@
-import { ComponentProps, useState, type FC } from "react";
+import { ChangeEvent, ComponentProps, useState, type FC } from "react";
 
 import { render } from "../../render";
 import { TalkSummary } from "./components/TalkSummary";
@@ -68,6 +68,28 @@ const App: FC = () => {
     });
   };
 
+  console.log(layout);
+
+  const layoutChangeHandler = (value: unknown) => {
+    if (value === "translation") {
+      setLayout({ type: value, frame: "" });
+    } else {
+      setLayout({ type: "default" });
+    }
+  };
+
+  const frameURLChangeHandler = (event: ChangeEvent) => {
+    if (!(event.target instanceof HTMLInputElement)) return;
+    const { value } = event.target;
+
+    if (typeof value !== "string") return;
+    if (value.trim() === "") {
+      setLayout({ type: "translation", frame: "" });
+    } else {
+      setLayout({ type: "translation", frame: value });
+    }
+  };
+
   return (
     <TalkSummary
       timeTable={timeTable}
@@ -76,12 +98,13 @@ const App: FC = () => {
       room={progress?.room ?? "trackOne"}
       onChangeRoom={roomChangeHandler}
       error={error}
-      layout={layout?.type ?? "default"}
+      layout={layout ?? { type: "default" }}
       onNext={() => pageChangeHandler("next")}
       onPrev={() => pageChangeHandler("prev")}
       onResetTimetable={resetTimeTable}
       onResetProgress={resetProgress}
-      onChangeLayout={(_, v) => setLayout({ type: v })}
+      onChangeLayout={(_, v) => layoutChangeHandler(v)}
+      onChangeFrameURL={frameURLChangeHandler}
     />
   );
 };

@@ -88,7 +88,7 @@ export const timeTable = {
       },
     },
     {
-      title: "ハードウェアを動かすTypeScrptの世界",
+      title: "ハードウェアを動かすTypeScriptの世界",
       speakerName: "9wick",
       social: {
         github: "9wick",

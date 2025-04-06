@@ -2,10 +2,6 @@
   "name": "tskaigi-layout",
   "version": "1.0.0",
   "private": true,
-  "engines": {
-    "node": "18.19.1"
-  },
-  "engineStrict": true,
   "nodecg": {
     "compatibleRange": "^1.0.0 || ^2.0.0",
     "dashboardPanels": [
@@ -82,5 +78,8 @@
     "react-dom": "^19.1.0",
     "ts-pattern": "^5.7.0",
     "valibot": "^1.0.0"
+  },
+  "volta": {
+    "node": "22.14.0"
   }
 }

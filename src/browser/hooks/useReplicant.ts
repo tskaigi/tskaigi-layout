@@ -17,7 +17,7 @@ export const useReplicant = <T extends {}>(
       update(nextState);
       replicant.value = nextState;
     },
-    [update],
+    [replicant],
   );
 
   const changeHandler = useCallback(
@@ -34,7 +34,7 @@ export const useReplicant = <T extends {}>(
   const reset = useCallback(() => {
     update(initialize);
     replicant.value = initialize;
-  }, [update, initialize]);
+  }, [initialize, replicant]);
 
   useEffect(() => {
     replicant.addListener("change", changeHandler);

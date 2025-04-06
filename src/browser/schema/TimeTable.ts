@@ -1,4 +1,4 @@
-import { object, string, array, type Output } from "valibot";
+import { object, string, array, type InferOutput } from "valibot";
 
 export const TrackItemSchema = object({
   speakerName: string(),
@@ -16,4 +16,4 @@ export const TimeTableSchema = object({
   trackThree: array(TrackItemSchema),
 });
 
-export type TimeTable = Output<typeof TimeTableSchema>;
+export type TimeTable = InferOutput<typeof TimeTableSchema>;

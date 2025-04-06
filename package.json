@@ -42,10 +42,13 @@
     "dev:server": "node ../../index.js",
     "check:eslint": "eslint .",
     "check:format": "prettier . --check",
+    "check:types": "tsc --noEmit",
     "prebuild": "rimraf dashboard graphics shared extension"
   },
   "devDependencies": {
     "@emotion/css": "^11.13.5",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.24.0",
     "@nodecg/types": "^2.5.3",
     "@types/markdown-it": "^14.1.2",
     "@types/react": "^19.1.0",

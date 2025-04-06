@@ -54,10 +54,8 @@ const styles = {
     height: 100%;
     width: 100%;
     padding: 8px 16px 8px 16px;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 50%),
-        rgba(255, 255, 255, 100%)
-      ),
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 50%), rgba(255, 255, 255, 100%)),
       url(${background});
     color: ${typescript.main};
     border-radius: 8px;

@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { BaseSchema, safeParse } from "valibot";
+import { BaseIssue, BaseSchema, safeParse } from "valibot";
 
 /**
  * 汎用Replicant呼び出し用Hooks
  */
 export const useReplicant = <T extends {}>(
   name: string,
-  schema: BaseSchema,
+  schema: BaseSchema<unknown, T, BaseIssue<unknown>>,
   initialize?: T,
 ) => {
   const replicant = useMemo(() => nodecg.Replicant(name), [name]);
@@ -17,12 +17,15 @@ export const useReplicant = <T extends {}>(
       update(nextState);
       replicant.value = nextState;
     },
-    [update],
+    [replicant],
   );
 
   const changeHandler = useCallback(
     (nextValue: unknown) => {
-      const result = safeParse<BaseSchema<T>>(schema, nextValue);
+      const result = safeParse<BaseSchema<unknown, T, BaseIssue<unknown>>>(
+        schema,
+        nextValue,
+      );
 
       if (result.success) {
         update(result.output);
@@ -34,7 +37,7 @@ export const useReplicant = <T extends {}>(
   const reset = useCallback(() => {
     update(initialize);
     replicant.value = initialize;
-  }, [update, initialize]);
+  }, [initialize, replicant]);
 
   useEffect(() => {
     replicant.addListener("change", changeHandler);

@@ -1,6 +1,5 @@
 import type { FC } from "react";
 import { useEffect, useState } from "react";
-import groupBy from "object.groupby";
 
 import { css } from "@emotion/css";
 
@@ -17,7 +16,9 @@ export const SponsorRoll: FC<Props> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const items = groupBy(images, (_, i) => (i % 2 === 0 ? "odd" : "even"));
+  const items = Object.groupBy(images, (_, i) =>
+    i % 2 === 0 ? "odd" : "even",
+  );
 
   useEffect(() => {
     const id = setInterval(() => {

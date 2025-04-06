@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@emotion/css": "^11.13.5",
+    "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.24.0",
     "@nodecg/types": "^2.5.3",
     "@types/markdown-it": "^14.1.2",

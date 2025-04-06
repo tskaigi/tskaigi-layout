@@ -1,4 +1,4 @@
-import { Output, literal, object, string, union } from "valibot";
+import { type InferOutput, literal, object, string, union } from "valibot";
 
 export const LayoutSchema = union([
   object({
@@ -10,4 +10,4 @@ export const LayoutSchema = union([
   }),
 ]);
 
-export type Layout = Output<typeof LayoutSchema>;
+export type Layout = InferOutput<typeof LayoutSchema>;

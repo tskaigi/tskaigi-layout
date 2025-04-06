@@ -1,4 +1,4 @@
-import { object, union, literal, number, type Output } from "valibot";
+import { object, union, literal, number, type InferOutput } from "valibot";
 
 export const ProgressSchema = object({
   room: union([
@@ -9,4 +9,4 @@ export const ProgressSchema = object({
   index: number(),
 });
 
-export type Progress = Output<typeof ProgressSchema>;
+export type Progress = InferOutput<typeof ProgressSchema>;

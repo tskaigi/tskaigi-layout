@@ -42,6 +42,7 @@
     "dev:server": "node ../../index.js",
     "check:eslint": "eslint .",
     "check:format": "prettier . --check",
+    "check:types": "tsc --noEmit",
     "prebuild": "rimraf dashboard graphics shared extension"
   },
   "devDependencies": {

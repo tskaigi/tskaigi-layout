@@ -5,6 +5,7 @@ import { Checkbox, Stack } from "@mui/material";
 
 type Props = {
   items: string[];
+  // eslint-disable-next-line no-unused-vars
   onChange?: (ready: boolean) => void;
 };
 

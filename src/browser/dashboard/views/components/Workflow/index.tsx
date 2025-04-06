@@ -7,6 +7,7 @@ import { checkListItems, type Progress } from "../../../data/checkList";
 import { Button, Stack } from "@mui/material";
 
 type Props = {
+  // eslint-disable-next-line no-unused-vars
   onChangeProgress?: (mode: Progress) => void;
 };
 

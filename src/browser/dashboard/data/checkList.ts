@@ -1,8 +1,6 @@
 export type Progress = "standby" | "during";
 
-type CheckList = {
-  [K in Progress]: string[];
-};
+type CheckList = Record<Progress, string[]>;
 
 /**
  * チェックリストの項目

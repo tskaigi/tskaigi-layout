@@ -1,4 +1,4 @@
-import { FC, useId } from "react";
+import { FC } from "react";
 import {
   FormHelperText,
   MenuItem,
@@ -16,6 +16,7 @@ type Props = {
   error?: boolean;
   errorMessage?: string;
   disabled?: boolean;
+  // eslint-disable-next-line no-unused-vars
   onChangeRoom?: (event: SelectChangeEvent<Room>) => void;
 };
 
@@ -27,8 +28,6 @@ export const RoomSelect: FC<Props> = ({
   disabled = false,
   onChangeRoom,
 }: Props) => {
-  const id = useId();
-
   return (
     <>
       <h3>トラック選択</h3>

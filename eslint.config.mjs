@@ -1,3 +1,4 @@
+import { defineConfig, globalIgnores } from "eslint/config";
 import esLint from "@eslint/js";
 import { FlatCompat } from "@eslint/eslintrc";
 import tsParser from "@typescript-eslint/parser";
@@ -37,9 +38,16 @@ const configReact = {
   },
 };
 
-export default [
+export default defineConfig([
+  globalIgnores([
+    "node_modules",
+    "shared/**",
+    "dashboard/**",
+    "extension/**",
+    "graphics/**",
+  ]),
   esLint.configs.recommended,
   configTypeScript,
   configReact,
   ...compat.extends("plugin:react-hooks/recommended"),
-];
+]);

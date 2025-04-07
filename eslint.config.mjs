@@ -35,6 +35,11 @@ const configReact = {
   plugins: {
     react: react,
   },
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   rules: {
     ...reactRecommended.rules,
     ...jsxRuntime.rules,

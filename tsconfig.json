@@ -1,4 +1,11 @@
 {
+  "include": [
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.tsx",
+    "**/*.mts",
+    ".storybook/**/*"
+  ],
   "compilerOptions": {
     "target": "ES2022",
     "module": "ES2022",

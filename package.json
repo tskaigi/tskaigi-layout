@@ -38,6 +38,7 @@
     "dev": "run-p dev:*",
     "fmt": "prettier . --write",
     "check": "run-p check:*",
+    "storybook": "storybook dev -p 6006",
     "dev:view": "vite",
     "dev:server": "node ../../index.js",
     "check:eslint": "eslint .",
@@ -46,10 +47,17 @@
     "prebuild": "rimraf dashboard graphics shared extension"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
     "@emotion/css": "^11.13.5",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.24.0",
     "@nodecg/types": "^2.5.3",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/react": "^8.6.12",
+    "@storybook/react-vite": "^8.6.12",
+    "@storybook/test": "^8.6.12",
     "@types/markdown-it": "^14.1.2",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
@@ -59,12 +67,14 @@
     "eslint": "^9.24.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-storybook": "^0.12.0",
     "globby": "^14.1.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.5.3",
     "rimraf": "^6.0.1",
     "rollup-plugin-esbuild": "^6.2.1",
     "rollup-plugin-node-externals": "^8.0.0",
+    "storybook": "^8.6.12",
     "typescript": "^5.8.3",
     "vite": "^6.2.5",
     "vitest": "^3.1.1"
@@ -82,5 +92,10 @@
   },
   "volta": {
     "node": "18.20.8"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

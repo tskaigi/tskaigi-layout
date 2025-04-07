@@ -5,12 +5,14 @@ import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
 import react from "eslint-plugin-react";
 import reactRecommended from "eslint-plugin-react/configs/recommended.js";
+import storybook from "eslint-plugin-storybook";
 import jsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
 
 const compat = new FlatCompat();
 
 /** @type {import('eslint').Linter.FlatConfig} */
 const configTypeScript = {
+  name: "typescript",
   files: ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
   languageOptions: {
     parser: tsParser,
@@ -28,6 +30,7 @@ const configTypeScript = {
 
 /** @type {import('eslint').Linter.FlatConfig} */
 const configReact = {
+  name: "react",
   files: ["**/*.tsx"],
   plugins: {
     react: react,
@@ -39,15 +42,22 @@ const configReact = {
 };
 
 export default defineConfig([
-  globalIgnores([
-    "node_modules",
-    "shared/**",
-    "dashboard/**",
-    "extension/**",
-    "graphics/**",
-  ]),
-  esLint.configs.recommended,
+  globalIgnores(
+    [
+      "node_modules",
+      "shared/**",
+      "dashboard/**",
+      "extension/**",
+      "graphics/**",
+    ],
+    "global/ignores",
+  ),
+  {
+    name: "eslint/recommended",
+    ...esLint.configs.recommended,
+  },
   configTypeScript,
   configReact,
+  storybook.configs["flat/recommended"],
   ...compat.extends("plugin:react-hooks/recommended"),
 ]);

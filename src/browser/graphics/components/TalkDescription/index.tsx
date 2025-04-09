@@ -1,10 +1,12 @@
 import type { FC, ReactNode } from "react";
+import { match, P } from "ts-pattern";
 
 import { css } from "@emotion/css";
-import { typescript } from "../../../styles/color";
+import leftIcon from "./left-icon.svg";
+import rightIcon from "./right-icon.svg";
 
-import { GitHub, LinkRounded, X, Person } from "@mui/icons-material";
-import background from "../../img/background/cloud.png";
+import { GitHub, LinkRounded, X } from "@mui/icons-material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 type Social = Partial<Record<"twitter" | "github" | "link", string>>;
 
@@ -14,77 +16,116 @@ type Props = {
   social?: Social;
 };
 
-const iconMap: Record<keyof Social, ReactNode> = {
+const iconMap: Record<string, ReactNode> = {
   link: <LinkRounded fontSize="small" />,
   github: <GitHub fontSize="small" />,
   twitter: <X fontSize="small" />,
 };
 
+const urlFormat = (url: string) => {
+  const maybeURL = URL.parse(url);
+  if (maybeURL == null) {
+    return url;
+  }
+  const { hostname, pathname } = maybeURL;
+  return pathname === "/" ? hostname : `${hostname}${pathname}`;
+};
+
 export const TalkDescription: FC<Props> = ({ title, name, social }) => {
+  const socials = Object.entries(social ?? {});
+
   return (
     <div className={styles.container}>
-      <h2 className={styles.title(title.length > 40)}>{title}</h2>
-      <div className={styles.about}>
-        <div className={styles.name}>
-          <Person fontSize="medium" sx={{ paddingBottom: "3px" }} />
-          <span>{name}</span>
-        </div>
-        <div className={styles.social}>
-          {(Object.entries(social ?? []) as [keyof Social, string][]).map(
-            ([key, value]) =>
-              value !== "" ? (
-                <div className={styles.socialItem} key={key}>
-                  {iconMap[key]}
-                  <div>{value}</div>
-                </div>
-              ) : null,
-          )}
+      <img className={styles.leftIcon} src={leftIcon} alt=""></img>
+      <div className={styles.inner}>
+        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.info}>
+          <p className={styles.name}>
+            <AccountCircleIcon />
+            {name}
+          </p>
+          <ul className={styles.socialList}>
+            {socials.map(([key, v]) => (
+              <li className={styles.socialItem} key={v}>
+                {match(key)
+                  .with(P.union("link", "github", "twitter"), (p) => iconMap[p])
+                  .otherwise(() => null)}
+                {urlFormat(v)}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
+      <img className={styles.rightIcon} src={rightIcon} alt=""></img>
     </div>
   );
 };
 
 const styles = {
   container: css`
-    box-sizing: border-box;
+    position: relative;
+    height: 150px;
+    padding: 34px 0 0 5px;
+  `,
+  leftIcon: css`
+    position: absolute;
+    top: 0;
+    left: 0;
+  `,
+  rightIcon: css`
+    position: absolute;
+    top: 22px;
+    right: 8px;
+  `,
+  inner: css`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     width: 100%;
-    padding: 8px 16px 8px 16px;
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 50%), rgba(255, 255, 255, 100%)),
-      url(${background});
-    color: ${typescript.main};
-    border-radius: 8px;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 4px;
   `,
-  title: (isLong: boolean) => css`
-    font-weight: 800;
-    font-size: ${isLong ? "2rem" : "2.25rem"};
+  title: css`
+    margin: 0;
+    padding: 24px 160px 0 62px;
+    color: #2a2a2d;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-wrap: balance;
   `,
-  about: css`
+  info: css`
+    padding: 0 28px 20px 0;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    flex-direction: row-reverse;
+    gap: 20px;
   `,
   name: css`
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    font-size: 1.5rem;
-    font-weight: 600;
-  `,
-  social: css`
-    display: flex;
+    margin: 0;
+    display: block flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 1.1rem;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #2a2a2d;
+  `,
+  socialList: css`
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    font-weight: 700;
+    font-size: 1rem;
+    gap: 10px;
+    color: #2a2a2d;
   `,
   socialItem: css`
-    display: flex;
-    gap: 8px;
+    display: block flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
   `,
 };

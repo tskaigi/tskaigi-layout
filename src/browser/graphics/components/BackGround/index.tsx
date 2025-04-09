@@ -19,6 +19,8 @@ const styles = {
     background: linear-gradient(180deg, #3a89c4 0%, #1071d3 100%);
   `,
   inner: css`
+    box-sizing: border-box;
+    padding: 19px;
     width: inherit;
     height: inherit;
     background-image: url(${ripple});

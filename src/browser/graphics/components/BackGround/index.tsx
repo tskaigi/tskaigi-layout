@@ -35,7 +35,7 @@ const styles = {
       "${gridAreaName.slide} ${gridAreaName.sponsor}"
       "${gridAreaName.description} ${gridAreaName.sponsor}";
     grid-template-columns: 1fr 350px;
-    grid-template-rows: 350px 110px 1fr 180px;
+    grid-template-rows: 350px 120px 1fr 180px;
     gap: 20px;
     padding: 19px;
     width: inherit;

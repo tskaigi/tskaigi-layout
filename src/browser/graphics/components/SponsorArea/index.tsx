@@ -70,13 +70,13 @@ const styles = {
     position: relative;
     width: 100%;
     min-width: 350px;
-    height: 100%;
+    height: auto;
     max-height: 100vh;
     margin: 13px 0 0 0;
     padding: 3px 0 16px 0;
     background-color: rgba(255, 255, 255, 1);
     opacity: 0.9;
-    box-shadow: rgba(0, 0, 0, 1) 0 4px 4px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 4px 4px;
     border-radius: 5px;
   `,
   goldfish: css`
@@ -100,7 +100,7 @@ const styles = {
     justify-content: center;
   `,
   list: css`
-    margin: 0 100px;
+    margin: 0 80px;
     padding: 0;
     list-style-type: none;
   `,

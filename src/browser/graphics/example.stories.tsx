@@ -11,11 +11,13 @@ import platinum from "./img/sponsor/platinum";
 import gold from "./img/sponsor/gold";
 
 import { Camera } from "./components/Camera";
+import { SlideArea } from "./components/SlideArea";
 import { MetaInformation } from "./components/MetaInformation";
 
 const Example: FC = () => {
   return (
     <BackGround>
+      <SlideArea areaName={gridAreaName.slide} />
       <Camera areaName={gridAreaName.camera} />
       <MetaInformation
         trackName="レバレジーズ"

@@ -6,7 +6,7 @@ import ripple from "./ripple.png?inline";
 export const gridAreaName = {
   slide: "slide",
   camera: "camera",
-  title: "title",
+  meta: "meta",
   sponsor: "sponsor",
   description: "description",
 };
@@ -31,7 +31,7 @@ const styles = {
     display: block grid;
     grid-template-areas:
       "${gridAreaName.slide} ${gridAreaName.camera}"
-      "${gridAreaName.slide} ${gridAreaName.title}"
+      "${gridAreaName.slide} ${gridAreaName.meta}"
       "${gridAreaName.slide} ${gridAreaName.sponsor}"
       "${gridAreaName.description} ${gridAreaName.sponsor}";
     grid-template-columns: 1fr 350px;

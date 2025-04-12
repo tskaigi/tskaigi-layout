@@ -11,11 +11,13 @@ import platinum from "./img/sponsor/platinum";
 import gold from "./img/sponsor/gold";
 
 import { Camera } from "./components/Camera";
+import { MetaInformation } from "./components/MetaInformation";
 
 const Example: FC = () => {
   return (
     <BackGround>
       <Camera areaName={gridAreaName.camera} />
+      <MetaInformation areaName={gridAreaName.meta} />
       <SponsorArea
         gold={gold}
         platinum={platinum}

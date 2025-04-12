@@ -10,5 +10,9 @@ const meta: Meta<typeof MetaInformation> = {
 export default meta;
 
 export const Basic: StoryObj<typeof MetaInformation> = {
-  args: {},
+  args: {
+    day: 1,
+    hashtag: ["TSKaigi2025", "tskaigi_leverages"],
+    trackName: "レバレジーズ",
+  },
 };

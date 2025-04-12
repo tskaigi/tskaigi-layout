@@ -17,7 +17,12 @@ const Example: FC = () => {
   return (
     <BackGround>
       <Camera areaName={gridAreaName.camera} />
-      <MetaInformation areaName={gridAreaName.meta} />
+      <MetaInformation
+        trackName="レバレジーズ"
+        day={1}
+        hashtag={["tskaigi20205", "tskaigi_leverages"]}
+        areaName={gridAreaName.meta}
+      />
       <SponsorArea
         gold={gold}
         platinum={platinum}

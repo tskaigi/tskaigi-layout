@@ -47,14 +47,16 @@ const styles = {
   logo: css`
     max-height: 37px;
     width: auto;
-    margin: auto 16px;
+    margin: auto 4px;
   `,
   trackName: css`
     display: inline;
     width: fit-content;
     margin: auto;
+    font-size: 22px;
   `,
   day: css`
+    font-weight: 700;
     text-transform: uppercase;
     margin: auto;
   `,

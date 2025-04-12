@@ -6,7 +6,7 @@ import tskaigi from "./tskaigi.svg?inline";
 type Props = {
   trackName: string;
   hashtag: [string, string];
-  day: 1 | 2;
+  day: number;
   areaName?: string;
 };
 

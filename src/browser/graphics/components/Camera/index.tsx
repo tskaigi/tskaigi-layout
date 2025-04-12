@@ -3,36 +3,17 @@ import type { FC } from "react";
 import { css } from "@emotion/css";
 import VideocamOffRoundedIcon from "@mui/icons-material/VideocamOffRounded";
 
-import logo from "../../../assets/image/logo/default.svg";
-import { hashTag } from "../../../dashboard/data/hashTag";
-
 type Props = {
-  room: keyof (typeof hashTag)["scoped"];
+  areaName?: string;
 };
 
-export const Camera: FC<Props> = ({ room }) => {
+export const Camera: FC<Props> = ({ areaName = "" }) => {
   return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.offIcon}>
-          <VideocamOffRoundedIcon fontSize="inherit" />
-        </div>
+    <div className={styles.container} style={{ gridArea: areaName }}>
+      <div className={styles.offIcon}>
+        <VideocamOffRoundedIcon fontSize="inherit" />
       </div>
-      <div className={styles.title}>
-        <div className={styles.logoWrapper}>
-          <img className={styles.logo} src={logo} alt="TSKaigi" />
-          <span className={styles.year}>
-            2024
-            <br />
-            Nakano
-          </span>
-        </div>
-        <div className={styles.hashTagArea}>
-          <div className={styles.hashTag}>{hashTag.global}</div>
-          <div className={styles.hashTag}>{hashTag.scoped[room]}</div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
 

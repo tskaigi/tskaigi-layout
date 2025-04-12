@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
 import { BackGround, gridAreaName } from "./components/BackGround";
+
 import { TalkDescription } from "./components/TalkDescription";
 import { LongTitle } from "./components/TalkDescription/index.stories";
 
@@ -9,9 +10,12 @@ import { SponsorArea } from "./components/SponsorArea";
 import platinum from "./img/sponsor/platinum";
 import gold from "./img/sponsor/gold";
 
+import { Camera } from "./components/Camera";
+
 const Example: FC = () => {
   return (
     <BackGround>
+      <Camera areaName={gridAreaName.camera} />
       <SponsorArea
         gold={gold}
         platinum={platinum}

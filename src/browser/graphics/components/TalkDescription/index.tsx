@@ -14,6 +14,7 @@ type Props = {
   title: string;
   name: string;
   social?: Social;
+  areaName?: string;
 };
 
 const iconMap: Record<string, ReactNode> = {
@@ -31,11 +32,16 @@ const urlFormat = (url: string) => {
   return pathname === "/" ? hostname : `${hostname}${pathname}`;
 };
 
-export const TalkDescription: FC<Props> = ({ title, name, social }) => {
+export const TalkDescription: FC<Props> = ({
+  title,
+  name,
+  social,
+  areaName = "",
+}) => {
   const socials = Object.entries(social ?? {});
 
   return (
-    <div className={styles.container}>
+    <div style={{ gridArea: areaName }} className={styles.container}>
       <img className={styles.leftIcon} src={leftIcon} alt=""></img>
       <div className={styles.inner}>
         <h2 className={styles.title}>{title}</h2>

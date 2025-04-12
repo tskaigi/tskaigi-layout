@@ -3,6 +3,14 @@ import { css } from "@emotion/css";
 
 import ripple from "./ripple.png?inline";
 
+export const gridAreaName = {
+  slide: "slide",
+  camera: "camera",
+  title: "title",
+  sponsor: "sponsor",
+  description: "description",
+};
+
 export const BackGround: FC<PropsWithChildren> = ({ children }) => {
   return (
     <main className={styles.container}>
@@ -20,6 +28,15 @@ const styles = {
   `,
   inner: css`
     box-sizing: border-box;
+    display: block grid;
+    grid-template-areas:
+      "${gridAreaName.slide} ${gridAreaName.camera}"
+      "${gridAreaName.slide} ${gridAreaName.title}"
+      "${gridAreaName.slide} ${gridAreaName.sponsor}"
+      "${gridAreaName.description} ${gridAreaName.sponsor}";
+    grid-template-columns: 1fr 350px;
+    grid-template-rows: 350px 110px 1fr 180px;
+    gap: 20px;
     padding: 19px;
     width: inherit;
     height: inherit;

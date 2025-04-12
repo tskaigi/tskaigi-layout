@@ -7,12 +7,14 @@ type Props = {
   gold: string[];
   platinum: string[];
   intervalTime?: number;
+  areaName?: string;
 };
 
 export const SponsorArea: FC<Props> = ({
   gold,
   platinum,
   intervalTime = 10_000,
+  areaName = "",
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const groupSize = Math.ceil(gold.length / 2);
@@ -29,7 +31,7 @@ export const SponsorArea: FC<Props> = ({
   });
 
   return (
-    <div className={styles.container}>
+    <div style={{ gridArea: areaName }} className={styles.container}>
       <img src={goldfish} className={styles.goldfish} alt="" />
       <div className={styles.plan}>
         <h3 className={styles.title}>Platinum Sponsors</h3>

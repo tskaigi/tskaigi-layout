@@ -7,6 +7,7 @@ type Props = {
   title: string;
   intervalTime?: number;
   images: string[];
+  areaName?: string;
 };
 
 export const SponsorRoll: FC<Props> = ({

@@ -9,8 +9,5 @@ const meta: Meta<typeof SlideArea> = {
 export default meta;
 
 export const Basic: Story = {
-  args: {
-    frameURL: undefined,
-    subtitling: false,
-  },
+  args: {},
 };

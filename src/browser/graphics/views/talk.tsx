@@ -1,27 +1,15 @@
 import type { FC } from "react";
+import { Temporal } from "temporal-polyfill";
 
 import { render } from "../../render";
-import { css } from "@emotion/css";
+import { Presentation } from "../presentations/talk";
 
 import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
-import { Layout, LayoutSchema } from "../../schema/Layout";
 import { useReplicant } from "../../hooks/useReplicant";
 
-import { TalkDescription } from "../components/TalkDescription";
-import { SlideArea } from "../components/SlideArea";
-import { Camera } from "../components/Camera";
-import { SponsorRoll } from "../components/SponsorRoll";
-import { SponsorStatic } from "../components/SponsorStatic";
-
-import background from "../img/background/gradation.svg";
 import platinumSponsor from "../img/sponsor/platinum";
 import goldSponsor from "../img/sponsor/gold";
-
-const sponsor = {
-  roll: goldSponsor,
-  static: platinumSponsor,
-};
 
 const App: FC = () => {
   const { value: timeTable } = useReplicant<TimeTable>(
@@ -33,8 +21,6 @@ const App: FC = () => {
     "progress",
     ProgressSchema,
   );
-
-  const { value: layout } = useReplicant<Layout>("layout", LayoutSchema);
 
   const getCurrentTalk = (
     data: TimeTable | undefined,
@@ -52,59 +38,22 @@ const App: FC = () => {
     },
   });
 
-  return (
-    <>
-      <div className={styles.layoutContainer}>
-        <SlideArea
-          subtitling={layout?.type === "translation"}
-          frameURL={
-            layout?.type === "translation" && layout.frame.trim() !== ""
-              ? layout.frame
-              : undefined
-          }
-        />
-        <div className={styles.side}>
-          <Camera room={progress?.room ?? "trackOne"} />
-          <SponsorStatic title="Platinum Sponsors" images={sponsor.static} />
-          <SponsorRoll title="Gold Sponsors" images={sponsor.roll} />
-        </div>
-        <TalkDescription
-          title={talk.title}
-          name={talk.speakerName}
-          social={talk.social}
-        />
-      </div>
-    </>
+  const now = Temporal.ZonedDateTime.from(
+    Temporal.Now.zonedDateTimeISO("Asia/Tokyo"),
   );
-};
 
-const styles = {
-  layoutContainer: css`
-    box-sizing: border-box;
-    width: 1920px;
-    height: 1080px;
-    padding: 20px;
-    background: url("${background}");
-    display: grid;
-    grid-template-columns: 1500px 1fr;
-    grid-template-rows: auto 120px;
-    gap: 16px;
-  `,
-
-  side: css`
-    display: flex;
-    grid-column: 2 / 3;
-    grid-row: 1 / 3;
-    flex-direction: column;
-    gap: 8px;
-  `,
-
-  logo: css`
-    width: 100%;
-    height: auto;
-    max-height: 60px;
-    background-color: rgba(0, 0, 0, 20%);
-  `,
+  return (
+    <Presentation
+      now={now}
+      talkTitle={talk.title}
+      speakerName={talk.speakerName}
+      socialLinks={talk.social}
+      goldSponsors={goldSponsor}
+      platinumSponsors={platinumSponsor}
+      roomHashtag={"tskaigi_leverages"} // TODO: 正しい値を算出させる
+      trackName="レバレジーズ" // TODO: 正しい値を算出させる
+    />
+  );
 };
 
 render(<App />);

@@ -68,8 +68,6 @@ const App: FC = () => {
     });
   };
 
-  console.log(layout);
-
   const layoutChangeHandler = (value: unknown) => {
     if (value === "translation") {
       setLayout({ type: value, frame: "" });

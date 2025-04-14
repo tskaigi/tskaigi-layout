@@ -27,3 +27,11 @@ export const AllSocialLink: Story = {
     },
   },
 };
+
+export const LongTitle: Story = {
+  args: {
+    ...AllSocialLink.args,
+    title:
+      "TSKaigi 2025 - TypeScript Conference in Japan / 日本の TypeScript カンファレンス - 2025 Online Edition",
+  },
+};

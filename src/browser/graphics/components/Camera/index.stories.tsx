@@ -9,7 +9,5 @@ const meta: Meta<typeof Camera> = {
 export default meta;
 
 export const Basic: Story = {
-  args: {
-    room: "trackOne",
-  },
+  args: {},
 };

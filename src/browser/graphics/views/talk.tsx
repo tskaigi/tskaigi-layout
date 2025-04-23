@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { useMemo, type FC } from "react";
 import { Temporal } from "temporal-polyfill";
 
 import { render } from "../../render";
@@ -8,8 +8,7 @@ import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
 import { useReplicant } from "../../hooks/useReplicant";
 
-import platinumSponsor from "../img/sponsor/platinum";
-import goldSponsor from "../img/sponsor/gold";
+import { useGoldSponsorts, usePlatinumSponsors } from "../../hooks/assets";
 
 const App: FC = () => {
   const { value: timeTable } = useReplicant<TimeTable>(
@@ -21,6 +20,14 @@ const App: FC = () => {
     "progress",
     ProgressSchema,
   );
+
+  const platinumSponsors = usePlatinumSponsors();
+  const goldSponsors = useGoldSponsorts();
+
+  const sponsor = useMemo(() => ({
+    platinum: platinumSponsors.map(asset => asset.url).toSorted((a, b) => a.localeCompare(b)),
+    gold: goldSponsors.map(asset => asset.url).toSorted((a, b) => a.localeCompare(b)),
+  }), [platinumSponsors, goldSponsors]);
 
   const getCurrentTalk = (
     data: TimeTable | undefined,
@@ -48,8 +55,8 @@ const App: FC = () => {
       talkTitle={talk.title}
       speakerName={talk.speakerName}
       socialLinks={talk.social}
-      goldSponsors={goldSponsor}
-      platinumSponsors={platinumSponsor}
+      goldSponsors={sponsor.platinum}
+      platinumSponsors={sponsor.gold}
       roomHashtag={"tskaigi_leverages"} // TODO: 正しい値を算出させる
       trackName="レバレジーズ" // TODO: 正しい値を算出させる
     />

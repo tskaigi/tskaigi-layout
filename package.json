@@ -30,6 +30,28 @@
         "width": 1920,
         "height": 1080
       }
+    ],
+    "assetCategories": [
+      {
+        "name": "platinum-sponsors",
+        "title": "プラチナスポンサーロゴ",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "png",
+          "gif"
+        ]
+      },
+      {
+        "name": "gold-sponsors",
+        "title": "ゴールドスポンサーロゴ",
+        "allowedTypes": [
+          "jpg",
+          "jpeg",
+          "png",
+          "gif"
+        ]
+      }
     ]
   },
   "scripts": {

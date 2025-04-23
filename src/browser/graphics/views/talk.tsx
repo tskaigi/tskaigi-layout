@@ -8,7 +8,7 @@ import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
 import { useReplicant } from "../../hooks/useReplicant";
 
-import { useGoldSponsorts, usePlatinumSponsors } from "../../hooks/assets";
+import { useGoldSponsors, usePlatinumSponsors } from "../../hooks/assets";
 
 const App: FC = () => {
   const { value: timeTable } = useReplicant<TimeTable>(
@@ -22,7 +22,7 @@ const App: FC = () => {
   );
 
   const platinumSponsors = usePlatinumSponsors();
-  const goldSponsors = useGoldSponsorts();
+  const goldSponsors = useGoldSponsors();
 
   const sponsor = useMemo(() => ({
     platinum: platinumSponsors.map(asset => asset.url).toSorted((a, b) => a.localeCompare(b)),
@@ -55,8 +55,8 @@ const App: FC = () => {
       talkTitle={talk.title}
       speakerName={talk.speakerName}
       socialLinks={talk.social}
-      goldSponsors={sponsor.platinum}
-      platinumSponsors={sponsor.gold}
+      goldSponsors={sponsor.gold}
+      platinumSponsors={sponsor.platinum}
       roomHashtag={"tskaigi_leverages"} // TODO: 正しい値を算出させる
       trackName="レバレジーズ" // TODO: 正しい値を算出させる
     />

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 type AssetName = "platinum-sponsors" | "gold-sponsors";
 
-export const useNodecgAssets = (name: AssetName): NodeCG.AssetFile[] => {
+const useNodecgAssets = (name: AssetName): NodeCG.AssetFile[] => {
   const [value, update] = useState<NodeCG.AssetFile[]>([]);
 
   useEffect(() => {
@@ -21,4 +21,4 @@ export const useNodecgAssets = (name: AssetName): NodeCG.AssetFile[] => {
 };
 
 export const usePlatinumSponsors = () => useNodecgAssets("platinum-sponsors");
-export const useGoldSponsorts = () => useNodecgAssets("gold-sponsors");
+export const useGoldSponsors = () => useNodecgAssets("gold-sponsors");

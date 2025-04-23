@@ -24,10 +24,17 @@ const App: FC = () => {
   const platinumSponsors = usePlatinumSponsors();
   const goldSponsors = useGoldSponsors();
 
-  const sponsor = useMemo(() => ({
-    platinum: platinumSponsors.map(asset => asset.url).toSorted((a, b) => a.localeCompare(b)),
-    gold: goldSponsors.map(asset => asset.url).toSorted((a, b) => a.localeCompare(b)),
-  }), [platinumSponsors, goldSponsors]);
+  const sponsor = useMemo(
+    () => ({
+      platinum: platinumSponsors
+        .map((asset) => asset.url)
+        .toSorted((a, b) => a.localeCompare(b)),
+      gold: goldSponsors
+        .map((asset) => asset.url)
+        .toSorted((a, b) => a.localeCompare(b)),
+    }),
+    [platinumSponsors, goldSponsors],
+  );
 
   const getCurrentTalk = (
     data: TimeTable | undefined,

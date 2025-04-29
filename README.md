@@ -37,9 +37,18 @@ npm run dev
 
 `SqliteError: no such table: replicant`のエラーが発生した場合は以下でtskaigi-layoutのbundleできた。
 
-```shell
+```sh
 (tskaigi-layoutディレクトリ) npm run dev:view
 ```
+
+## Docker Compose で起動する場合
+
+```sh
+docker compose up -d
+```
+
+http://localhost:9090 でダッシュボードを表示できます。
+
 
 ## 使用方法
 

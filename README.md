@@ -35,13 +35,18 @@ npm ci
 npm run dev
 ```
 
+`SqliteError: no such table: replicant`のエラーが発生した場合は以下でtskaigi-layoutのbundleできた。
+
+```shell
+(tskaigi-layoutディレクトリ) npm run dev:view
+```
+
 ## 使用方法
 
 アプリケーションをビルド後、NodeCGサーバーを立ち上げることでアプリケーションを実行できます。
 
 ```sh
-npm run build
-npm start
+(nodecgディレクトリ) npm start
 ```
 
 実際の使用方法については[アプリケーション内部のマニュアル](https://github.com/tskaigi/tskaigi-layout/blob/main/src/browser/dashboard/data/manual/index.md)を参照してください。

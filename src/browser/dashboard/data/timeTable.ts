@@ -482,4 +482,4 @@ export const timeTable = {
       },
     },
   ],
-} as const satisfies TimeTable;
+} satisfies TimeTable;

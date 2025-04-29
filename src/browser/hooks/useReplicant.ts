@@ -1,6 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { BaseIssue, BaseSchema, safeParse } from "valibot";
 
+type DeepReadonly<T> = {
+  readonly [P in keyof T]: DeepReadonly<T[P]>;
+};
+
 /**
  * 汎用Replicant呼び出し用Hooks
  */

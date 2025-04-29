@@ -22,6 +22,7 @@ type Props = {
   error?: UIError;
   onChangeLayout: ComponentProps<typeof Speaker>["onChangeLayout"];
   onChangeFrameURL?: ComponentProps<typeof Speaker>["onChangeFrameURL"];
+  onChangeName?: ComponentProps<typeof Speaker>["onChangeName"];
   onChangeRoom?: ComponentProps<typeof RoomSelect>["onChangeRoom"];
   onNext?: ComponentProps<typeof TalkIndex>["onNext"];
   onPrev?: ComponentProps<typeof TalkIndex>["onPrev"];
@@ -38,6 +39,7 @@ export const TalkSummary: FC<Props> = ({
   layout,
   onNext,
   onPrev,
+  onChangeName,
   onChangeRoom,
   onChangeLayout,
   onResetTimetable,
@@ -83,6 +85,7 @@ export const TalkSummary: FC<Props> = ({
               title={timeTable[room][talkIndex].title ?? ""}
               layout={layout}
               disabled={isLock}
+              onChangeName={onChangeName}
               onChangeLayout={onChangeLayout}
               onChangeFrameURL={onChangeFrameURL}
             />

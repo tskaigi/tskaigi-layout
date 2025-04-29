@@ -1,7 +1,7 @@
 version: "3"
 services:
   nodecg:
-    image: ghcr.io/nodecg/nodecg:latest
+    image: ghcr.io/nodecg/nodecg:2.3.2
     volumes:
       - "assets:/opt/nodecg/assets:rw"
       - "db:/opt/nodecg/db:rw"

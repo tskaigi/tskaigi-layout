@@ -35,6 +35,14 @@ npm ci
 npm run dev
 ```
 
+## Docker Compose で起動する場合
+
+```sh
+docker compose up -d
+```
+
+http://localhost:9090 でダッシュボードを表示できます。
+
 ## 使用方法
 
 アプリケーションをビルド後、NodeCGサーバーを立ち上げることでアプリケーションを実行できます。

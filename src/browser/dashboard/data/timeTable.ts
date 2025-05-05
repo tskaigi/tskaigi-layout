@@ -1,4 +1,4 @@
-import {TimeTable, TrackItem} from "../../schema/TimeTable";
+import { TimeTable, TrackItem } from "../../schema/TimeTable";
 
 const toggleTalkDay1List: TrackItem[] = [
   {
@@ -12,7 +12,8 @@ const toggleTalkDay1List: TrackItem[] = [
   },
   {
     speakerName: "プログラミングをするパンダ",
-    title: "TypeScriptで実践するクリーンアーキテクチャ ― WebからもCLIからも使えるアプリ設計",
+    title:
+      "TypeScriptで実践するクリーンアーキテクチャ ― WebからもCLIからも使えるアプリ設計",
     social: {
       github: "",
       link: "https://panda-program.com/",
@@ -68,7 +69,8 @@ const toggleTalkDay1List: TrackItem[] = [
 
 const toggleTalkDay2List: TrackItem[] = [
   {
-    title: "技術書をソフトウェア開発する - jsprimerの10年から学ぶ継続的メンテナンスの技術",
+    title:
+      "技術書をソフトウェア開発する - jsprimerの10年から学ぶ継続的メンテナンスの技術",
     speakerName: "azu",
     social: {
       twitter: "azu_re",
@@ -77,7 +79,8 @@ const toggleTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "機能的凝集の概念を用いて複数ロール、類似の機能を多く含むシステムのフロントエンドのコンポーネントを適切に分割する",
+    title:
+      "機能的凝集の概念を用いて複数ロール、類似の機能を多く含むシステムのフロントエンドのコンポーネントを適切に分割する",
     speakerName: "IkedaNoritaka",
     social: {
       github: "",
@@ -104,7 +107,8 @@ const toggleTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "TypeScript Language Service Plugin で CSS Modules の開発体験を改善する",
+    title:
+      "TypeScript Language Service Plugin で CSS Modules の開発体験を改善する",
     speakerName: "mizdra",
     social: {
       github: "",
@@ -197,7 +201,8 @@ const ascendTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "TSConfig Solution Style & subpath imports でファイル単位で型を切り替える",
+    title:
+      "TSConfig Solution Style & subpath imports でファイル単位で型を切り替える",
     speakerName: "kotori",
     social: {
       twitter: "maminami_minami",
@@ -215,7 +220,8 @@ const ascendTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "コンポーネントライブラリで実現する、アクセシビリティの正しい実装パターン",
+    title:
+      "コンポーネントライブラリで実現する、アクセシビリティの正しい実装パターン",
     speakerName: "たじまん",
     social: {
       twitter: "schktjm",
@@ -224,7 +230,8 @@ const ascendTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "AWS LambdaをTypeScriptで動かして分かった、Node.jsのTypeScriptサポートの利点と課題",
+    title:
+      "AWS LambdaをTypeScriptで動かして分かった、Node.jsのTypeScriptサポートの利点と課題",
     speakerName: "Masaki Suzuki",
     social: {
       twitter: "makky12",
@@ -233,7 +240,8 @@ const ascendTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "fast-checkとneverthrowのPBT+Result型で堅牢なビジネスロジックを実現する",
+    title:
+      "fast-checkとneverthrowのPBT+Result型で堅牢なビジネスロジックを実現する",
     speakerName: "上田慶祐",
     social: {
       github: "",
@@ -260,7 +268,8 @@ const ascendTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "型パズルを好きになるために、競プロを型システムだけで解いてみることにした",
+    title:
+      "型パズルを好きになるために、競プロを型システムだけで解いてみることにした",
     speakerName: "いまいまい",
     social: {
       twitter: "imaimai17468",
@@ -269,7 +278,8 @@ const ascendTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "タイプレベルリファクタリング奮闘記〜この「型パズル」は読めません！〜",
+    title:
+      "タイプレベルリファクタリング奮闘記〜この「型パズル」は読めません！〜",
     speakerName: "Yugo Yagita",
     social: {
       github: "",
@@ -299,7 +309,8 @@ const ascendTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "型システムを活用した ESLint カスタムルール開発入門 〜固有ドメインにおけるコーディング規約を開発する〜",
+    title:
+      "型システムを活用した ESLint カスタムルール開発入門 〜固有ドメインにおけるコーディング規約を開発する〜",
     speakerName: "山梨 蓮",
     social: {
       twitter: "ren_yamanashi",
@@ -335,7 +346,8 @@ const ascendTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "これは型破り？型安全？真実はいつもひとつ！（じゃないかもしれない）TypeScriptクイズ〜〜〜〜！！！！！",
+    title:
+      "これは型破り？型安全？真実はいつもひとつ！（じゃないかもしれない）TypeScriptクイズ〜〜〜〜！！！！！",
     speakerName: "君田 祥一",
     social: {
       twitter: "kimi_koma1111",
@@ -446,7 +458,8 @@ const leveragesTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "転生したらTypeScriptのEnumだった件～型安全性とエコシステムの変化で挫けそうになっているんだが～",
+    title:
+      "転生したらTypeScriptのEnumだった件～型安全性とエコシステムの変化で挫けそうになっているんだが～",
     speakerName: "やまのく",
     social: {
       twitter: "yamanoku",
@@ -473,7 +486,8 @@ const leveragesTalkDay1List: TrackItem[] = [
     },
   },
   {
-    title: "Valibot Schema Driven UI - ノーコードWebサイトビルダーを実装してみよう！",
+    title:
+      "Valibot Schema Driven UI - ノーコードWebサイトビルダーを実装してみよう！",
     speakerName: "宮城広隆(@MH4GF)",
     social: {
       twitter: "MH4GF",
@@ -521,7 +535,8 @@ const leveragesTalkDay1List: TrackItem[] = [
 
 const leveragesTalkDay2List: TrackItem[] = [
   {
-    title: "TypeScriptとVercel AI SDKで実現するLLMアプリケーション開発：フロントエンドからバックエンド、そしてChrome拡張まで",
+    title:
+      "TypeScriptとVercel AI SDKで実現するLLMアプリケーション開発：フロントエンドからバックエンド、そしてChrome拡張まで",
     speakerName: "加瀬健太（Kesin11）",
     social: {
       twitter: "Kesin11",
@@ -575,7 +590,8 @@ const leveragesTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "クラサバ境界を失った現代 TypeScript コードベースに秩序をもたらしたい",
+    title:
+      "クラサバ境界を失った現代 TypeScript コードベースに秩序をもたらしたい",
     speakerName: "Yo Iwamoto",
     social: {
       twitter: "yoiwamoto",
@@ -593,7 +609,8 @@ const leveragesTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "TypeScript製IaCツールのAWS CDKが様々な言語で実装できる理由 〜他言語変換の仕組み〜",
+    title:
+      "TypeScript製IaCツールのAWS CDKが様々な言語で実装できる理由 〜他言語変換の仕組み〜",
     speakerName: "k.goto",
     social: {
       twitter: "365_step_tech",
@@ -611,7 +628,8 @@ const leveragesTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "declaration mergingの威力：ライブラリアップデート時の書き換え作業を90%短縮するテクニック",
+    title:
+      "declaration mergingの威力：ライブラリアップデート時の書き換え作業を90%短縮するテクニック",
     speakerName: "Yuma Takei",
     social: {
       twitter: "yutake27",

@@ -38,7 +38,7 @@ export const TalkDescription: FC<Props> = ({
   social,
   areaName = "",
 }) => {
-  const socials = Object.entries(social ?? {}).filter(([,v]) => v !== "");
+  const socials = Object.entries(social ?? {}).filter(([, v]) => v !== "");
 
   return (
     <div style={{ gridArea: areaName }} className={styles.container}>

@@ -34,11 +34,11 @@ export const SponsorArea: FC<Props> = ({
     <div style={{ gridArea: areaName }} className={styles.container}>
       <img src={goldfish} className={styles.goldfish} alt="" />
       <div className={styles.plan}>
-        <h3 className={styles.title}>Platinum Sponsors</h3>
+        <h3 className={styles.title}>PLATINUM SPONSORS</h3>
         <ul className={styles.list}>
           {platinum.map((image) => {
             return (
-              <li key={image}>
+              <li key={image} className={styles.item}>
                 <img className={styles.logo} src={image} alt="" />
               </li>
             );
@@ -46,12 +46,13 @@ export const SponsorArea: FC<Props> = ({
         </ul>
       </div>
       <div className={styles.plan}>
-        <h3 className={styles.title}>Gold Sponsors</h3>
+        <h3 className={styles.title}>GOLD SPONSORS</h3>
         <ul className={styles.grid}>
           {gold.map((image, index) => {
             return (
               <li
                 key={image}
+                className={styles.cell}
                 data-position={index % 2 === 0 ? "odd" : "even"}
                 hidden={Math.floor(index / 2) !== currentIndex}
               >
@@ -100,9 +101,17 @@ const styles = {
     justify-content: center;
   `,
   list: css`
-    margin: 0 80px;
+    display: flex;
+    flex-direction: column;
+    height: 340px;
+    gap: 14px;
+    margin: 0;
     padding: 0;
     list-style-type: none;
+  `,
+  item: css`
+    flex: 1;
+    min-height: 0;
   `,
   grid: css`
     margin: 0 30px;
@@ -111,9 +120,15 @@ const styles = {
     grid-template-columns: 1fr 1fr;
     gap: 28px;
     list-style-type: none;
+    height: 46px;
+  `,
+  cell: css`
+    min-height: 0;
   `,
   logo: css`
-    max-width: 100%;
-    mix-blend-mode: darken;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   `,
 };

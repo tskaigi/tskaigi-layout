@@ -9,6 +9,7 @@ export const TrackItemSchema = object({
     twitter: string(),
   }),
 });
+export type TrackItem = InferOutput<typeof TrackItemSchema>;
 
 export const TimeTableSchema = object({
   trackOne: array(TrackItemSchema),

@@ -1,485 +1,664 @@
-import type { TimeTable } from "../../schema/TimeTable";
+import { TimeTable, TrackItem } from "../../schema/TimeTable";
+
+const toggleTalkDay1List: TrackItem[] = [
+  {
+    speakerName: "kkk4oru",
+    title: "checker.tsに対して真剣に向き合う",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    speakerName: "プログラミングをするパンダ",
+    title:
+      "TypeScriptで実践するクリーンアーキテクチャ ― WebからもCLIからも使えるアプリ設計",
+    social: {
+      github: "",
+      link: "https://panda-program.com/",
+      twitter: "",
+    },
+  },
+  {
+    speakerName: "takanorip",
+    title: "堅牢なデザインシステムをつくるためのTypeScript活用",
+    social: {
+      github: "takanorip",
+      link: "https://takanorip.com",
+      twitter: "takanoripe",
+    },
+  },
+  {
+    speakerName: "Yuku Kotani",
+    title: "AI Coding Agent Enablement in TypeScript",
+    social: {
+      github: "yukukotani",
+      link: "https://yuku.dev",
+      twitter: "yukukotani",
+    },
+  },
+  {
+    speakerName: "ymrl",
+    title: "TypeScriptとReactで、WAI-ARIAの属性を正しく利用する",
+    social: {
+      github: "ymrl",
+      link: "",
+      twitter: "ymrl",
+    },
+  },
+  {
+    speakerName: "Sosuke Suzuki",
+    title: "TypeScriptとは何であって何でなく、誰のもので、どこへ向かうのか",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    speakerName: "unvalley",
+    title: "Rust製JavaScript/TypeScript Linterにおけるプラグイン実装の裏側",
+    social: {
+      github: "unvalley",
+      link: "https://unvalley.me",
+      twitter: "unvalley_",
+    },
+  },
+];
+
+const toggleTalkDay2List: TrackItem[] = [
+  {
+    title:
+      "技術書をソフトウェア開発する - jsprimerの10年から学ぶ継続的メンテナンスの技術",
+    speakerName: "azu",
+    social: {
+      twitter: "azu_re",
+      github: "azu",
+      link: "https://jsprimer.net/",
+    },
+  },
+  {
+    title:
+      "機能的凝集の概念を用いて複数ロール、類似の機能を多く含むシステムのフロントエンドのコンポーネントを適切に分割する",
+    speakerName: "IkedaNoritaka",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "複雑なフォームを継続的に開発していくための技術選定・設計・実装",
+    speakerName: "izumin5210",
+    social: {
+      twitter: "izumin5210",
+      github: "izumin5210",
+      link: "",
+    },
+  },
+  {
+    title: "TS特化Clineプログラミング",
+    speakerName: "mizchi",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title:
+      "TypeScript Language Service Plugin で CSS Modules の開発体験を改善する",
+    speakerName: "mizdra",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "ts-morphを利用して編集可能なコード生成を実現する",
+    speakerName: "yuta-ike",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "Type ChallengesにPRを出して新しい問題を追加した話",
+    speakerName: "Kanon",
+    social: {
+      twitter: "ysknsid25",
+      github: "ysknsid25",
+      link: "https://dev.inorinrinrin.com/",
+    },
+  },
+  {
+    title: "Panda-CSS はどのように型安全にしているのか",
+    speakerName: "加藤貴裕",
+    social: {
+      twitter: "doz13189",
+      github: "doz13189",
+      link: "",
+    },
+  },
+  {
+    title: "ProxyとTypeScriptのおいしい関係",
+    speakerName: "Motoki Shakagori/ほとけ",
+    social: {
+      twitter: "schwmtl",
+      github: "m-shaka",
+      link: "https://linktr.ee/mshaka",
+    },
+  },
+  {
+    title: "型がない世界に生まれ落ちて 〜TypeScript運用進化の歴史〜",
+    speakerName: "成原 聡一朗",
+    social: {
+      github: "feel_sooo_baaad",
+      link: "https://suzuri.jp/VoodooRhythm",
+      twitter: "",
+    },
+  },
+];
+
+const ascendTalkDay1List: TrackItem[] = [
+  {
+    title: "高度な型付け、どう教える？",
+    speakerName: "progfay",
+    social: {
+      twitter: "progfay",
+      github: "progfay",
+      link: "",
+    },
+  },
+  {
+    title: "静的解析で実現したいことから逆算して学ぶTypeScript Compiler",
+    speakerName: "Kazushi Konosu",
+    social: {
+      link: "",
+      twitter: "kazushikonosu",
+      github: "kazushisan",
+    },
+  },
+  {
+    title: "Language Serverと喋ろう",
+    speakerName: "ぴざきゃっと",
+    social: {
+      twitter: "pizzacat83b",
+      github: "pizzacat83",
+      link: "https://pizzacat83.com",
+    },
+  },
+  {
+    title: "推論された型の移植性エラーTS2742に挑む",
+    speakerName: "elecdeer",
+    social: {
+      twitter: "elecdeerdev",
+      github: "elecdeer",
+      link: "https://elecdeer.dev/",
+    },
+  },
+  {
+    title:
+      "TSConfig Solution Style & subpath imports でファイル単位で型を切り替える",
+    speakerName: "kotori",
+    social: {
+      twitter: "maminami_minami",
+      github: "minami-minami",
+      link: "",
+    },
+  },
+  {
+    title: "主要ライブラリの実例に学ぶ、TypeScriptで実現する型安全な座標定義",
+    speakerName: "原口 公輔",
+    social: {
+      twitter: "Tirol_JPN",
+      github: "TirolJPN",
+      link: "https://tirol-jpn.com/pages/about",
+    },
+  },
+  {
+    title:
+      "コンポーネントライブラリで実現する、アクセシビリティの正しい実装パターン",
+    speakerName: "たじまん",
+    social: {
+      twitter: "schktjm",
+      github: "schktjm",
+      link: "https://bsky.app/profile/schktjm.bsky.social",
+    },
+  },
+  {
+    title:
+      "AWS LambdaをTypeScriptで動かして分かった、Node.jsのTypeScriptサポートの利点と課題",
+    speakerName: "Masaki Suzuki",
+    social: {
+      twitter: "makky12",
+      github: "smt7174",
+      link: "https://makky12.hatenablog.com/",
+    },
+  },
+  {
+    title:
+      "fast-checkとneverthrowのPBT+Result型で堅牢なビジネスロジックを実現する",
+    speakerName: "上田慶祐",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "Interface vs Types 〜型推論が過多推論〜",
+    speakerName: "omote",
+    social: {
+      link: "",
+      twitter: "HirokiOmote",
+      github: "HirokiOmote",
+    },
+  },
+  {
+    title: "Wasmを用いて他言語資産をTypeScriptで活用する",
+    speakerName: "赤木 勇統",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title:
+      "型パズルを好きになるために、競プロを型システムだけで解いてみることにした",
+    speakerName: "いまいまい",
+    social: {
+      twitter: "imaimai17468",
+      github: "imaimai17468",
+      link: "https://imaimai.tech/",
+    },
+  },
+  {
+    title:
+      "タイプレベルリファクタリング奮闘記〜この「型パズル」は読めません！〜",
+    speakerName: "Yugo Yagita",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+];
+
+const ascendTalkDay2List: TrackItem[] = [
+  {
+    title: "フロントエンドがTypeScriptなら、バックエンドはPHPでもいいじゃない",
+    speakerName: "富所 亮",
+    social: {
+      twitter: "hanhan1978",
+      github: "hanhan1978",
+      link: "https://blog.hanhans.net",
+    },
+  },
+  {
+    title: "Pragmatic Functional Programming in TypeScript",
+    speakerName: "yasaichi",
+    social: {
+      twitter: "_yasaichi",
+      github: "yasaichi",
+      link: "https://blog.yasaichi.com/",
+    },
+  },
+  {
+    title:
+      "型システムを活用した ESLint カスタムルール開発入門 〜固有ドメインにおけるコーディング規約を開発する〜",
+    speakerName: "山梨 蓮",
+    social: {
+      twitter: "ren_yamanashi",
+      github: "ren-yamanashi",
+      link: "https://zenn.dev/yamaren",
+    },
+  },
+  {
+    title: "VueUse から学ぶ実践 TypeScript",
+    speakerName: "ツノ",
+    social: {
+      github: "",
+      link: "",
+      twitter: "2nofa11",
+    },
+  },
+  {
+    title: "型推論の扉を開く―集合論と構造的型制約で理解する中級へのステップ",
+    speakerName: "栃川晃佑",
+    social: {
+      github: "",
+      link: "https://product.plex.co.jp/",
+      twitter: "Web_TochiTech",
+    },
+  },
+  {
+    title: "TypeScript ASTとJSDocで実現するコードの自動削除",
+    speakerName: "川野賢一",
+    social: {
+      twitter: "k_rf_",
+      github: "k-rf",
+      link: "",
+    },
+  },
+  {
+    title:
+      "これは型破り？型安全？真実はいつもひとつ！（じゃないかもしれない）TypeScriptクイズ〜〜〜〜！！！！！",
+    speakerName: "君田 祥一",
+    social: {
+      twitter: "kimi_koma1111",
+      github: "kimitashoichi",
+      link: "https://kimitashoichi.github.io/Profile",
+    },
+  },
+  {
+    title: "Lookback TypeScript ESM support and what should we do now.",
+    speakerName: "左治木 隆成",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: `"良い"TSのコードを書く為のマインドセット`,
+    speakerName: "Kei",
+    social: {
+      twitter: "kei_english_ca",
+      github: "kei95",
+      link: "https://www.youtube.com/@kei_NA",
+    },
+  },
+  {
+    title: "令和最新版TypeScriptでのnpmパッケージ開発",
+    speakerName: "odan",
+    social: {
+      twitter: "odan3240",
+      github: "odanado",
+      link: "",
+    },
+  },
+  {
+    title: "コンパイルオプションで変わる型世界",
+    speakerName: "池田敬祐",
+    social: {
+      twitter: "ike_keichan",
+      github: "ike-keichan",
+      link: "",
+    },
+  },
+  {
+    title: "TypeScriptのmoduleオプションを改めて整理する",
+    speakerName: "おおいし (bicstone)",
+    social: {
+      twitter: "bicstone_me",
+      github: "bicstone",
+      link: "https://bicstone.me/",
+    },
+  },
+  {
+    title: "Project Referencesを活用した実行環境ごとのtsconfig最適化",
+    speakerName: "板井俊樹",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+];
+
+const leveragesTalkDay1List: TrackItem[] = [
+  {
+    title: "Full-Stack TypeScript x GraphQLで実現する漸進的アーキテクチャ",
+    speakerName: "Sohei Takeno",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "SignalとObservable―新たなデータモデルを解きほぐす",
+    speakerName: "lacolaco",
+    social: {
+      twitter: "laco2net",
+      github: "lacolaco",
+      link: "https://lacolaco.net",
+    },
+  },
+  {
+    title: "TSConfigからTypeScriptの世界を覗く",
+    speakerName: "らいと",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "ハッカソンでTypeScriptを使った実体験",
+    speakerName: "河村悠太",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "『Python→TypeScript』オンボーディング奮闘記",
+    speakerName: "龍野 卓己",
+    social: {
+      twitter: "takumi_t_jp",
+      github: "Exerea",
+      link: "",
+    },
+  },
+  {
+    title:
+      "転生したらTypeScriptのEnumだった件～型安全性とエコシステムの変化で挫けそうになっているんだが～",
+    speakerName: "やまのく",
+    social: {
+      twitter: "yamanoku",
+      github: "yamanoku",
+      link: "https://yamanoku.net",
+    },
+  },
+  {
+    title: "URLPatternから始めるWebフレームワーク開発入門",
+    speakerName: "ryuapp",
+    social: {
+      github: "ryuapp",
+      link: "https://ryu.app",
+      twitter: "",
+    },
+  },
+  {
+    title: "TypeScriptエンジニアがAndroid開発の世界に飛び込んだ話",
+    speakerName: "yui_tang",
+    social: {
+      twitter: "yui_tang",
+      github: "YUISAKAMOTO",
+      link: "",
+    },
+  },
+  {
+    title:
+      "Valibot Schema Driven UI - ノーコードWebサイトビルダーを実装してみよう！",
+    speakerName: "宮城広隆(@MH4GF)",
+    social: {
+      twitter: "MH4GF",
+      github: "mh4gf",
+      link: "https://mh4gf.dev",
+    },
+  },
+  {
+    title: "Rust製JavaScript EngineのTypeScriptサポート",
+    speakerName: "yossydev",
+    social: {
+      twitter: "yossydev",
+      github: "yossydev",
+      link: "https://yossy.dev/",
+    },
+  },
+  {
+    title: "TypeScript だけを書いて Tauri でデスクトップアプリを作ろう",
+    speakerName: "小松 翔 (tris)",
+    social: {
+      twitter: "tris5572",
+      github: "tris5572",
+      link: "",
+    },
+  },
+  {
+    title: "型安全なDrag and Dropの設計を考える",
+    speakerName: "yudppp",
+    social: {
+      twitter: "yudppp",
+      github: "yudppp",
+      link: "https://blog.yudppp.com/",
+    },
+  },
+  {
+    title: "GitHub ActionsをTypeScriptで作ろう！",
+    speakerName: "じょーし（上司陽平）",
+    social: {
+      twitter: "paper2parasol",
+      github: "paper2",
+      link: "https://paper2.hatenablog.com/",
+    },
+  },
+];
+
+const leveragesTalkDay2List: TrackItem[] = [
+  {
+    title:
+      "TypeScriptとVercel AI SDKで実現するLLMアプリケーション開発：フロントエンドからバックエンド、そしてChrome拡張まで",
+    speakerName: "加瀬健太（Kesin11）",
+    social: {
+      twitter: "Kesin11",
+      github: "Kesin11",
+      link: "https://zenn.dev/kesin11",
+    },
+  },
+  {
+    title: "feature flag 自動お掃除のための TypeScript メタプログラミング",
+    speakerName: "azrsh",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "Web Streams APIの基本と実践、TypeScriptでの活用法",
+    speakerName: "tasshi",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title: "Result型、自前で書くか、ライブラリ使うか",
+    speakerName: "majimaccho",
+    social: {
+      twitter: "majimaccho_",
+      github: "majimaccho",
+      link: "https://zenn.dev/mj2mkt",
+    },
+  },
+  {
+    title: "型付け力を強化するための Hoogle のすゝめ",
+    speakerName: "TAKASE Kazuyuki (@Guvalif)",
+    social: {
+      twitter: "guvalif",
+      github: "Guvalif",
+      link: "https://www.wantedly.com/id/guvalif",
+    },
+  },
+  {
+    title: "React19で変化したuseReducerの型から学ぶTypeScriptの型推論",
+    speakerName: "k8o",
+    social: {
+      twitter: "",
+      github: "k35o",
+      link: "https://k8o.me",
+    },
+  },
+  {
+    title:
+      "クラサバ境界を失った現代 TypeScript コードベースに秩序をもたらしたい",
+    speakerName: "Yo Iwamoto",
+    social: {
+      twitter: "yoiwamoto",
+      github: "yo-iwamoto",
+      link: "https://yo-iwamoto.me",
+    },
+  },
+  {
+    title: "君だけのオリジナル async / await を作ろう",
+    speakerName: "susisu",
+    social: {
+      twitter: "susisu2413",
+      github: "susisu",
+      link: "https://susisu.hatenablog.com/",
+    },
+  },
+  {
+    title:
+      "TypeScript製IaCツールのAWS CDKが様々な言語で実装できる理由 〜他言語変換の仕組み〜",
+    speakerName: "k.goto",
+    social: {
+      twitter: "365_step_tech",
+      github: "go-to-k",
+      link: "https://aws.amazon.com/jp/developer/community/heroes/kenta-goto/",
+    },
+  },
+  {
+    title: "ts-morph実践：型を利用するcodemodのテクニック",
+    speakerName: "ypresto",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    title:
+      "declaration mergingの威力：ライブラリアップデート時の書き換え作業を90%短縮するテクニック",
+    speakerName: "Yuma Takei",
+    social: {
+      twitter: "yutake27",
+      github: "yutake27",
+      link: "https://zenn.dev/yutake27",
+    },
+  },
+  {
+    title: "バリデーションライブラリ徹底比較",
+    speakerName: "田中勇太",
+    social: {
+      twitter: "nayuta999999",
+      github: "Yuta123456",
+      link: "",
+    },
+  },
+  {
+    title: "Standard Schema: スキーマライブラリの統一規格とは何か",
+    speakerName: "Nozomu Ikuta",
+    social: {
+      link: "",
+      twitter: "nozomuikuta",
+      github: "nozomuikuta",
+    },
+  },
+];
 
 export const timeTable = {
-  trackOne: [
-    {
-      // オープニングトークを表示する必要があるので手動調整対応
-      title: "TSKaigi 2024 Opening Talk",
-      speakerName: "竹下義晃(takezoux2)",
-      social: {
-        github: "",
-        link: "",
-        twitter: "",
-      },
-    },
-    {
-      title: "Keynote: What's New in TypeScript",
-      speakerName: "Daniel Rosenwasser",
-      social: {
-        github: "DanielRosenwasser",
-        link: "https://bsky.app/profile/danr.bsky.social",
-        twitter: "drosenwasser",
-      },
-    },
-    {
-      title:
-        "フロントエンドもバックエンドもインフラも… 全てをTypeScriptで統一したらこうなった！",
-      speakerName: "君田 祥一",
-      social: {
-        github: "kimitashoichi",
-        link: "https://kimitashoichi.github.io/Profile",
-        twitter: "kimi_koma1111",
-      },
-    },
-    {
-      title: "TypeScript化の旅: Helpfeelが辿った試行錯誤と成功の道のり",
-      speakerName: "寺本大輝",
-      social: {
-        github: "teramotodaiki",
-        link: "",
-        twitter: "teramotodaiki",
-      },
-    },
-    {
-      title:
-        "新サービス Progate Path の演習で TypeScript を採用して見えた教材観点からの利点と課題",
-      speakerName: "島津 真人",
-      social: {
-        github: "makotoshimazu",
-        link: "",
-        twitter: "MakotoShimazu",
-      },
-    },
-    {
-      title: "PMF達成の立役者！Full TypeScript Architecture の選定背景と構成",
-      speakerName: "丹羽 健",
-      social: {
-        github: "",
-        link: "https://product.career.ascendlogi.co.jp/",
-        twitter: "niwa_takeru",
-      },
-    },
-    {
-      title: "TypeScript 関数型バックエンド開発のリアル",
-      speakerName: "伊藤 直也",
-      social: {
-        github: "naoya",
-        link: "",
-        twitter: "naoya_ito",
-      },
-    },
-    {
-      title:
-        "TypeScript の抽象構文木を用いた、数百を超える API の大規模リファクタリング戦略",
-      speakerName: "白栁 広樹",
-      social: {
-        github: "yanaemon",
-        link: "",
-        twitter: "yanaemon169",
-      },
-    },
-    {
-      title: "Step by Stepで学ぶ、ADT(代数的データ型)、モナドからEffect-TSまで",
-      speakerName: "竹下義晃(takezoux2)",
-      social: {
-        github: "takezoux2",
-        link: "",
-        twitter: "takezoux2",
-      },
-    },
-    {
-      title: "ハードウェアを動かすTypeScriptの世界",
-      speakerName: "9wick",
-      social: {
-        github: "9wick",
-        link: "https://9wick.com/",
-        twitter: "9wick",
-      },
-    },
-    {
-      title: "TypeScriptとGraphQLで実現する型安全なAPI実装",
-      speakerName: "Kazuhito Hokamura",
-      social: {
-        github: "hokaccha",
-        link: "",
-        twitter: "hokaccha",
-      },
-    },
-    {
-      title: "Prettierの未来を考える",
-      speakerName: "Sosuke Suzuki",
-      social: {
-        github: "sosukesuzuki",
-        link: "https://sosukesuzuki.dev",
-        twitter: "__sosukeSuzuki",
-      },
-    },
-    {
-      title: "TypeScriptが学生のエンジニアコミュニティ参加を促進する",
-      speakerName: "NoritakaIkeda",
-      social: {
-        github: "NoritakaIkeda",
-        link: "",
-        twitter: "omotidaisukijp",
-      },
-    },
-    {
-      title: "Reactでハードウェア制御できるEdison.jsを作っている",
-      speakerName: "Allen Shintani",
-      social: {
-        github: "AllenShintani",
-        link: "https://edison-js-document.vercel.app/",
-        twitter: "allenganbaru",
-      },
-    },
-    {
-      title:
-        "多言語化対応における TypeScript の型定義を通して開発のしやすさについて考えた",
-      speakerName: "nabeliwo",
-      social: {
-        github: "nabeliwo",
-        link: "https://blog.nabeliwo.com",
-        twitter: "nabeliwo",
-      },
-    },
-  ],
-  trackTwo: [
-    {
-      title: "TypeScript ASTを利用したコードジェネレーターの実装入門",
-      speakerName: "Himenon",
-      social: {
-        github: "Himenon",
-        link: "https://himenon.github.io/",
-        twitter: "Himenoglyph",
-      },
-    },
-    {
-      title: "TypescriptでのContextualな構造化ロギングと社内全体への導入！",
-      speakerName: "瀬尾 光希",
-      social: {
-        github: "",
-        link: "https://my.prairie.cards/u/seoink",
-        twitter: "_seoink",
-      },
-    },
-    {
-      title: "TypeScriptで使いやすいOpenAPIの書き方",
-      speakerName: "上坂 直輝",
-      social: {
-        github: "yukimochi",
-        link: "",
-        twitter: "",
-      },
-    },
-    {
-      title: "生成 AI と Cloud Workstations で始めるクラウド AI ネイティブ開発",
-      speakerName: "Hiroyuki Momoi",
-      social: {
-        github: "m0m0i",
-        link: "",
-        twitter: "",
-      },
-    },
-    {
-      title: "EARTHBRAINが挑むグローバルな課題とTypeScriptの活用事例について",
-      speakerName: "yasaichi",
-      social: {
-        github: "yasaichi",
-        link: "https://earthbrain.notion.site/EARTHBRAIN-Tech-3775fb71b41342aebf0aee6848d722bd",
-        twitter: "_yasaichi",
-      },
-    },
-    {
-      title: "TypeScriptで統一したアーキテクチャ",
-      speakerName: "井関正也",
-      social: {
-        github: "iseki-masaya",
-        link: "https://even-eko.hatenablog.com/",
-        twitter: "iskmsy",
-      },
-    },
-    {
-      title: "TypeScriptと型のパフォーマンス",
-      speakerName: "ypresto",
-      social: {
-        github: "ypresto",
-        link: "",
-        twitter: "yuya_presto",
-      },
-    },
-    {
-      title: "TypeScriptから始めるVR生活",
-      speakerName: "TamaG",
-      social: {
-        github: "TAMAGOKAKEG",
-        link: "",
-        twitter: "TAMAGOKAKE_G_",
-      },
-    },
-    {
-      title: "TypeScript をパワフルに使って開発したい！",
-      speakerName: "ユーン",
-      social: {
-        github: "euxn23",
-        link: "https://blog.euxn.me",
-        twitter: "euxn23",
-      },
-    },
-    {
-      title: "TypeScriptでもLLMアプリケーション開発！LangChain.js入門",
-      speakerName: "r-kagaya",
-      social: {
-        github: "",
-        link: "",
-        twitter: "ry0_kaga",
-      },
-    },
-    {
-      title: "TanStack Routerで型安全かつ効率的なルーティングを実現",
-      speakerName: "安井大晟（ytaisei）",
-      social: {
-        github: "taisei-13046",
-        link: "",
-        twitter: "ytaisei_",
-      },
-    },
-    {
-      title: "tRPCを実務に導入して分かった旨味と苦味",
-      speakerName: "海老原 圭吾",
-      social: {
-        github: "misoton665",
-        link: "",
-        twitter: "misoton665",
-      },
-    },
-    {
-      title: "サービス開発におけるVue3とTypeScriptの親和性について",
-      speakerName: "からころ",
-      social: {
-        github: "tsukuha",
-        link: "https://zenn.dev/karan_coron",
-        twitter: "karan_corons",
-      },
-    },
-    {
-      title: "Exploring type-informed lint rules in Rust based Linters",
-      speakerName: "unvalley",
-      social: {
-        github: "unvalley",
-        link: "http://unvalley.me",
-        twitter: "unvalley_",
-      },
-    },
-    {
-      title: "TypeScriptのパフォーマンス改善",
-      speakerName: "やじはむ",
-      social: {
-        github: "yajihum",
-        link: "https://blog.yajihum.dev/",
-        twitter: "yajihum",
-      },
-    },
-    {
-      title: "ts-morphを使ってコードリプレイスとASTへのハードルを下げる！",
-      speakerName: "姫野 佑介",
-      social: {
-        github: "nyawach",
-        link: "https://hyme.site/",
-        twitter: "_hyme_",
-      },
-    },
-    {
-      title: "SWC Transformerから見るTypeScript関数記述ベストプラクティス",
-      speakerName: "Kaito Fujimura",
-      social: {
-        github: "fujiyamaorange",
-        link: "https://fujiyamaorange.vercel.app/",
-        twitter: "fujiyamaorange",
-      },
-    },
-    {
-      title: "TypeScriptのコード生成をつらくしないために",
-      speakerName: "ノーン（nkowne63）",
-      social: {
-        github: "nkowne63",
-        link: "",
-        twitter: "nkowne63",
-      },
-    },
-    {
-      title: "Documentation testsの恩恵",
-      speakerName: "ssssota",
-      social: {
-        github: "ssssota",
-        link: "",
-        twitter: "ssssotaro",
-      },
-    },
-    {
-      title: "Full TypeScriptだから実現できる世界線",
-      speakerName: "k-ichirof",
-      social: {
-        github: "k1rof18",
-        link: "",
-        twitter: "k1rof18",
-      },
-    },
-    {
-      title: "Real World Type Puzzle and Code Generation",
-      speakerName: "Yuku Kotani",
-      social: {
-        github: "yukukotani",
-        link: "https://yuku.dev",
-        twitter: "yukukotani",
-      },
-    },
-  ],
-  trackThree: [
-    {
-      title: "Prisma ORMを2年運用して培ったノウハウを共有する",
-      speakerName: "tockn (Takuto Sato)",
-      social: {
-        github: "tockn",
-        link: "",
-        twitter: "tockn_s",
-      },
-    },
-    {
-      title: "エンジニアの技術的な意思決定を支えるADR - LayerXの活用事例",
-      speakerName: "松本駿",
-      social: {
-        github: "Toshi1127",
-        link: "",
-        twitter: "Toshi11274",
-      },
-    },
-    {
-      title: "toggle holdingsとTSあるいはTSKaigi",
-      speakerName: "Tatsuro Hisamori",
-      social: {
-        github: "myfinder",
-        link: "",
-        twitter: "myfinder",
-      },
-    },
-    {
-      title: "高まった熱量をぶつけられるコミュニティ活動のススメ",
-      speakerName: "河又 涼",
-      social: {
-        github: "",
-        link: "",
-        twitter: "r_kawamata",
-      },
-    },
-    {
-      title: "こんなTypescriptは嫌だ",
-      speakerName: "佐藤 拓人",
-      social: {
-        github: "taku7777777",
-        link: "https://qiita.com/takuuuuuuu777",
-        twitter: "takuuuuuuu777",
-      },
-    },
-    {
-      title: "チームで挑むTypeScriptコードの漸進的改善",
-      speakerName: "髙橋 佑太",
-      social: {
-        github: "YTakahashii",
-        link: "",
-        twitter: "Wakeupsloth",
-      },
-    },
-    {
-      title: "Ubie のプロダクト開発における技術的レバレッジポイント3選",
-      speakerName: "yoheikikuta",
-      social: {
-        github: "yoheikikuta",
-        link: "https://yoheikikuta.github.io/",
-        twitter: "yohei_kikuta",
-      },
-    },
-    {
-      title: "部分型の代数的模型",
-      speakerName: "PADAone",
-      social: {
-        github: "yo-goto",
-        link: "https://publish.obsidian.md/pd1-notes/start-page",
-        twitter: "pd1xx",
-      },
-    },
-    {
-      title:
-        "複雑なビジネスルールに挑む：正確性と効率性を両立するfp-tsのチーム活用術",
-      speakerName: "kosui",
-      social: {
-        github: "iwasa-kosui",
-        link: "https://www.kosui.me/",
-        twitter: "kosui_me",
-      },
-    },
-    {
-      title: "Type-safety in Angular",
-      speakerName: "lacolaco",
-      social: {
-        github: "lacolaco",
-        link: "https://lacolaco.net",
-        twitter: "laco2net",
-      },
-    },
-    {
-      title: "TypeScriptできると思ったのは勘違いだった件",
-      speakerName: "Daishi Kato (加藤大志)",
-      social: {
-        github: "dai-shi",
-        link: "https://daishikato.com",
-        twitter: "dai_shi",
-      },
-    },
-    {
-      title: "Effectで作る堅牢でスケーラブルなAPIゲートウェイ",
-      speakerName: "yasaichi",
-      social: {
-        github: "yasaichi",
-        link: "",
-        twitter: "_yasaichi",
-      },
-    },
-    {
-      title:
-        "Introduction to Database Connection Management Patterns in TypeScript",
-      speakerName: "Sugar",
-      social: {
-        github: "sugar-cat7",
-        link: "https://sugar-cat7.github.io/portfolio",
-        twitter: "sugar235711",
-      },
-    },
-    {
-      title: "Prismaでスキーマ変更を行う際のベストプラクティス",
-      speakerName: "ryusaka",
-      social: {
-        github: "ryusaka",
-        link: "",
-        twitter: "",
-      },
-    },
-    {
-      title: "Denoで作る快適な “as Code” プラットフォーム",
-      speakerName: "pizzacat83",
-      social: {
-        github: "pizzacat83",
-        link: "https://pizzacat83.com/",
-        twitter: "pizzacat83b",
-      },
-    },
-    {
-      title: "ｽﾀｯｸﾁｬﾝ -TypeScriptで動くオープンソースロボット-",
-      speakerName: "ししかわ",
-      social: {
-        github: "meganetaaan",
-        link: "https://meganetaaan.jp/",
-        twitter: "stack_chan",
-      },
-    },
-  ],
+  trackOne: [...toggleTalkDay1List, ...toggleTalkDay2List],
+  trackTwo: [...ascendTalkDay1List, ...ascendTalkDay2List],
+  trackThree: [...leveragesTalkDay1List, ...leveragesTalkDay2List],
 } as const satisfies TimeTable;

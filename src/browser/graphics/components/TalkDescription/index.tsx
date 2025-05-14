@@ -52,7 +52,7 @@ export const TalkDescription: FC<Props> = ({
           </p>
           <ul className={styles.socialList}>
             {socials.map(([key, v]) => (
-              <li className={styles.socialItem} key={v}>
+              <li className={styles.socialItem} key={key}>
                 {match(key)
                   .with(P.union("link", "github", "twitter"), (p) => iconMap[p])
                   .otherwise(() => null)}

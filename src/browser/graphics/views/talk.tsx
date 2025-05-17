@@ -72,13 +72,15 @@ const App: FC = () => {
       case "trackThree":
         return 2;
       default:
-        return 0;
+        console.warn(`Unknown room identifier: "${room}". Returning -1 as fallback.`);
+        return -1;
     }
   };
+  const roomIndex = getRoomIndex(progress?.room ?? "");
   const trackName =
-    configRoomData.track[getRoomIndex(progress?.room ?? "")].name;
+    roomIndex >= 0 ? configRoomData.track[roomIndex]?.name : "Unknown Track";
   const trackHashtag =
-    configRoomData.track[getRoomIndex(progress?.room ?? "")].hashtag;
+    roomIndex >= 0 ? configRoomData.track[roomIndex]?.hashtag : "";
   return (
     <Presentation
       now={now}

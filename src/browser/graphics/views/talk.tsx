@@ -42,6 +42,8 @@ const App: FC = () => {
     Temporal.Now.zonedDateTimeISO("Asia/Tokyo"),
   );
 
+  console.log(nodecg.bundleConfig);
+
   return (
     <Presentation
       now={now}

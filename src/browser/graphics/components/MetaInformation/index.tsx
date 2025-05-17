@@ -25,7 +25,7 @@ export const MetaInformation: FC<Props> = ({
       </time>
       <ul className={styles.hashtag}>
         {hashtag.map((tag) => {
-          return <li key={tag}>#{tag}</li>;
+          return <li key={tag}>{tag}</li>;
         })}
       </ul>
     </div>

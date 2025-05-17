@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "default": {},
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "hashtag": {
+      "type": "object",
+      "properties": {
+        "globalHashtag": {
+          "type": "string"
+        },
+        "trackHashtag": {
+          "type": "string"
+        },
+        "trackName": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

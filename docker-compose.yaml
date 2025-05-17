@@ -1,0 +1,20 @@
+version: "3"
+services:
+  nodecg:
+    image: ghcr.io/nodecg/nodecg:2.3.2
+    volumes:
+      - "assets:/opt/nodecg/assets:rw"
+      - "db:/opt/nodecg/db:rw"
+      - "./cfg:/opt/nodecg/cfg:rw"
+      - "./dashboard:/opt/nodecg/bundles/tskaigi-layout/dashboard:ro"
+      - "./graphics:/opt/nodecg/bundles/tskaigi-layout/graphics:ro"
+      - "./extension:/opt/nodecg/bundles/tskaigi-layout/extension:ro"
+      - "./node_modules:/opt/nodecg/bundles/tskaigi-layout/node_modules:ro"
+      - "./package.json:/opt/nodecg/bundles/tskaigi-layout/package.json:ro"
+    ports:
+      - "9090:9090"
+
+volumes:
+  assets:
+  db:
+  node_modules:

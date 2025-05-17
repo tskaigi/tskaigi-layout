@@ -30,7 +30,7 @@ export const Presentation: FC<PresentationProps> = ({
   platinumSponsors,
 }) => {
   const dayZero = Temporal.ZonedDateTime.from({
-    year: 2020,
+    year: 2025,
     month: 5,
     day: 22,
     timeZone: "Asia/Tokyo",
@@ -48,7 +48,7 @@ export const Presentation: FC<PresentationProps> = ({
       <MetaInformation
         trackName={trackName}
         day={day}
-        hashtag={["tskaigi20205", roomHashtag]}
+        hashtag={["tskaigi2025", roomHashtag]}
         areaName={gridAreaName.meta}
       />
       <SponsorArea

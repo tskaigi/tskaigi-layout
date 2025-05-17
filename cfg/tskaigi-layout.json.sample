@@ -3,8 +3,20 @@
   "title": "TSKaigi 2025",
   "hashtag": {
     "globalHashtag": "#tskaigi2025",
-    "trackHashtag": "#tskaigi_toggle",
-    "trackName": "トグルルーム"
+    "track": [
+      {
+        "name": "トグルルーム",
+        "hashtag": "#tskaigi_toggle"
+      },
+      {
+        "name": "アセンドトラック",
+        "hashtag": "#tskaigi_ascend"
+      },
+      {
+        "name": "レバレジーズトラック",
+        "hashtag": "#tskaigi_leverages"
+      }
+    ]
   },
   "dayZero": {
     "year": 2025,

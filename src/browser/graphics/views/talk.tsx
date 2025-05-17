@@ -50,8 +50,13 @@ const App: FC = () => {
       socialLinks={talk.social}
       goldSponsors={goldSponsor}
       platinumSponsors={platinumSponsor}
-      roomHashtag={"tskaigi_leverages"} // TODO: 正しい値を算出させる
-      trackName="レバレジーズ" // TODO: 正しい値を算出させる
+      roomHashtag={
+        (nodecg.bundleConfig.hashtag as { trackHashtag?: string })
+          ?.trackHashtag ?? ""
+      }
+      trackName={
+        (nodecg.bundleConfig.hashtag as { trackName?: string })?.trackName ?? ""
+      }
     />
   );
 };

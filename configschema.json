@@ -24,6 +24,21 @@
         }
       },
       "additionalProperties": false
+    },
+    "dayZero": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "integer"
+        },
+        "month": {
+          "type": "integer"
+        },
+        "day": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

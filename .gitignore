@@ -140,3 +140,6 @@ dist
 .pnp.*
 
 *storybook.log
+
+# NodeCG Config
+cfg/*.json

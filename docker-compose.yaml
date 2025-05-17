@@ -2,6 +2,7 @@ version: "3"
 services:
   nodecg:
     image: ghcr.io/nodecg/nodecg:2.3.2
+    working_dir: /opt/nodecg/bundles/tskaigi-layout
     volumes:
       - "assets:/opt/nodecg/assets:rw"
       - "db:/opt/nodecg/db:rw"

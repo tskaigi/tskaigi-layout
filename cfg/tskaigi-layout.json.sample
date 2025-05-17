@@ -1,0 +1,14 @@
+{
+  "name": "TSKaigi",
+  "title": "TSKaigi 2025",
+  "hashtag": {
+    "globalHashtag": "#tskaigi2025",
+    "trackHashtag": "#tskaigi_toggle",
+    "trackName": "トグルルーム"
+  },
+  "dayZero": {
+    "year": 2025,
+    "month": 5,
+    "day": 22
+  }
+}

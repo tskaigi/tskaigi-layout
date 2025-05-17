@@ -16,11 +16,20 @@
         "globalHashtag": {
           "type": "string"
         },
-        "trackHashtag": {
-          "type": "string"
-        },
-        "trackName": {
-          "type": "string"
+        "track": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "hashtag": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
         }
       },
       "additionalProperties": false

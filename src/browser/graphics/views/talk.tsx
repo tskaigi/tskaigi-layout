@@ -42,8 +42,29 @@ const App: FC = () => {
     Temporal.Now.zonedDateTimeISO("Asia/Tokyo"),
   );
 
-  console.log(nodecg.bundleConfig);
-
+  const configRoomData = nodecg.bundleConfig.hashtag as {
+    globalHashtag?: string;
+    track: Array<{
+      name: string;
+      hashtag: string;
+    }>;
+  };
+  const getRoomIndex = (room: string) => {
+    switch (room) {
+      case "trackOne":
+        return 0;
+      case "trackTwo":
+        return 1;
+      case "trackThree":
+        return 2;
+      default:
+        return 0;
+    }
+  };
+  const trackName =
+    configRoomData.track[getRoomIndex(progress?.room ?? "")].name;
+  const trackHashtag =
+    configRoomData.track[getRoomIndex(progress?.room ?? "")].hashtag;
   return (
     <Presentation
       now={now}
@@ -52,13 +73,8 @@ const App: FC = () => {
       socialLinks={talk.social}
       goldSponsors={goldSponsor}
       platinumSponsors={platinumSponsor}
-      roomHashtag={
-        (nodecg.bundleConfig.hashtag as { trackHashtag?: string })
-          ?.trackHashtag ?? ""
-      }
-      trackName={
-        (nodecg.bundleConfig.hashtag as { trackName?: string })?.trackName ?? ""
-      }
+      roomHashtag={trackHashtag ?? ""}
+      trackName={trackName ?? ""}
     />
   );
 };

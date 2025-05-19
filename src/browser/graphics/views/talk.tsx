@@ -72,7 +72,9 @@ const App: FC = () => {
       case "trackThree":
         return 2;
       default:
-        console.warn(`Unknown room identifier: "${room}". Returning -1 as fallback.`);
+        console.warn(
+          `Unknown room identifier: "${room}". Returning -1 as fallback.`,
+        );
         return -1;
     }
   };

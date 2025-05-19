@@ -29,10 +29,15 @@ export const Presentation: FC<PresentationProps> = ({
   goldSponsors,
   platinumSponsors,
 }) => {
+  const configDayZero = nodecg.bundleConfig.dayZero as {
+    year: number;
+    month: number;
+    day: number;
+  };
   const dayZero = Temporal.ZonedDateTime.from({
-    year: 2020,
-    month: 5,
-    day: 22,
+    year: configDayZero.year,
+    month: configDayZero.month,
+    day: configDayZero.day,
     timeZone: "Asia/Tokyo",
   });
   const day = Math.abs(dayZero.day - now.day);
@@ -40,6 +45,12 @@ export const Presentation: FC<PresentationProps> = ({
   if (day >= 2 || day < 0) {
     console.warn("Invalid day");
   }
+  const globalHashtag =
+    (
+      nodecg.bundleConfig.hashtag as {
+        globalHashtag?: string;
+      }
+    )?.globalHashtag ?? "";
 
   return (
     <BackGround>
@@ -48,7 +59,7 @@ export const Presentation: FC<PresentationProps> = ({
       <MetaInformation
         trackName={trackName}
         day={day}
-        hashtag={["tskaigi20205", roomHashtag]}
+        hashtag={[globalHashtag, roomHashtag]}
         areaName={gridAreaName.meta}
       />
       <SponsorArea

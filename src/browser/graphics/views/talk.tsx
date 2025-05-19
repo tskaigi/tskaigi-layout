@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import { useMemo, type FC } from "react";
 import { Temporal } from "temporal-polyfill";
 
 import { render } from "../../render";
@@ -8,8 +8,7 @@ import { TimeTableSchema, type TimeTable } from "../../schema/TimeTable";
 import { ProgressSchema, type Progress } from "../../schema/Progress";
 import { useReplicant } from "../../hooks/useReplicant";
 
-import platinumSponsor from "../img/sponsor/platinum";
-import goldSponsor from "../img/sponsor/gold";
+import { useGoldSponsors, usePlatinumSponsors } from "../../hooks/assets";
 
 const App: FC = () => {
   const { value: timeTable } = useReplicant<TimeTable>(
@@ -20,6 +19,21 @@ const App: FC = () => {
   const { value: progress } = useReplicant<Progress>(
     "progress",
     ProgressSchema,
+  );
+
+  const platinumSponsors = usePlatinumSponsors();
+  const goldSponsors = useGoldSponsors();
+
+  const sponsor = useMemo(
+    () => ({
+      platinum: platinumSponsors
+        .map((asset) => asset.url)
+        .toSorted((a, b) => a.localeCompare(b)),
+      gold: goldSponsors
+        .map((asset) => asset.url)
+        .toSorted((a, b) => a.localeCompare(b)),
+    }),
+    [platinumSponsors, goldSponsors],
   );
 
   const getCurrentTalk = (
@@ -42,16 +56,43 @@ const App: FC = () => {
     Temporal.Now.zonedDateTimeISO("Asia/Tokyo"),
   );
 
+  const configRoomData = nodecg.bundleConfig.hashtag as {
+    globalHashtag?: string;
+    track: Array<{
+      name: string;
+      hashtag: string;
+    }>;
+  };
+  const getRoomIndex = (room: string) => {
+    switch (room) {
+      case "trackOne":
+        return 0;
+      case "trackTwo":
+        return 1;
+      case "trackThree":
+        return 2;
+      default:
+        console.warn(
+          `Unknown room identifier: "${room}". Returning -1 as fallback.`,
+        );
+        return -1;
+    }
+  };
+  const roomIndex = getRoomIndex(progress?.room ?? "");
+  const trackName =
+    roomIndex >= 0 ? configRoomData.track[roomIndex]?.name : "Unknown Track";
+  const trackHashtag =
+    roomIndex >= 0 ? configRoomData.track[roomIndex]?.hashtag : "";
   return (
     <Presentation
       now={now}
       talkTitle={talk.title}
       speakerName={talk.speakerName}
       socialLinks={talk.social}
-      goldSponsors={goldSponsor}
-      platinumSponsors={platinumSponsor}
-      roomHashtag={"tskaigi_leverages"} // TODO: 正しい値を算出させる
-      trackName="レバレジーズ" // TODO: 正しい値を算出させる
+      goldSponsors={sponsor.gold}
+      platinumSponsors={sponsor.platinum}
+      roomHashtag={trackHashtag ?? ""}
+      trackName={trackName ?? ""}
     />
   );
 };

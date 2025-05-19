@@ -56,6 +56,33 @@ const App: FC = () => {
     Temporal.Now.zonedDateTimeISO("Asia/Tokyo"),
   );
 
+  const configRoomData = nodecg.bundleConfig.hashtag as {
+    globalHashtag?: string;
+    track: Array<{
+      name: string;
+      hashtag: string;
+    }>;
+  };
+  const getRoomIndex = (room: string) => {
+    switch (room) {
+      case "trackOne":
+        return 0;
+      case "trackTwo":
+        return 1;
+      case "trackThree":
+        return 2;
+      default:
+        console.warn(
+          `Unknown room identifier: "${room}". Returning -1 as fallback.`,
+        );
+        return -1;
+    }
+  };
+  const roomIndex = getRoomIndex(progress?.room ?? "");
+  const trackName =
+    roomIndex >= 0 ? configRoomData.track[roomIndex]?.name : "Unknown Track";
+  const trackHashtag =
+    roomIndex >= 0 ? configRoomData.track[roomIndex]?.hashtag : "";
   return (
     <Presentation
       now={now}
@@ -64,8 +91,8 @@ const App: FC = () => {
       socialLinks={talk.social}
       goldSponsors={sponsor.gold}
       platinumSponsors={sponsor.platinum}
-      roomHashtag={"tskaigi_leverages"} // TODO: 正しい値を算出させる
-      trackName="レバレジーズ" // TODO: 正しい値を算出させる
+      roomHashtag={trackHashtag ?? ""}
+      trackName={trackName ?? ""}
     />
   );
 };

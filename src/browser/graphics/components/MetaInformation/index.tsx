@@ -19,13 +19,13 @@ export const MetaInformation: FC<Props> = ({
   return (
     <div className={styles.container} style={{ gridArea: areaName }}>
       <img className={styles.logo} src={tskaigi} alt="TSKaigiロゴ" />
-      <span className={styles.trackName}>{trackName}トラック</span>
+      <span className={styles.trackName}>{trackName}</span>
       <time className={styles.day} dateTime={new Date().toISOString()}>
         Day {day}
       </time>
       <ul className={styles.hashtag}>
         {hashtag.map((tag) => {
-          return <li key={tag}>#{tag}</li>;
+          return <li key={tag}>{tag}</li>;
         })}
       </ul>
     </div>

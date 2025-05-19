@@ -116,7 +116,7 @@
     "valibot": "^1.0.0"
   },
   "volta": {
-    "node": "18.20.8"
+    "node": "22.15.1"
   },
   "eslintConfig": {
     "extends": [

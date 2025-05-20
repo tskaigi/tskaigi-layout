@@ -113,21 +113,67 @@ const toggleTalkDay1List = [
   },
 ] satisfies TrackItem[];
 
-const toggleTalkDay2List: TrackItem[] = [
+const toggleTalkDay2List = [
   {
-    title:
-      "技術書をソフトウェア開発する - jsprimerの10年から学ぶ継続的メンテナンスの技術",
-    speakerName: "azu",
+    title: "TypeScriptネイティブ移植観察レポート TSKaigi 2025",
+    speakerName: "berlysia",
     social: {
-      twitter: "azu_re",
-      github: "azu",
-      link: "https://jsprimer.net/",
+      twitter: "https://x.com/berlysia",
+      github: "https://github.com/berlysia",
+      link: "https://berlysia.net/",
     },
   },
   {
     title:
-      "機能的凝集の概念を用いて複数ロール、類似の機能を多く含むシステムのフロントエンドのコンポーネントを適切に分割する",
-    speakerName: "IkedaNoritaka",
+      "TypeScript Language Service Plugin で CSS Modules の開発体験を改善する",
+    speakerName: "mizdra",
+    social: {
+      github: "https://github.com/mizdra",
+      link: "https://www.mizdra.net/",
+      twitter: "https://x.com/mizdra",
+    },
+  },
+  {
+    title: "複雑なフォームを継続的に開発していくための技術選定・設計・実装",
+    speakerName: "izumin5210",
+    social: {
+      twitter: "https://x.com/izumin5210",
+      github: "https://github.com/izumin5210",
+      link: "",
+    },
+  },
+  {
+    title: "バックエンドのコードファーストなOpenAPIスキーマ駆動開発",
+    speakerName: "鳥居 雄仁",
+    social: {
+      github: "",
+      link: "https://blog.kinto-technologies.com/authors/dc770e2b-4ed2-5f16-81ae-fb103d5b7278/",
+      twitter: "https://x.com/yu_torii",
+    },
+  },
+  {
+    title: "バランスを見極めよう！実装の意味を明示するための型定義",
+    speakerName: "畑田祥太",
+    social: {
+      github: "",
+      link: "",
+      twitter: "https://x.com/whatasoda",
+    },
+  },
+  {
+    title:
+      "PandaCSSでつくる、型で守られたスタイリング基盤 ～TypeScript × デザインシステム管理の実践アーキテクチャ～",
+    speakerName: "田代 敬太",
+    social: {
+      github: "",
+      link: "",
+      twitter: "https://x.com/Dendam_X",
+    },
+  },
+  {
+    title:
+      "TSでシステムが堅牢になっていくさまをスポンサーになるたびに報告 〜型定義から始めるリファクタリング編",
+    speakerName: "井上 心太",
     social: {
       github: "",
       link: "",
@@ -135,12 +181,32 @@ const toggleTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title: "複雑なフォームを継続的に開発していくための技術選定・設計・実装",
-    speakerName: "izumin5210",
+    title:
+      "技術書をソフトウェア開発する - jsprimerの10年から学ぶ継続的メンテナンスの技術",
+    speakerName: "azu",
     social: {
-      twitter: "izumin5210",
-      github: "izumin5210",
-      link: "",
+      twitter: "https://x.com/azu_re",
+      github: "https://github.com/azu",
+      link: "https://jsprimer.net/",
+    },
+  },
+  {
+    title: "ts-morphを利用して編集可能なコード生成を実現する",
+    speakerName: "池奥裕太/@yuta-ike",
+    social: {
+      github: "https://github.com/yuta-ike",
+      link: "https://zenn.dev/yuta_ike",
+      twitter: "https://x.com/Selria1",
+    },
+  },
+  {
+    title:
+      "機能的凝集の概念を用いて複数ロール、類似の機能を多く含むシステムのフロントエンドのコンポーネントを適切に分割する",
+    speakerName: "IkedaNoritaka",
+    social: {
+      github: "https://github.com/NoritakaIkeda",
+      link: "https://zenn.dev/omotidaisukijp",
+      twitter: "https://x.com/omotidaisukijp",
     },
   },
   {
@@ -153,21 +219,11 @@ const toggleTalkDay2List: TrackItem[] = [
     },
   },
   {
-    title:
-      "TypeScript Language Service Plugin で CSS Modules の開発体験を改善する",
-    speakerName: "mizdra",
+    title: "型がない世界に生まれ落ちて 〜TypeScript運用進化の歴史〜",
+    speakerName: "成原 聡一朗",
     social: {
       github: "",
-      link: "",
-      twitter: "",
-    },
-  },
-  {
-    title: "ts-morphを利用して編集可能なコード生成を実現する",
-    speakerName: "yuta-ike",
-    social: {
-      github: "",
-      link: "",
+      link: "https://suzuri.jp/VoodooRhythm",
       twitter: "",
     },
   },
@@ -175,39 +231,30 @@ const toggleTalkDay2List: TrackItem[] = [
     title: "Type ChallengesにPRを出して新しい問題を追加した話",
     speakerName: "Kanon",
     social: {
-      twitter: "ysknsid25",
-      github: "ysknsid25",
+      twitter: "https://x.com/ysknsid25",
+      github: "https://github.com/ysknsid25",
       link: "https://dev.inorinrinrin.com/",
-    },
-  },
-  {
-    title: "Panda-CSS はどのように型安全にしているのか",
-    speakerName: "加藤貴裕",
-    social: {
-      twitter: "doz13189",
-      github: "doz13189",
-      link: "",
     },
   },
   {
     title: "ProxyとTypeScriptのおいしい関係",
     speakerName: "Motoki Shakagori/ほとけ",
     social: {
-      twitter: "schwmtl",
-      github: "m-shaka",
+      twitter: "https://x.com/schwmtl",
+      github: "https://github.com/m-shaka",
       link: "https://linktr.ee/mshaka",
     },
   },
   {
-    title: "型がない世界に生まれ落ちて 〜TypeScript運用進化の歴史〜",
-    speakerName: "成原 聡一朗",
+    title: "Panda-CSS はどのように型安全にしているのか",
+    speakerName: "加藤貴裕",
     social: {
-      github: "feel_sooo_baaad",
-      link: "https://suzuri.jp/VoodooRhythm",
-      twitter: "",
+      twitter: "https://x.com/doz13189",
+      github: "https://github.com/doz13189",
+      link: "",
     },
   },
-];
+] satisfies TrackItem[];
 
 const ascendTalkDay1List: TrackItem[] = [
   {

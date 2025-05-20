@@ -70,45 +70,45 @@ const toggleTalkDay1List = [
     speakerName: "takanorip",
     title: "堅牢なデザインシステムをつくるためのTypeScript活用",
     social: {
-      github: "takanorip",
+      github: "https://github.com/takanorip",
       link: "https://takanorip.com",
-      twitter: "takanoripe",
+      twitter: "https://x.com/takanoripe",
     },
   },
   {
     speakerName: "Yuku Kotani",
     title: "AI Coding Agent Enablement in TypeScript",
     social: {
-      github: "yukukotani",
+      github: "https://github.com/yukukotani",
       link: "https://yuku.dev",
-      twitter: "yukukotani",
+      twitter: "https://x.com/yukukotani",
     },
   },
   {
     speakerName: "ymrl",
     title: "TypeScriptとReactで、WAI-ARIAの属性を正しく利用する",
     social: {
-      github: "ymrl",
+      github: "https://github.com/ymrl",
       link: "",
-      twitter: "ymrl",
+      twitter: "https://x.com/ymrl",
     },
   },
   {
     speakerName: "Sosuke Suzuki",
     title: "TypeScriptとは何であって何でなく、誰のもので、どこへ向かうのか",
     social: {
-      github: "",
+      github: "https://github.com/sosukesuzuki",
       link: "",
-      twitter: "",
+      twitter: "https://x.com/__sosukesuzuki",
     },
   },
   {
     speakerName: "unvalley",
     title: "Rust製JavaScript/TypeScript Linterにおけるプラグイン実装の裏側",
     social: {
-      github: "unvalley",
+      github: "https://github.com/unvalley",
       link: "https://unvalley.me",
-      twitter: "unvalley_",
+      twitter: "https://x.com/unvalley_",
     },
   },
 ] satisfies TrackItem[];

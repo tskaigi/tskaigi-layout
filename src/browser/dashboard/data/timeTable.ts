@@ -256,13 +256,13 @@ const toggleTalkDay2List = [
   },
 ] satisfies TrackItem[];
 
-const ascendTalkDay1List: TrackItem[] = [
+const ascendTalkDay1List = [
   {
     title: "高度な型付け、どう教える？",
     speakerName: "progfay",
     social: {
-      twitter: "progfay",
-      github: "progfay",
+      twitter: "https://x.com/progfay",
+      github: "https://github.com/progfay",
       link: "",
     },
   },
@@ -271,16 +271,16 @@ const ascendTalkDay1List: TrackItem[] = [
     speakerName: "Kazushi Konosu",
     social: {
       link: "",
-      twitter: "kazushikonosu",
-      github: "kazushisan",
+      twitter: "https://x.com/kazushikonosu",
+      github: "https://github.com/kazushisan",
     },
   },
   {
     title: "Language Serverと喋ろう",
     speakerName: "ぴざきゃっと",
     social: {
-      twitter: "pizzacat83b",
-      github: "pizzacat83",
+      twitter: "https://x.com/pizzacat83b",
+      github: "https://github.com/pizzacat83",
       link: "https://pizzacat83.com",
     },
   },
@@ -288,8 +288,8 @@ const ascendTalkDay1List: TrackItem[] = [
     title: "推論された型の移植性エラーTS2742に挑む",
     speakerName: "elecdeer",
     social: {
-      twitter: "elecdeerdev",
-      github: "elecdeer",
+      twitter: "https://x.com/elecdeerdev",
+      github: "https://github.com/elecdeer",
       link: "https://elecdeer.dev/",
     },
   },
@@ -298,8 +298,8 @@ const ascendTalkDay1List: TrackItem[] = [
       "TSConfig Solution Style & subpath imports でファイル単位で型を切り替える",
     speakerName: "kotori",
     social: {
-      twitter: "maminami_minami",
-      github: "minami-minami",
+      twitter: "https://x.com/maminami_minami",
+      github: "https://github.com/minami-minami",
       link: "",
     },
   },
@@ -307,8 +307,8 @@ const ascendTalkDay1List: TrackItem[] = [
     title: "主要ライブラリの実例に学ぶ、TypeScriptで実現する型安全な座標定義",
     speakerName: "原口 公輔",
     social: {
-      twitter: "Tirol_JPN",
-      github: "TirolJPN",
+      twitter: "https://x.com/Tirol_JPN",
+      github: "https://github.com/TirolJPN",
       link: "https://tirol-jpn.com/pages/about",
     },
   },
@@ -317,8 +317,8 @@ const ascendTalkDay1List: TrackItem[] = [
       "コンポーネントライブラリで実現する、アクセシビリティの正しい実装パターン",
     speakerName: "たじまん",
     social: {
-      twitter: "schktjm",
-      github: "schktjm",
+      twitter: "https://x.com/schktjm",
+      github: "https://github.com/schktjm",
       link: "https://bsky.app/profile/schktjm.bsky.social",
     },
   },
@@ -327,8 +327,8 @@ const ascendTalkDay1List: TrackItem[] = [
       "AWS LambdaをTypeScriptで動かして分かった、Node.jsのTypeScriptサポートの利点と課題",
     speakerName: "Masaki Suzuki",
     social: {
-      twitter: "makky12",
-      github: "smt7174",
+      twitter: "https://x.com/makky12",
+      github: "https://github.com/smt7174",
       link: "https://makky12.hatenablog.com/",
     },
   },
@@ -347,8 +347,8 @@ const ascendTalkDay1List: TrackItem[] = [
     speakerName: "omote",
     social: {
       link: "",
-      twitter: "HirokiOmote",
-      github: "HirokiOmote",
+      twitter: "https://x.com/HirokiOmote",
+      github: "https://github.com/HirokiOmote",
     },
   },
   {
@@ -365,8 +365,8 @@ const ascendTalkDay1List: TrackItem[] = [
       "型パズルを好きになるために、競プロを型システムだけで解いてみることにした",
     speakerName: "いまいまい",
     social: {
-      twitter: "imaimai17468",
-      github: "imaimai17468",
+      twitter: "https://x.com/imaimai17468",
+      github: "https://github.com/imaimai17468",
       link: "https://imaimai.tech/",
     },
   },
@@ -375,12 +375,12 @@ const ascendTalkDay1List: TrackItem[] = [
       "タイプレベルリファクタリング奮闘記〜この「型パズル」は読めません！〜",
     speakerName: "Yugo Yagita",
     social: {
-      github: "",
+      github: "https://github.com/ygkn",
       link: "",
-      twitter: "",
+      twitter: "https://x.com/ygkn35034",
     },
   },
-];
+] satisfies TrackItem[];
 
 const ascendTalkDay2List: TrackItem[] = [
   {

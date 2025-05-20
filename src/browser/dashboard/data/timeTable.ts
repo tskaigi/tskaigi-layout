@@ -382,13 +382,13 @@ const ascendTalkDay1List = [
   },
 ] satisfies TrackItem[];
 
-const ascendTalkDay2List: TrackItem[] = [
+const ascendTalkDay2List = [
   {
     title: "フロントエンドがTypeScriptなら、バックエンドはPHPでもいいじゃない",
     speakerName: "富所 亮",
     social: {
-      twitter: "hanhan1978",
-      github: "hanhan1978",
+      twitter: "https://x.com/hanhan1978",
+      github: "https://github.com/hanhan1978",
       link: "https://blog.hanhans.net",
     },
   },
@@ -396,8 +396,8 @@ const ascendTalkDay2List: TrackItem[] = [
     title: "Pragmatic Functional Programming in TypeScript",
     speakerName: "yasaichi",
     social: {
-      twitter: "_yasaichi",
-      github: "yasaichi",
+      twitter: "https://x.com/_yasaichi",
+      github: "https://github.com/yasaichi",
       link: "https://blog.yasaichi.com/",
     },
   },
@@ -406,8 +406,8 @@ const ascendTalkDay2List: TrackItem[] = [
       "型システムを活用した ESLint カスタムルール開発入門 〜固有ドメインにおけるコーディング規約を開発する〜",
     speakerName: "山梨 蓮",
     social: {
-      twitter: "ren_yamanashi",
-      github: "ren-yamanashi",
+      twitter: "https://x.com/ren_yamanashi",
+      github: "https://github.com/ren-yamanashi",
       link: "https://zenn.dev/yamaren",
     },
   },
@@ -417,7 +417,7 @@ const ascendTalkDay2List: TrackItem[] = [
     social: {
       github: "",
       link: "",
-      twitter: "2nofa11",
+      twitter: "https://x.com/2nofa11",
     },
   },
   {
@@ -426,15 +426,15 @@ const ascendTalkDay2List: TrackItem[] = [
     social: {
       github: "",
       link: "https://product.plex.co.jp/",
-      twitter: "Web_TochiTech",
+      twitter: "https://x.com/Web_TochiTech",
     },
   },
   {
     title: "TypeScript ASTとJSDocで実現するコードの自動削除",
     speakerName: "川野賢一",
     social: {
-      twitter: "k_rf_",
-      github: "k-rf",
+      twitter: "https://x.com/k_rf_",
+      github: "https://github.com/k-rf",
       link: "",
     },
   },
@@ -443,26 +443,26 @@ const ascendTalkDay2List: TrackItem[] = [
       "これは型破り？型安全？真実はいつもひとつ！（じゃないかもしれない）TypeScriptクイズ〜〜〜〜！！！！！",
     speakerName: "君田 祥一",
     social: {
-      twitter: "kimi_koma1111",
-      github: "kimitashoichi",
+      twitter: "https://x.com/kimi_koma1111",
+      github: "https://github.com/kimitashoichi",
       link: "https://kimitashoichi.github.io/Profile",
     },
   },
   {
     title: "Lookback TypeScript ESM support and what should we do now.",
-    speakerName: "左治木 隆成",
+    speakerName: "Saji",
     social: {
-      github: "",
-      link: "",
-      twitter: "",
+      github: "https://github.com/sajikix",
+      link: "https://www.sajiki.dev/",
+      twitter: "https://x.com/sajikix",
     },
   },
   {
     title: `"良い"TSのコードを書く為のマインドセット`,
     speakerName: "Kei",
     social: {
-      twitter: "kei_english_ca",
-      github: "kei95",
+      twitter: "https://x.com/kei_english_ca",
+      github: "https://github.com/kei95",
       link: "https://www.youtube.com/@kei_NA",
     },
   },
@@ -470,8 +470,8 @@ const ascendTalkDay2List: TrackItem[] = [
     title: "令和最新版TypeScriptでのnpmパッケージ開発",
     speakerName: "odan",
     social: {
-      twitter: "odan3240",
-      github: "odanado",
+      twitter: "https://x.com/odan3240",
+      github: "https://github.com/odanado",
       link: "",
     },
   },
@@ -479,8 +479,8 @@ const ascendTalkDay2List: TrackItem[] = [
     title: "コンパイルオプションで変わる型世界",
     speakerName: "池田敬祐",
     social: {
-      twitter: "ike_keichan",
-      github: "ike-keichan",
+      twitter: "https://x.com/ike_keichan",
+      github: "https://github.com/ike-keichan",
       link: "",
     },
   },
@@ -488,21 +488,21 @@ const ascendTalkDay2List: TrackItem[] = [
     title: "TypeScriptのmoduleオプションを改めて整理する",
     speakerName: "おおいし (bicstone)",
     social: {
-      twitter: "bicstone_me",
-      github: "bicstone",
+      twitter: "https://x.com/bicstone_me",
+      github: "https://github.com/bicstone",
       link: "https://bicstone.me/",
     },
   },
   {
     title: "Project Referencesを活用した実行環境ごとのtsconfig最適化",
-    speakerName: "板井俊樹",
+    speakerName: "Toshiki Itai",
     social: {
       github: "",
       link: "",
-      twitter: "",
+      twitter: "https://x.com/itatchi3_",
     },
   },
-];
+] satisfies TrackItem[];
 
 const leveragesTalkDay1List: TrackItem[] = [
   {

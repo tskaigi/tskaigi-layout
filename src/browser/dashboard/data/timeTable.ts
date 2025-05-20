@@ -504,22 +504,22 @@ const ascendTalkDay2List = [
   },
 ] satisfies TrackItem[];
 
-const leveragesTalkDay1List: TrackItem[] = [
+const leveragesTalkDay1List = [
   {
-    title: "Full-Stack TypeScript x GraphQLで実現する漸進的アーキテクチャ",
+    title: "スキーマと型で拓く Full-Stack TypeScript",
     speakerName: "Sohei Takeno",
     social: {
-      github: "",
+      github: "https://github.com/Altech",
       link: "",
-      twitter: "",
+      twitter: "https://x.com/Altech_2015",
     },
   },
   {
     title: "SignalとObservable―新たなデータモデルを解きほぐす",
     speakerName: "lacolaco",
     social: {
-      twitter: "laco2net",
-      github: "lacolaco",
+      twitter: "https://x.com/laco2net",
+      github: "https://github.com/lacolaco",
       link: "https://lacolaco.net",
     },
   },
@@ -527,27 +527,27 @@ const leveragesTalkDay1List: TrackItem[] = [
     title: "TSConfigからTypeScriptの世界を覗く",
     speakerName: "らいと",
     social: {
-      github: "",
-      link: "",
-      twitter: "",
+      github: "https://github.com/light-planck",
+      link: "https://zenn.dev/light_planck",
+      twitter: "https://x.com/light_planck",
     },
   },
   {
-    title: "ハッカソンでTypeScriptを使った実体験",
-    speakerName: "河村悠太",
+    title: "学生でもここまで出来る！ハッカソンで爆速開発して優勝した話",
+    speakerName: "かわちゃん",
     social: {
-      github: "",
-      link: "",
-      twitter: "",
+      github: "https://github.com/YutaK1026",
+      link: "https://kawaport.pages.dev/",
+      twitter: "https://x.com/inheritans1904",
     },
   },
   {
     title: "『Python→TypeScript』オンボーディング奮闘記",
     speakerName: "龍野 卓己",
     social: {
-      twitter: "takumi_t_jp",
-      github: "Exerea",
-      link: "",
+      twitter: "https://x.com/takumi_t_jp",
+      github: "https://github.com/Exerea",
+      link: "https://note.com/toggle/n/n25ce52d3a2ae",
     },
   },
   {
@@ -555,8 +555,8 @@ const leveragesTalkDay1List: TrackItem[] = [
       "転生したらTypeScriptのEnumだった件～型安全性とエコシステムの変化で挫けそうになっているんだが～",
     speakerName: "やまのく",
     social: {
-      twitter: "yamanoku",
-      github: "yamanoku",
+      twitter: "https://x.com/yamanoku",
+      github: "https://github.com/yamanoku",
       link: "https://yamanoku.net",
     },
   },
@@ -564,7 +564,7 @@ const leveragesTalkDay1List: TrackItem[] = [
     title: "URLPatternから始めるWebフレームワーク開発入門",
     speakerName: "ryuapp",
     social: {
-      github: "ryuapp",
+      github: "https://github.com/ryuapp",
       link: "https://ryu.app",
       twitter: "",
     },
@@ -573,8 +573,8 @@ const leveragesTalkDay1List: TrackItem[] = [
     title: "TypeScriptエンジニアがAndroid開発の世界に飛び込んだ話",
     speakerName: "yui_tang",
     social: {
-      twitter: "yui_tang",
-      github: "YUISAKAMOTO",
+      twitter: "https://x.com/yui_tang",
+      github: "https://github.com/YUISAKAMOTO",
       link: "",
     },
   },
@@ -583,8 +583,8 @@ const leveragesTalkDay1List: TrackItem[] = [
       "Valibot Schema Driven UI - ノーコードWebサイトビルダーを実装してみよう！",
     speakerName: "宮城広隆(@MH4GF)",
     social: {
-      twitter: "MH4GF",
-      github: "mh4gf",
+      twitter: "https://x.com/MH4GF",
+      github: "https://github.com/mh4gf",
       link: "https://mh4gf.dev",
     },
   },
@@ -592,8 +592,8 @@ const leveragesTalkDay1List: TrackItem[] = [
     title: "Rust製JavaScript EngineのTypeScriptサポート",
     speakerName: "yossydev",
     social: {
-      twitter: "yossydev",
-      github: "yossydev",
+      twitter: "https://x.com/yossydev",
+      github: "https://github.com/yossydev",
       link: "https://yossy.dev/",
     },
   },
@@ -601,8 +601,8 @@ const leveragesTalkDay1List: TrackItem[] = [
     title: "TypeScript だけを書いて Tauri でデスクトップアプリを作ろう",
     speakerName: "小松 翔 (tris)",
     social: {
-      twitter: "tris5572",
-      github: "tris5572",
+      twitter: "https://x.com/tris5572",
+      github: "https://github.com/tris5572",
       link: "",
     },
   },
@@ -610,8 +610,8 @@ const leveragesTalkDay1List: TrackItem[] = [
     title: "型安全なDrag and Dropの設計を考える",
     speakerName: "yudppp",
     social: {
-      twitter: "yudppp",
-      github: "yudppp",
+      twitter: "https://x.com/yudppp",
+      github: "https://github.com/yudppp",
       link: "https://blog.yudppp.com/",
     },
   },
@@ -619,12 +619,12 @@ const leveragesTalkDay1List: TrackItem[] = [
     title: "GitHub ActionsをTypeScriptで作ろう！",
     speakerName: "じょーし（上司陽平）",
     social: {
-      twitter: "paper2parasol",
-      github: "paper2",
+      twitter: "https://x.com/paper2parasol",
+      github: "https://github.com/paper2",
       link: "https://paper2.hatenablog.com/",
     },
   },
-];
+] satisfies TrackItem[];
 
 const leveragesTalkDay2List: TrackItem[] = [
   {

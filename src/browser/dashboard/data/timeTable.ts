@@ -626,7 +626,7 @@ const leveragesTalkDay1List = [
   },
 ] satisfies TrackItem[];
 
-const leveragesTalkDay2List: TrackItem[] = [
+const leveragesTalkDay2List = [
   {
     title:
       "TypeScriptとVercel AI SDKで実現するLLMアプリケーション開発：フロントエンドからバックエンド、そしてChrome拡張まで",
@@ -748,7 +748,7 @@ const leveragesTalkDay2List: TrackItem[] = [
       github: "https://github.com/nozomuikuta",
     },
   },
-];
+] satisfies TrackItem[];
 
 export const timeTable = {
   trackOne: [...toggleTalkDay1List, ...toggleTalkDay2List],

@@ -184,6 +184,7 @@ const toggleTalkDay2List = [
     title:
       "技術書をソフトウェア開発する - jsprimerの10年から学ぶ継続的メンテナンスの技術",
     speakerName: "azu",
+    doNotShowFace: true,
     social: {
       twitter: "https://x.com/azu_re",
       github: "https://github.com/azu",
@@ -278,6 +279,7 @@ const ascendTalkDay1List = [
   {
     title: "Language Serverと喋ろう",
     speakerName: "ぴざきゃっと",
+    doNotShowFace: true,
     social: {
       twitter: "https://x.com/pizzacat83b",
       github: "https://github.com/pizzacat83",
@@ -640,6 +642,7 @@ const leveragesTalkDay2List = [
   {
     title: "feature flag 自動お掃除のための TypeScript プログラム変換",
     speakerName: "azrsh",
+    doNotShowFace: true,
     social: {
       github: "https://github.com/azrsh",
       link: "https://azr.sh/",
@@ -695,6 +698,7 @@ const leveragesTalkDay2List = [
   {
     title: "君だけのオリジナル async / await を作ろう",
     speakerName: "susisu",
+    doNotShowFace: true,
     social: {
       twitter: "https://x.com/susisu2413",
       github: "https://github.com/susisu",

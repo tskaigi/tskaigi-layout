@@ -111,7 +111,7 @@ const toggleTalkDay1List = [
       twitter: "https://x.com/unvalley_",
     },
   },
-] satisfies TrackItem[];
+] as const satisfies TrackItem[];
 
 const toggleTalkDay2List = [
   {
@@ -254,7 +254,7 @@ const toggleTalkDay2List = [
       link: "",
     },
   },
-] satisfies TrackItem[];
+] as const satisfies TrackItem[];
 
 const ascendTalkDay1List = [
   {
@@ -380,7 +380,7 @@ const ascendTalkDay1List = [
       twitter: "https://x.com/ygkn35034",
     },
   },
-] satisfies TrackItem[];
+] as const satisfies TrackItem[];
 
 const ascendTalkDay2List = [
   {
@@ -502,7 +502,7 @@ const ascendTalkDay2List = [
       twitter: "https://x.com/itatchi3_",
     },
   },
-] satisfies TrackItem[];
+] as const satisfies TrackItem[];
 
 const leveragesTalkDay1List = [
   {
@@ -624,7 +624,7 @@ const leveragesTalkDay1List = [
       link: "https://paper2.hatenablog.com/",
     },
   },
-] satisfies TrackItem[];
+] as const satisfies TrackItem[];
 
 const leveragesTalkDay2List = [
   {
@@ -748,7 +748,7 @@ const leveragesTalkDay2List = [
       github: "https://github.com/nozomuikuta",
     },
   },
-] satisfies TrackItem[];
+] as const satisfies TrackItem[];
 
 export const timeTable = {
   trackOne: [...toggleTalkDay1List, ...toggleTalkDay2List],

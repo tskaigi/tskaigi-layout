@@ -1,9 +1,55 @@
 import { TimeTable, TrackItem } from "../../schema/TimeTable";
 
-const toggleTalkDay1List: TrackItem[] = [
+const toggleTalkDay1List = [
+  {
+    speakerName: "Anthony Fu",
+    title: "The New Powerful ESLint Config with Type Safety",
+    social: {
+      github: "https://github.com/antfu",
+      link: "",
+      twitter: "https://x.com/antfu7",
+    },
+  },
   {
     speakerName: "kkk4oru",
     title: "checker.tsに対して真剣に向き合う",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
+    speakerName: "横沢 諒",
+    title:
+      "撤退危機からのピボット：4年目エンジニアがリードする TypeScript で挑む事業復活",
+    social: {
+      github: "",
+      link: "",
+      twitter: "https://x.com/yokkori_dev",
+    },
+  },
+  {
+    speakerName: "Hayato Okumoto",
+    title: "推し活を支えるAngularアプリ量産体制",
+    social: {
+      github: "",
+      link: "",
+      twitter: "https://x.com/falcon_8823",
+    },
+  },
+  {
+    speakerName: "matano",
+    title: "生成AI時代にフルスタックTypeScriptの夢を見る",
+    social: {
+      github: "",
+      link: "",
+      twitter: "https://x.com/matamatanot",
+    },
+  },
+  {
+    speakerName: "高橋 修平",
+    title: "AsyncAPIを使ってPub/Subを型安全にする",
     social: {
       github: "",
       link: "",
@@ -65,7 +111,7 @@ const toggleTalkDay1List: TrackItem[] = [
       twitter: "unvalley_",
     },
   },
-];
+] satisfies TrackItem[];
 
 const toggleTalkDay2List: TrackItem[] = [
   {

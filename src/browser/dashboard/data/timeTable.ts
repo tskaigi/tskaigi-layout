@@ -11,12 +11,12 @@ const toggleTalkDay1List = [
     },
   },
   {
-    speakerName: "kkk4oru",
+    speakerName: "Kaoru",
     title: "checker.tsに対して真剣に向き合う",
     social: {
-      github: "",
+      github: "https://github.com/kkkaoru",
       link: "",
-      twitter: "",
+      twitter: "https://x.com/kkkaoru",
     },
   },
   {

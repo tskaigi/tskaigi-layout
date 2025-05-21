@@ -1,8 +1,11 @@
 import { ComponentProps, type FC } from "react";
 
 import { type Layout } from "../../../schema/Layout";
+import { type TrackItem } from "../../../schema/TimeTable";
 
 import {
+  Alert,
+  AlertTitle,
   Stack,
   TextField,
   ToggleButton,
@@ -13,6 +16,8 @@ type Props = {
   title: string;
   name: string;
   disabled?: boolean;
+  doNotShowFace?: TrackItem["doNotShowFace"];
+  doNotShowFaceNext?: TrackItem["doNotShowFace"];
   layout: Layout;
   onChangeTitle?: ComponentProps<typeof TextField>["onChange"];
   onChangeName?: ComponentProps<typeof TextField>["onChange"];
@@ -25,6 +30,8 @@ export const Speaker: FC<Props> = ({
   name,
   layout,
   disabled = false,
+  doNotShowFace = false,
+  doNotShowFaceNext = false,
   onChangeName,
   onChangeTitle,
   onChangeLayout,
@@ -52,12 +59,26 @@ export const Speaker: FC<Props> = ({
           <ToggleButton
             size="small"
             value="translation"
+            disabled // 今年(2025)は使用しないので常時非活性化
             sx={{ fontWeight: layout.type === "translation" ? 900 : 500 }}
           >
             翻訳表示用
           </ToggleButton>
         </ToggleButtonGroup>
       </Stack>
+
+      {doNotShowFaceNext && (
+        <Alert severity="info" variant="filled">
+          次の登壇者は顔出しNGです！
+        </Alert>
+      )}
+
+      {doNotShowFace && (
+        <Alert severity="warning" variant="filled">
+          <AlertTitle>警告</AlertTitle>
+          この登壇者は顔出しNGです！
+        </Alert>
+      )}
 
       {layout.type === "translation" && (
         <TextField label="URL" type="url" onChange={onChangeFrameURL}>

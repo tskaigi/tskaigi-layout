@@ -19,6 +19,7 @@ type Props = {
   hasNext: boolean;
   layout: ComponentProps<typeof Speaker>["layout"];
   room: ComponentProps<typeof RoomSelect>["room"];
+  doNotShowFace?: ComponentProps<typeof Speaker>["doNotShowFace"];
   error?: UIError;
   onChangeLayout: ComponentProps<typeof Speaker>["onChangeLayout"];
   onChangeFrameURL?: ComponentProps<typeof Speaker>["onChangeFrameURL"];
@@ -82,6 +83,8 @@ export const TalkSummary: FC<Props> = ({
               name={timeTable[room][talkIndex].speakerName ?? ""}
               title={timeTable[room][talkIndex].title ?? ""}
               layout={layout}
+              doNotShowFace={timeTable[room][talkIndex]?.doNotShowFace}
+              doNotShowFaceNext={timeTable[room][talkIndex + 1]?.doNotShowFace}
               disabled={isLock}
               onChangeLayout={onChangeLayout}
               onChangeFrameURL={onChangeFrameURL}

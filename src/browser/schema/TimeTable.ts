@@ -1,8 +1,16 @@
-import { object, string, array, type InferOutput } from "valibot";
+import {
+  object,
+  string,
+  array,
+  optional,
+  type InferOutput,
+  boolean,
+} from "valibot";
 
 export const TrackItemSchema = object({
   speakerName: string(),
   title: string(),
+  doNotShowFace: optional(boolean()),
   social: object({
     github: string(),
     link: string(),

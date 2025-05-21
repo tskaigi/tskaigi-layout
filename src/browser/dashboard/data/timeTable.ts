@@ -565,6 +565,7 @@ const leveragesTalkDay1List = [
   {
     title: "URLPatternから始めるWebフレームワーク開発入門",
     speakerName: "ryuapp",
+    doNotShowFace: true,
     social: {
       github: "https://github.com/ryuapp",
       link: "https://ryu.app",

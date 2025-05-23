@@ -2,6 +2,15 @@ import { TimeTable, TrackItem } from "../../schema/TimeTable";
 
 const toggleTalkDay1List = [
   {
+    speakerName: "",
+    title: "オープニングトーク",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
+  {
     speakerName: "Anthony Fu",
     title: "The New Powerful ESLint Config with Type Safety",
     social: {
@@ -114,6 +123,15 @@ const toggleTalkDay1List = [
 ] as const satisfies TrackItem[];
 
 const toggleTalkDay2List = [
+  {
+    speakerName: "",
+    title: "オープニングトーク",
+    social: {
+      github: "",
+      link: "",
+      twitter: "",
+    },
+  },
   {
     title: "TypeScriptネイティブ移植観察レポート TSKaigi 2025",
     speakerName: "berlysia",

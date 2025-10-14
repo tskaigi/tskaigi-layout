@@ -62,9 +62,15 @@ const App: FC = () => {
       return;
     }
 
+    let index = progress.index;
+    // ルーム変更時に、現在のindexが新しいルームの発表数を超えていたら調整する
+    if (index >= timeTable[room].length) {
+      index = timeTable[room].length - 1;
+    }
+
     setProgress({
-      ...progress,
       room,
+      index,
     });
   };
 

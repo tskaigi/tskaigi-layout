@@ -1,6 +1,6 @@
 # TSKaigi Streaming Layout
 
-## setup
+## setup （NodeCG のインストールから自分でする場合）
 
 ### NodeCGのインストール
 
@@ -9,7 +9,8 @@ BundleファイルはNodeCGの配下に置かないといけないため先にNo
 
 ```sh
 mkdir nodecg
-npx --package=nodecg-cli@latest -- nodecg setup
+cd nodecg
+npx nodecg@latest setup
 ```
 
 - npmのパッケージインストールが進まない場合は止めて別途`npm ci`してください
@@ -32,22 +33,45 @@ cloneしたBundleのディレクトリに移動してパッケージをインス
 ```sh
 cd tskaigi-layout
 npm ci
-npm run dev
+npm run dev:view
 ```
 
-`SqliteError: no such table: replicant`のエラーが発生した場合は以下でtskaigi-layoutのbundleできた。
+NodeCG 本体も別途立ち上げます
 
 ```sh
-(tskaigi-layoutディレクトリ) npm run dev:view
+(nodecgディレクトリ) node index.js
 ```
 
-## Docker Compose で起動する場合
+上記2つを立ち上げると http://localhost:9090 でダッシュボードを表示できます。
+
+## setup (Docker Compose で起動する場合)
+
+### clone
+
+このリポジトリをcloneします。
+
+```sh
+git clone https://github.com/tskaigi/tskaigi-layout.git
+# or
+gh repo clone tskaigi/tskaigi-layout
+```
+
+### 開発環境の立ち上げ
+
+cloneしたディレクトリに移動してパッケージをインストール後開発環境を立ち上げます。
+
+```sh
+cd tskaigi-layout
+npm run dev:view
+```
+
+NodeCG 本体はDocker Compose で立ち上げます
 
 ```sh
 docker compose up -d
 ```
 
-http://localhost:9090 でダッシュボードを表示できます。
+上記2つを立ち上げると http://localhost:9090 でダッシュボードを表示できます。
 
 ## 使用方法
 

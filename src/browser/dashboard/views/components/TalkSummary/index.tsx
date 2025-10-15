@@ -80,8 +80,8 @@ export const TalkSummary: FC<Props> = ({
               {`${talkIndex + 1} / ${timeTable[room].length}`}
             </TalkIndex>
             <Speaker
-              name={timeTable[room][talkIndex].speakerName ?? ""}
-              title={timeTable[room][talkIndex].title ?? ""}
+              name={timeTable[room][talkIndex]?.speakerName ?? ""}
+              title={timeTable[room][talkIndex]?.title ?? ""}
               layout={layout}
               doNotShowFace={timeTable[room][talkIndex]?.doNotShowFace}
               doNotShowFaceNext={timeTable[room][talkIndex + 1]?.doNotShowFace}
